@@ -1,0 +1,4 @@
+repository "Flames_of_Freedom@Fotelhuszarok@cloud"
+  path "/"
+    br "/main"
+    co "/main"
