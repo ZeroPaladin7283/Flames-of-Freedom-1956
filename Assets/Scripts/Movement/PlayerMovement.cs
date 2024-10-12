@@ -1,7 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using Unity.VisualScripting;
+using Unity;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -55,10 +56,12 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        rb = GetComponent<Rigidbody> ();
+        rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
         startYScale = transform.localScale.y;
+
+        ResetJump();
     }
 
     private void Update()
@@ -88,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKey(jumpKey) && readyToJump && grounded)
+        if (Input.GetKey(jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
 
@@ -121,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Mode - Sprinting
-        if(grounded && Input.GetKey(sprintKey))
+        if (grounded && Input.GetKey(sprintKey))
         {
             state = MovementState.sprinting;
             moveSpeed = sprintSpeed;
@@ -137,18 +140,19 @@ public class PlayerMovement : MonoBehaviour
         // Mode - Air
         else
         {
-            state= MovementState.air;
+            state = MovementState.air;
         }
-        
+
     }
 
     private void MovePlayer()
     {
         //Calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        moveDirection.y = 0;
 
         // on ground
-        if(grounded)
+        if (grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
         // in air
