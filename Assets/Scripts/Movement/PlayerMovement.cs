@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public float crouchSpeed;
     public float crouchYScale;
     private float startYScale;
+    private bool isCrouching;
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
@@ -72,6 +73,10 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         SpeedControl();
         StateHandler();
+        if(state == MovementState.crouching)
+        {
+
+        }
 
         //handle drag
         if (grounded)
@@ -105,12 +110,14 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+            isCrouching = true;
         }
 
         // stop crouch
         if (Input.GetKeyUp(crouchKey))
         {
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+            isCrouching = false;
         }
     }
 
@@ -124,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Mode - Sprinting
-        if (grounded && Input.GetKey(sprintKey))
+        if (grounded && !isCrouching && Input.GetKey(sprintKey))
         {
             state = MovementState.sprinting;
             moveSpeed = sprintSpeed;
