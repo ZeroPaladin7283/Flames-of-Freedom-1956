@@ -73,10 +73,6 @@ public class PlayerMovement : MonoBehaviour
         MyInput();
         SpeedControl();
         StateHandler();
-        if(state == MovementState.crouching)
-        {
-
-        }
 
         //handle drag
         if (grounded)
