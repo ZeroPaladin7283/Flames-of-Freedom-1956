@@ -192,8 +192,8 @@ MonoBehaviour:
     y: 0
     width: 290.4
     height: 428
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -619,9 +619,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.22046618, y: 2.589892, z: 7.2092338}
+    m_Target: {x: 2.5845878, y: 1.5838788, z: 0.14934584}
     speed: 2
-    m_Value: {x: -0.22046618, y: 2.589892, z: 7.2092338}
+    m_Value: {x: 2.5845878, y: 1.5838788, z: 0.14934584}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -667,13 +667,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.14927435, y: 0.049823508, z: -0.0075846803, w: 0.987715}
+    m_Target: {x: 0.0062280744, y: -0.6835285, z: 0.005639333, w: 0.73019516}
     speed: 2
-    m_Value: {x: 0.14924423, y: 0.049813453, z: -0.0075831497, w: 0.9875157}
+    m_Value: {x: 0.006226621, y: -0.683369, z: 0.005638017, w: 0.73002476}
   m_Size:
-    m_Target: 0.010205026
+    m_Target: 0.017306514
     speed: 2
-    m_Value: 0.010205026
+    m_Value: 0.017306514
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -771,7 +771,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Weapons
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -779,16 +779,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Weapons
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\GameProjects\Flames_of_Freedom\Flames-of-Freedom-1956
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 145d0000
-    m_LastClickedID: 23828
-    m_ExpandedIDs: 00000000005d0000025d00001c5d000000ca9a3bffffff7f
+    m_SelectedIDs: 085d0000
+    m_LastClickedID: 23816
+    m_ExpandedIDs: 00000000085d00000a5d0000365d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -816,7 +816,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000005d0000025d0000
+    m_ExpandedIDs: 00000000085d00000a5d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -960,8 +960,8 @@ MonoBehaviour:
     y: 0
     width: 363.19995
     height: 722.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}

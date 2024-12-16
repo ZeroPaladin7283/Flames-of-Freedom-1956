@@ -62,12 +62,14 @@
   <ItemGroup>
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
     <Compile Include="Assets\Scripts\Movement\PlayerCam.cs" />
+    <Compile Include="Assets\Scripts\IEntity.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\Ultimate 10 Plus Shaders\Scripts\U10PS_MouseRotation.cs" />
     <Compile Include="Assets\Scripts\Movement\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunAim.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Ultimate 10 Plus Shaders\Scripts\U10PS_ExampleReview.cs" />
     <Compile Include="Assets\Ultimate 10 Plus Shaders\Scripts\U10PS_SnowOverTime.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="Assets\Ultimate 10 Plus Shaders\Scripts\U10PS_DissolveOverTime.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
+    <Compile Include="Assets\Scripts\WeaponObject.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
     <Compile Include="Assets\Ultimate 10 Plus Shaders\Shaders\Plexus\Plexus.cs" />
     <Compile Include="Assets\Scripts\Weapons\Bullet.cs" />
