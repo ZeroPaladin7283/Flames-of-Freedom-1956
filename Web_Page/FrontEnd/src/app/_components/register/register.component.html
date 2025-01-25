@@ -1,0 +1,38 @@
+<div class="secondbg">
+    <app-navbar></app-navbar>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <form action="">
+                    <h1>Register</h1>
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" [(ngModel)]="registerUsername" name="username" id="username" placeholder="exampleuser" required="true">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" [(ngModel)]="registerEmail" name="email" id="email" placeholder="example@example.com" required="true">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" [(ngModel)]="registerPass" name="password" id="password" placeholder="*********" required="true">
+                    </div>
+                    <div class="input-group">
+                        <label for="cpassword">Confirm Password</label>
+                        <input type="password" [(ngModel)]="registerCPass" name="cpassword" id="cpassword" placeholder="*********" required="true">
+                    </div>
+                    <div class="input-group" id="bdselector">
+                        <label for="birthday">Select your date of birth</label>
+                        <input type="date" [(ngModel)]="registerBDate" name="birthday" id="birthday">
+                        <div class="error">{{errorMessage}}</div>
+                    </div>
+                    <a href="/login" id="register" (click)="onRegister()">Register</a>
+                    <p id="login-register">
+                        Already have an account? <a href="/login">Login here</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

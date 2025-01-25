@@ -1,0 +1,36 @@
+.secondbg {
+    background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("../../../assets/images/makarov\ BG.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-attachment: fixed;
+}
+
+#login-register {
+    margin-top: 50px;
+    font-size: 30px !important;
+}
+
+#login-register a:hover {
+    color: rgb(19, 89, 219) !important;
+    transition: none !important;
+}
+
+#bdselector {
+    margin-bottom: 50px;
+}
+
+#register {
+    font-size: 35px !important;
+    padding: 15px 105px;
+    border-radius: 15px;
+    background-color: #405A85;
+    color: #D8CEC5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#register:hover {
+    color: #D8CEC5 !important;
+    background-color: #3a69b6;
+}
