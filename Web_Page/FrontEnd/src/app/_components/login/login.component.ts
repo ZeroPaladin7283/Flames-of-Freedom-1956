@@ -30,7 +30,7 @@ export class LoginComponent{
     } else if(this.loginService.userLoginFunc(this.loginUser, this.loginPass)) {
       this.router.navigate(['logged-in-home']);
     } else {
-      this.errorMessage = 'Invalid email or password. Please try again.';
+      this.errorMessage = 'Invalid email or password.' + 'Please try again.';
     }
   }
 }

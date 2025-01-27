@@ -22,14 +22,26 @@ export class RegisterComponent {
   constructor(private registerService: RegisterService) {}
 
   onRegister() {
-    if(!this.registerUsername || !this.registerEmail || !this.registerPass || this.registerCPass || !this.registerBDate) {
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!this.registerUsername || !this.registerEmail || !this.registerPass || !this.registerCPass || !this.registerBDate) {
       this.errorMessage = 'Please fill in all fields.';
       return;
     }
 
+    if(emailRegex.test(this.registerEmail)) {
+      this.errorMessage = 'Invalid email adress'
+    }
+
+    if(this.registerPass !== this.registerCPass) {
+      this.errorMessage = 'Passwords do not match.';
+      return;
+    }
+
     const parsedBDate = new Date(this.registerBDate);
-    if(isNaN(parsedBDate.getTime())) {
-      this.errorMessage = "Invalid birtday format!";
+    if(isNaN(parsedBDate.getTime()) || parsedBDate >= this.registerService.minDate) {
+      this.errorMessage = 'You are too young to play this game.';
       return;
     }
 
@@ -48,15 +60,16 @@ export class RegisterComponent {
         password: this.registerPass
       }));
 
-      this.registerUsername = "";
-      this.registerEmail = "";
-      this.registerPass = "";
-      this.registerCPass = "";
-      this.registerBDate = "";
+      this.registerUsername = '';
+      this.registerEmail = '';
+      this.registerPass = '';
+      this.registerCPass = '';
+      this.registerBDate = '';
+      this.errorMessage = '';
 
-      alert("Successfully registerd!");
+      alert('Registration successful!');
     } else {
-      this.errorMessage = "Invalid username / email / birth date.";
+      this.errorMessage = 'Invalid username, email or password!';
     }
   }
 }

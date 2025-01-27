@@ -6,6 +6,17 @@
     background-attachment: fixed;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.input-group input {
+    width: 450px;
+}
+
 #login-register {
     margin-top: 50px;
     font-size: 30px !important;
@@ -21,16 +32,27 @@
 }
 
 #register {
+    display: flex;
     font-size: 35px !important;
-    padding: 15px 105px;
+    padding: 10px;
     border-radius: 15px;
     background-color: #405A85;
     color: #D8CEC5;
     text-decoration: none;
     font-weight: bold;
+    width: 450px;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 #register:hover {
     color: #D8CEC5 !important;
     background-color: #3a69b6;
+}
+
+.error {
+    color: rgb(171, 19, 19);
+    font-size: 30px !important;
+    margin-top: 30px;
+    width: 450px;
 }

@@ -6,6 +6,10 @@
     background-attachment: fixed;
 }
 
+.input-group input {
+    width: 450px;
+}
+
 #login-register {
     margin-top: 50px;
     font-size: 30px !important;
