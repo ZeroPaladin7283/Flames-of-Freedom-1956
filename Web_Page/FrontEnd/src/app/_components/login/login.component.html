@@ -7,13 +7,11 @@
                     <h1>Login</h1>
                     <div class="input-group">
                         <label for="user">E-mail</label>
-                        <input type="text" [(ngModel)]="loginUser" name="user" id="user"
-                            placeholder="Enter your e-mail" required="true">
+                        <input type="text" [(ngModel)]="loginUser" name="user" id="user" placeholder="Enter your e-mail" required="true">
                     </div>
                     <div class="input-group">
                         <label for="password">Password</label>
-                        <input type="password" [(ngModel)]="loginPass" name="password" id="password"
-                            placeholder="*********" required="true">
+                        <input type="password" [(ngModel)]="loginPass" name="password" id="password" placeholder="*********" required="true">
                     </div>
                     <a href="#" id="forgot">Forgot Password?</a>
                     <div class="error">{{errorMessage}}</div>

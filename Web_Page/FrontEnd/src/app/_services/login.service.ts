@@ -12,9 +12,9 @@ interface User{
 export class LoginService {
 
   private adminLogin: User[] = [
-    { email: 'ZeroPaladin@gmail.com', password: 'admin'},
-    { email: 'ShadowFoxy0819@gmail.com', password: 'ILoveFoxes'},
-    { email: 'Döme@gmail.com', password: '1234' }
+    { email: 'ZeroPaladin@gmail.com', password: 'Jude1945'},
+    { email: 'ShadowFoxy0819@gmail.com', password: 'ILoveFoxes0819'},
+    { email: 'Döme@gmail.com', password: '1234Dome' }
   ];
 
   private userLogin: User[] = [
