@@ -13,6 +13,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
+  isNavbarCollapsed = true;
+
   title = 'Flames_of_Freedom_1956';
   backgroundClass: string = '';
 

@@ -1,11 +1,3 @@
-.mainbg {
-    background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("../../../assets/images/background.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-attachment: fixed;
-}
-
 .title {
     font-size: 5rem !important;
     position: absolute;

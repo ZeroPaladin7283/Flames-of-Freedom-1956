@@ -6,6 +6,10 @@
     background-attachment: fixed;
 }
 
+h1 {
+    font-size: 50px !important;
+}
+
 .communityContent {
     background-color: rgba(61, 61, 61, 0.421);
     padding: 50px;
