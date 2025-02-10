@@ -1,0 +1,669 @@
+/* You can add global styles to this file, and also import other style files */
+/* Universal Settings */
+body {
+    background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("assets/images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    transform: none;
+    margin: 0;
+    padding: 0;
+}
+
+#current a{
+    border-bottom: 3px solid #D8CEC5;
+}
+
+#current a:hover{
+    border-bottom: 3px solid #afeca9;
+}
+
+hr {
+    border: 3.5px solid #D8CeC5;
+    opacity: 1;
+    border-radius: 5px;
+    margin-bottom: 100px !important;
+    margin-top: 50px !important;
+}
+
+form {
+    width: 700px !important;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 20px;
+    padding: 50px;
+    background-color: #D8CEC5;
+    text-align: center;
+}
+
+form p {
+    font-size: 25px !important;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0px 0px 25px;
+    font-size: 25px !important;
+    margin: 0 auto;
+    width: 500px !important;
+}
+
+.input-group label {
+    font-weight: bold;
+    text-align: left;
+}
+
+.input-group input {
+    border-radius: 20px !important;
+    padding: 10px;
+}
+
+.input-group textarea {
+    height: 150px !important;
+    border-radius: 20px !important;
+    padding: 10px;
+}
+
+form button {
+    width: 350px !important;
+    font-size: 35px !important;
+    padding: 10px 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+    font-weight: bold;
+    border: none;
+    background-color: #405A85;
+    color: #D8CEC5;
+}
+
+form button:hover {
+    background-color: #3a69b6;
+    transition: 0.5s ease-in-out;
+}
+
+h1 {
+    font-size: 50px !important;
+}
+
+a:hover {
+    color: #afeca9 !important;
+    transition: 0.5s ease-in-out;
+}
+
+footer {
+    font-size: 25px !important;
+    font-weight: bold;
+    background-image: linear-gradient(to top, rgba(175, 149, 131, 0.684), rgba(46, 39, 34, 0.53));
+    display: flex;
+    flex-direction: row !important;
+    padding: 20px;
+    align-items: center;
+    color: #D8CeC5;
+}
+
+footer .rights {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-left: 50px !important;
+}
+
+footer .social {
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    padding-right: 50px !important;
+}
+
+
+footer .social p{
+    margin: 0;
+    font-size: 45px !important;
+    display: flex;
+    justify-content: right;
+    padding-right: 50px;
+}
+
+footer .social p a {
+    color: #D8CeC5;
+    padding-left: 20px;
+}
+/* 
+@media screen and (max-width: 1440px) {
+    #navbarNav ul li a {
+        color: #D8CeC5;
+        font-size: 25px !important;
+        margin-left: 25px;
+        margin-right: 25px;
+        text-decoration: none;
+        font-family: Callistoga;
+    }
+
+    #downloadButton {
+        background-color: #405A85;
+        padding: 20px 50px;
+        text-align: center;
+        border-radius: 25px;
+        margin-left: 50px;
+        text-decoration: none;
+        color: #D8CeC5;
+        font-size: 20px !important;
+    }
+    
+    #home footer .social p {
+        margin: 0;
+        font-size: 30px !important;
+        display: flex;
+        justify-content: right;
+        padding-right: 50px;
+    }
+
+    .downloadContent{
+        margin: 0 auto;
+        align-items: center;
+        padding: 100px;
+        font-size: 20px !important;
+        text-align: justify;
+        background-color: rgba(46, 39, 34, 0.676);
+        margin-top: 50px;
+        margin-bottom: 50px;
+        border-radius: 50px;
+        width: 80%;
+        color: #D8CEC5;
+    }
+
+    .downloadContent div #gameDownload {
+        background-color: #405A85;
+        color: #D8CEC5;
+        border: none;
+        font-size: 20px !important;
+        padding: 15px 35px;
+        border-radius: 15px;
+        margin-top: 25px;
+        font-weight: bold;
+    }
+
+    .carousel-inner img {
+        height: 300px !important;
+    }
+
+    .communityContent .row .text a {
+        font-size: 35px;
+        width: 40%;
+        text-decoration: none;
+        color: #D8CeC5;
+        margin-bottom: 50px;
+    }
+
+    .profileCard .buttons div{
+        width: 300px !important;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .profileCard .buttons div a {
+        padding: 25px;
+        width: 200px !important;
+        text-align: center;
+        background-color: #405A85;
+        color: #D8CEC5;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 15px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #navbarNav ul li a {
+        color: #D8CeC5;
+        font-size: 20px;
+        padding: 10px;
+        text-decoration: none;
+        font-family: Callistoga;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    #logo {
+        height: 80px;
+    }
+
+    #loggedOut {
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    .title {
+        font-size: 3.5rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #D8CeC5;
+        font-family: Jacques Francois;
+    }
+
+    #downloadButton {
+        background-color: #405A85;
+        padding: 20px 50px;
+        text-align: center;
+        border-radius: 25px;
+        margin-left: 50px;
+        text-decoration: none;
+        color: #D8CeC5;
+        font-size: 20px;
+    }
+    
+    #home footer .social p {
+        margin: 0;
+        font-size: 30px;
+        display: flex;
+        justify-content: right;
+        padding-right: 50px;
+    }
+
+    .mediaContent div {
+        font-size: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .mediaContent img {
+        width: 250px;
+    }
+
+    .dev img {
+        width: 150px;
+        border: 5px solid #afeca9 !important;
+        border-radius: 50%;
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .devContent .row .text {
+        padding-left: 50px;
+        padding-right: 50px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        text-align: justify;
+        color: #D8CeC5;
+    }
+
+    .communityContent .row .user img {
+        width: 150px;
+    }
+
+    .communityContent .row .text {
+        font-size: 20px;
+    }
+
+    .communityContent .row .text h1 {
+        font-size: 20px !important;
+    }
+
+    .communityContent .row .text img {
+        width: 250px;
+    }
+
+    .communityContent .row .text a {
+        font-size: 25px;
+        width: 50%;
+        text-decoration: none;
+        color: #D8CeC5;
+        margin-bottom: 50px;
+    }
+
+    .downloadContent{
+        margin: 0 auto;
+        align-items: center;
+        padding: 50px;
+        font-size: 15px;
+        text-align: justify;
+        background-color: rgba(46, 39, 34, 0.676);
+        margin-top: 50px;
+        margin-bottom: 50px;
+        border-radius: 50px;
+        width: 80%;
+        color: #D8CEC5;
+    }
+
+    .downloadContent div #gameDownload {
+        background-color: #405A85;
+        color: #D8CEC5;
+        border: none;
+        font-size: 15px;
+        padding: 15px 35px;
+        border-radius: 15px;
+        margin-top: 25px;
+        font-weight: bold;
+    }
+
+    .carousel-inner img {
+        height: 200px !important;
+    }
+
+    .profileCard {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        background-color: #D8CEC5;
+        border-radius: 50px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profileCard h1 {
+        font-size: 25px;
+    }
+
+    footer .rights{
+        font-size: 20px !important;
+    }
+
+    footer .social p{
+        font-size: 35px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .downloadContent{
+        margin: 0 auto;
+        align-items: center;
+        padding: 25px;
+        font-size: 15px;
+        text-align: justify;
+        background-color: rgba(46, 39, 34, 0.676);
+        margin-top: 50px;
+        margin-bottom: 50px;
+        border-radius: 50px;
+        width: 100%;
+        color: #D8CEC5;
+    }
+
+    .carousel-inner img {
+        height: 200px !important;
+    }
+
+    .profileCard {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        background-color: #D8CEC5;
+        border-radius: 50px;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profileCard .buttons div{
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    footer .rights{
+        font-size: 20px !important;
+    }
+
+    footer .social p{
+        font-size: 35px !important;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .title {
+        font-size: 2rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #D8CeC5;
+        font-family: Jacques Francois;
+    }
+
+    #downloadButton {
+        background-color: #405A85;
+        padding: 10px 10px;
+        text-align: center;
+        border-radius: 25px;
+        margin-left: 15px;
+        text-decoration: none;
+        color: #D8CeC5;
+        font-size: 15px;
+    }
+
+    .communityContent .row .text a {
+        font-size: 20px;
+        width: 60%;
+        text-decoration: none;
+        color: #D8CeC5;
+        margin-bottom: 50px;
+    }
+
+    form {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        border-radius: 20px;
+        padding: 50px;
+        background-color: #D8CEC5;
+        text-align: center;
+    }
+
+    form p {
+        font-size: 25px;
+    }
+    
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        padding: 50px 0px 0px 25px;
+        font-size: 20px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    .input-group label {
+        font-weight: bold;
+        text-align: left;
+    }
+    
+    .input-group textarea {
+        height: 100px;
+    }
+    
+    form button {
+        width: 300px;
+        font-size: 25px;
+        padding: 10px 30px;
+        border-radius: 15px;
+        margin-top: 30px;
+        font-weight: bold;
+        border: none;
+        margin-left: 10px;
+        background-color: #405A85;
+        color: #D8CEC5;
+    }
+    
+    form button:hover {
+        background-color: #3a69b6;
+        transition: 0.5s ease-in-out;
+    }
+
+    .downloadContent{
+        margin: 0 auto;
+        align-items: center;
+        padding: 25px;
+        font-size: 15px;
+        text-align: justify;
+        background-color: rgba(46, 39, 34, 0.676);
+        margin-top: 50px;
+        margin-bottom: 50px;
+        border-radius: 50px;
+        width: 100%;
+        color: #D8CEC5;
+    }
+
+    .carousel-inner img {
+        height: 200px !important;
+        margin-top: 50px;
+    }
+
+    .reviews {
+        width: 700px;
+        display: flex;
+        margin: 0 auto;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    
+    .review-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 80px;
+        height: 300px;
+        background-color: #3d3d3da8;
+        border-radius: 50px;
+    }
+    
+    .carousel-inner .profile-pic {
+        height: 100%;
+        max-height: 150px;
+        width: 100%;
+        object-fit: cover;
+        border: 5px solid #afeca9;
+    }
+    
+    .review-profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 30%;
+    }
+    
+    .profile-pic {
+        width: 120px !important;
+        height: 100px !important;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        margin-right: 40px;
+    }
+    
+    .username {
+        font-size: 20px;
+        font-weight: bold;
+        color: #D8CEC5;
+        margin-right: 40px;
+    }
+    
+    .review-text {
+        width: 60%;
+        font-size: 10px;
+        color: #D8CEC5;
+        text-align: justify;
+    }
+    
+    #homeButton {
+        background-color: #405A85;
+        padding: 10px 30px;
+        text-align: center;
+        border-radius: 25px;
+        margin-left: 25px;
+        text-decoration: none;
+        font-size: 10px;
+        color: #D8CeC5;
+    }
+
+    .profileCard {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        background-color: #D8CEC5;
+        border-radius: 50px;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profileCard .buttons div{
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .profileCard .input-group {
+        display: flex;
+        width: 100%;
+    }
+    
+    .profileCard .input-group label {
+        font-size: 20px;
+    }
+    
+    .profileCard .input-group input {
+        width: 75%;
+    }
+    
+    .profileCard .input-group textarea {
+        width: 75%;
+    }
+    
+    .profileCard .input-group img {
+        width: 100px;
+    }
+    .profileCard .buttons div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .profileCard .buttons div a {
+        width: 150px;
+        text-align: center;
+        background-color: #405A85;
+        color: #D8CEC5;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 15px;
+    }
+    
+    .profileCard .buttons div a:hover {
+        background-color: #3D3D3D;
+        color: #D8CEC5 !important;
+    }
+    
+    .profileCard .buttons .save a {
+        background-color: #5050508f;
+    }
+
+    footer .rights{
+        font-size: 15px !important;
+    }
+
+    footer .social p a{
+        font-size: 20px !important;
+        padding: 10 !important;
+    }
+} */

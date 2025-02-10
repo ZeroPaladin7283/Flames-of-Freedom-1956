@@ -1,0 +1,30 @@
+<div class="secondbg">
+    <app-navbar></app-navbar>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <form action="">
+                    <h1>Contact Us</h1>
+                    <p>Please write your message below to contact us</p>
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" [(ngModel)]="contactUsername" name="username" id="username"
+                            placeholder="exampleuser" required="true">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" [(ngModel)]="contactEmail" name="email" id="email"
+                            placeholder="example@example.com" required="true">
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea name="message" [(ngModel)]="contactMessage" id="message" required="true"></textarea>
+                        <div class="error">{{errorMessage}}</div>
+                    </div>
+                    <button type="submit" id="submit" (click)="onSubmit()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
