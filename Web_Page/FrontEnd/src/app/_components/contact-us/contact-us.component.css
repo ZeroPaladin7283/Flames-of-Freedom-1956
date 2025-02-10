@@ -1,0 +1,30 @@
+.secondbg {
+    background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("../../../assets/images/makarov\ BG.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-attachment: fixed;
+}
+
+.error {
+    color: rgb(171, 19, 19);
+    font-size: 40px !important;
+    margin-top: 20px;
+    text-align: center;
+    font-family: Bookman Old Style;
+}
+
+h1 {
+    font-size: 70px !important;
+}
+
+form p {
+    font-size: 40px !important;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.input-group {
+    font-size: 30px !important;
+    width: 100% !important;
+}

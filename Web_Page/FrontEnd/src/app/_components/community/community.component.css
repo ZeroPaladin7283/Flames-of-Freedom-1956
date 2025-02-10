@@ -1,0 +1,64 @@
+.secondbg {
+    background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("../../../assets/images/makarov\ BG.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-attachment: fixed;
+}
+
+.communityContent {
+    background-color: rgba(61, 61, 61, 0.421);
+    padding: 50px;
+    width: 80% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 75px;
+    color: #D8CeC5;
+}
+
+.user img {
+    width: 250px !important;
+    border: 5px solid #afeca9 !important;
+    border-radius: 50%;
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.communityContent .row .user p {
+    display: flex;
+    justify-content: center;
+    font-size: 25px !important;
+    font-weight: bold;
+    color: #D8CeC5;
+    margin-bottom: 25px;
+}
+
+.communityContent .row .text {
+    display: flex;
+    font-size: 25px !important;
+    flex-direction: column;
+}
+
+.communityContent .row .text p {
+    text-align: justify;
+} 
+
+.communityContent .row .text img {
+    width: 450px !important;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.communityContent .row .text a {
+    font-size: 35px !important;
+    width: 40% !important;
+    text-decoration: none;
+    color: #D8CeC5;
+    margin-bottom: 50px;
+}

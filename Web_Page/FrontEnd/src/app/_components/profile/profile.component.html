@@ -1,0 +1,69 @@
+<div class="secondbg">
+    <app-loggedinnavbar></app-loggedinnavbar>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 profileCard">
+                <h1>Profile information</h1>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <div class="edit">
+                        <input type="text" [(ngModel)]="profileUser" name="username" id="username"
+                            placeholder="ShadowFoxy0819" required="true"><a href=""><i
+                                class="bi bi-pencil-square"></i></a>
+                    </div>
+                    <div class="error"></div>
+                    <p>{{profileUser}}</p>
+                </div>
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <div class="edit">
+                        <input type="email" [(ngModel)]="profileEmail" name="email" id="email"
+                            placeholder="fof1956admin@gmail.com" required="true"><a href=""><i
+                                class="bi bi-pencil-square"></i></a>
+                    </div>
+                    <div class="error"></div>
+                    <p>{{profileEmail}}</p>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="edit">
+                        <input type="password" [(ngModel)]="profilePass" name="password" id="password"
+                            placeholder="*********" required="true"><a href=""><i class="bi bi-pencil-square"></i></a>
+                    </div>
+                    <div class="error"></div>
+                    <p>{{profilePass}}</p>
+                </div>
+                <div class="input-group">
+                    <label for="description">Description</label>
+                    <div class="edit">
+                        <textarea name="description" [(ngModel)]="profileDesc" id="description"></textarea><a href=""><i
+                                class="bi bi-pencil-square"></i></a>
+                    </div>
+                    <div class="error"></div>
+                    <p>{{profileDesc}}</p>
+                </div>
+                <div class="input-group">
+                    <label for="profile_pic">Profile Picture</label>
+                    <div class="edit">
+                        <img src="ShadowFoxy PFP.jpg" alt="profile_pic"><a href=""><i class="bi bi-upload"></i></a>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <div class="logout">
+                        <a href="/home">
+                            Logout
+                        </a>
+                    </div>
+                    <div class="save">
+                        <a href="/profile">
+                            Save Changes
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-loggedinfooter></app-loggedinfooter>
+</div>

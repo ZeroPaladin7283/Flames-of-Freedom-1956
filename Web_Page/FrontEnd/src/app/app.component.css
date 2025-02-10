@@ -1,0 +1,9 @@
+.background-wrapper {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    transform: none;
+    margin: 0;
+    padding: 0;
+}

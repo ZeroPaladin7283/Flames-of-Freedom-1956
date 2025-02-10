@@ -1,0 +1,42 @@
+#homeFooter {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    background-image: linear-gradient(to top, rgba(175, 149, 131, 0.684), rgba(46, 39, 34, 0.53));
+}
+
+#downloadButton {
+    background-color: #405A85;
+    padding: 20px 50px;
+    text-align: center;
+    border-radius: 25px;
+    margin-left: 50px;
+    text-decoration: none;
+    color: #D8CeC5;
+    font-size: 30px !important;
+}
+
+#downloadButton:hover {
+    color: #D8CEC5 !important;
+    background-color: #3a69b6;
+}
+
+#homeFooter .social p {
+    margin: 0;
+    font-size: 40px !important;
+    display: flex;
+    justify-content: right;
+    padding-right: 50px;
+}
+
+#homeFooter .social p a {
+    padding-left: 20px;
+    color: #D8CeC5;
+}
+
+a:hover {
+    color: #afeca9 !important;
+    transition: 0.5s ease-in-out;
+}
