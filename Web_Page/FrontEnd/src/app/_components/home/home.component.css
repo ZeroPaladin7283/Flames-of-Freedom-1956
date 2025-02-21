@@ -1,10 +1,13 @@
 .title {
-    font-size: 5rem !important;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 300px);
+}
+
+.title p {
+    font-size: 4em;
+    width: 100%;
     color: #D8CeC5;
     font-family: Jacques Francois;
 }
@@ -22,11 +25,11 @@
     background-color: #405A85;
     padding: 20px 50px;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 50px;
     margin-left: 50px;
     text-decoration: none;
     color: #D8CeC5;
-    font-size: 30px !important;
+    font-size: 30px;
 }
 
 #downloadButton:hover {
@@ -36,7 +39,7 @@
 
 #homeFooter .social p {
     margin: 0;
-    font-size: 40px !important;
+    font-size: 40px;
     display: flex;
     justify-content: right;
     padding-right: 50px;
@@ -45,4 +48,28 @@
 #home footer .social p a {
     padding-left: 20px;
     color: #D8CeC5;
+}
+
+@media (min-width: 2556px){
+    .title {
+        height: calc(100vh - 450px);
+    }
+
+    .title p {
+        font-size: 7.5em;
+    }
+
+    #homeFooter {
+        padding: 40px;
+    }
+
+    #downloadButton {
+        padding: 30px 60px;
+        font-size: 60px;
+        border-radius: 70px;
+    }
+
+    #homeFooter .social p a{
+        font-size: 60px;
+    }
 }
