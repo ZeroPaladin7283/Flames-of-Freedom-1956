@@ -7,10 +7,8 @@
 }
 
 form {
-    width: 700px !important;
-    margin: 0 auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    width: 700px;
+    margin: 100px auto;
     border-radius: 20px;
     padding: 50px;
     background-color: #D8CEC5;
@@ -21,9 +19,9 @@ form {
     display: flex;
     flex-direction: column;
     padding: 50px 0px 0px 25px;
-    font-size: 25px !important;
+    font-size: 25px;
     margin: 0 auto;
-    width: 500px !important;
+    width: 500px;
 }
 
 .input-group label {
@@ -31,33 +29,30 @@ form {
     text-align: left;
 }
 
-.input-group input {
-    border-radius: 20px !important;
+.input-group input, .input-group textarea {
+    border-radius: 20px;
     padding: 10px;
+    width: 100%;
 }
 
 .input-group textarea {
-    height: 150px !important;
-    border-radius: 20px !important;
-    padding: 10px;
+    height: 150px;
 }
 
 #forgot {
     display: flex;
-    margin-left: 75px;
-    font-size: 25px !important;
-    margin-bottom: 50px !important;
-    width: 200px !important;
+    font-size: 25px;
+    margin: 0 auto 50px;
+    width: fit-content;
 }
 
 #forgot:hover {
-    color: rgb(19, 89, 219) !important;
-    transition: none !important;
+    color: rgb(19, 89, 219);
 }
 
 form button {
-    width: 350px !important;
-    font-size: 35px !important;
+    width: 350px;
+    font-size: 35px;
     padding: 10px 30px;
     border-radius: 15px;
     margin-top: 30px;
@@ -74,15 +69,77 @@ form button:hover {
 
 #login-register {
     margin-top: 50px;
-    font-size: 30px !important;
+    font-size: 30px;
 }
 
 #registerhere:hover {
-    color: rgb(19, 89, 219) !important;
+    color: rgb(19, 89, 219);
 }
 
 .error {
     color: rgb(171, 19, 19);
-    font-size: 30px !important;
+    font-size: 30px;
     text-align: center;
+}
+
+@media (max-width: 2556px) {
+    form {
+        width: 900px;
+        padding: 70px;
+    }
+
+    .input-group {
+        width: 600px;
+        font-size: 30px;
+    }
+
+    form button {
+        width: 400px;
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    form {
+        width: 80%;
+        padding: 40px;
+    }
+
+    .input-group {
+        width: 90%;
+        font-size: 22px;
+        padding: 30px 0 0 15px;
+    }
+
+    form button {
+        width: 80%;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .input-group {
+        width: 100%;
+        font-size: 20px;
+        padding: 20px 0 0 10px;
+    }
+
+    form button {
+        width: 100%;
+        font-size: 25px;
+    }
+
+    #forgot {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .error {
+        font-size: 25px;
+    }
 }

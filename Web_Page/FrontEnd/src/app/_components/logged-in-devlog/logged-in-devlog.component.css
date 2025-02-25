@@ -2,19 +2,20 @@
     background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("../../../assets/images/makarov\ BG.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: center;
+    background-position: center;
     background-attachment: fixed;
 }
 
+/* Developer Section */
 .devContent {
     background-color: rgba(61, 61, 61, 0.421);
     padding: 100px;
-    width: 80% !important;
+    width: 80%;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin: 100px auto;
     border-radius: 75px;
 }
 
@@ -23,14 +24,17 @@
     margin-bottom: 50px;
 }
 
+/* Developer Profile Images */
 .dev img {
-    width: 250px !important;
-    border: 5px solid #afeca9 !important;
+    width: 250px;
+    max-width: 100%;
+    border: 5px solid #afeca9;
     border-radius: 50%;
     display: flex;
     margin: 0 auto;
 }
 
+/* Developer Name */
 .devContent .row .dev p {
     color: #D8CeC5;
     font-size: 25px;
@@ -40,12 +44,69 @@
     justify-content: center;
 }
 
+/* Developer Text */
 .devContent .row .text {
     padding-left: 150px;
     padding-right: 150px;
-    font-size: 30px !important;
+    font-size: 30px;
     display: flex;
     align-items: center;
     text-align: justify;
     color: #D8CeC5;
+}
+
+/* ====== Reszponzív beállítások ====== */
+
+/* Nagy kijelzők (4K, 2556px+) */
+@media (min-width: 2556px) {
+    .devContent {
+        font-size: 30px;
+        max-width: 1200px;
+    }
+
+    .devContent .row .text {
+        font-size: 35px;
+    }
+}
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .devContent {
+        padding: 50px;
+        width: 90%;
+    }
+
+    .dev img {
+        width: 200px;
+    }
+
+    .devContent .row .text {
+        padding-left: 50px;
+        padding-right: 50px;
+        font-size: 25px;
+    }
+}
+
+/* Mobil (max-width: 768px) */
+@media (max-width: 768px) {
+    .devContent {
+        padding: 30px;
+        width: 95%;
+    }
+
+    .dev img {
+        width: 150px;
+    }
+
+    .devContent .row .dev p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .devContent .row .text {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 20px;
+        text-align: center;
+    }
 }

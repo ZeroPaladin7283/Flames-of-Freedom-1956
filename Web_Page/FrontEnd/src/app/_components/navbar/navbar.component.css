@@ -1,6 +1,9 @@
 nav {
     background-color: rgba(46, 39, 34, 0.676);
-    padding: 20px !important;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #logo {
@@ -11,15 +14,30 @@ nav {
 #navbarNav {
     display: flex;
     justify-content: center;
+    flex-grow: 1;
+}
+
+#navbarNav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#navbarNav ul li {
+    margin: 0 15px;
 }
 
 #navbarNav ul li a {
     color: #D8CeC5;
     font-size: 40px;
-    margin-left: 25px;
-    margin-right: 25px;
     text-decoration: none;
     font-family: Callistoga;
+    transition: color 0.5s ease-in-out;
+}
+
+#navbarNav ul li a:hover {
+    color: #afeca9;
 }
 
 #loggedOut {
@@ -28,13 +46,7 @@ nav {
     margin-right: 50px;
 }
 
-a:hover {
-    color: #afeca9 !important;
-    transition: 0.5s ease-in-out;
-}
-
-
-@media (min-width: 2556px) {
+@media (max-width: 2556px) {
     #logo {
         height: 200px;
     }
@@ -45,5 +57,78 @@ a:hover {
 
     #loggedOut {
         height: 200px;
+    }
+}
+
+@media (max-width: 1024px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    #logo {
+        height: 80px;
+        margin: 0 auto;
+    }
+
+    #navbarNav {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #navbarNav ul {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #navbarNav ul li {
+        margin: 10px;
+    }
+
+    #navbarNav ul li a {
+        font-size: 30px;
+    }
+
+    #loggedOut {
+        height: 80px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #logo {
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    #navbarNav {
+        width: 100%;
+    }
+
+    #navbarNav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #navbarNav ul li {
+        margin: 5px 0;
+    }
+
+    #navbarNav ul li a {
+        font-size: 25px;
+    }
+
+    #loggedOut {
+        height: 70px;
+        margin-top: 10px;
     }
 }

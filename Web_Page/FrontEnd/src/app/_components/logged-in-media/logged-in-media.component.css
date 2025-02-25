@@ -9,23 +9,21 @@
 .mediaContent {
     background-color: rgba(61, 61, 61, 0.421);
     padding: 100px;
-    width: 80% !important;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin: 100px auto;
     border-radius: 75px;
 }
 
 .mediaContent div {
-    font-size: 35px !important;
+    font-size: 35px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: 50px 0;
 }
 
 .mediaContent p {
@@ -35,6 +33,67 @@
 }
 
 #galleryPic {
-    height: 350px !important;
-    width: 350px !important;
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+@media (max-width: 2556px) {
+    .mediaContent {
+        width: 60%;
+        padding: 150px;
+    }
+
+    .mediaContent div {
+        font-size: 45px;
+    }
+
+    #galleryPic {
+        height: 450px;
+        width: 450px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .mediaContent {
+        width: 90%;
+        padding: 50px;
+        border-radius: 50px;
+    }
+
+    .mediaContent div {
+        font-size: 30px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #galleryPic {
+        height: 300px;
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mediaContent {
+        width: 95%;
+        padding: 30px;
+        border-radius: 30px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .mediaContent div {
+        font-size: 25px;
+        flex-direction: column;
+    }
+
+    .mediaContent p {
+        padding: 20px;
+    }
+
+    #galleryPic {
+        height: 250px;
+        width: 250px;
+    }
 }

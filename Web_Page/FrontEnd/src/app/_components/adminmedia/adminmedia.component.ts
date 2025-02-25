@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { AdminnavbarComponent } from '../adminnavbar/adminnavbar.component';
-import { LoggedinfooterComponent } from '../loggedinfooter/loggedinfooter.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-adminmedia',
   standalone: true,
-  imports: [AdminnavbarComponent, LoggedinfooterComponent],
+  imports: [AdminnavbarComponent, FooterComponent],
   templateUrl: './adminmedia.component.html',
   styleUrl: './adminmedia.component.css'
 })

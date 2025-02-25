@@ -66,3 +66,108 @@ h1 {
     color: #D8CeC5;
     margin-bottom: 50px;
 }
+
+/* Reszponzív módosítások */
+
+/* Tabletes nézet */
+@media (max-width: 1024px) {
+    .communityContent {
+        width: 85%;
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 40px !important;
+    }
+
+    .user img {
+        width: 200px !important;
+    }
+
+    .communityContent .row .user p {
+        font-size: 22px !important;
+    }
+
+    .communityContent .row .text p {
+        font-size: 22px !important;
+    }
+
+    .communityContent .row .text img {
+        width: 400px !important;
+    }
+
+    .communityContent .row .text a {
+        font-size: 30px !important;
+        width: 50% !important;
+    }
+}
+
+/* Mobil nézet */
+@media (max-width: 768px) {
+    .communityContent {
+        width: 90%;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 30px !important;
+    }
+
+    .user img {
+        width: 180px !important;
+    }
+
+    .communityContent .row .user p {
+        font-size: 20px !important;
+    }
+
+    .communityContent .row .text p {
+        font-size: 18px !important;
+    }
+
+    .communityContent .row .text img {
+        width: 100% !important;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .communityContent .row .text a {
+        font-size: 28px !important;
+        width: 60% !important;
+    }
+}
+
+/* Nagyon kis képernyős mobil nézet */
+@media (max-width: 480px) {
+    .communityContent {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 25px !important;
+    }
+
+    .user img {
+        width: 150px !important;
+    }
+
+    .communityContent .row .user p {
+        font-size: 18px !important;
+    }
+
+    .communityContent .row .text p {
+        font-size: 16px !important;
+    }
+
+    .communityContent .row .text img {
+        width: 100% !important;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .communityContent .row .text a {
+        font-size: 22px !important;
+        width: 80% !important;
+    }
+}

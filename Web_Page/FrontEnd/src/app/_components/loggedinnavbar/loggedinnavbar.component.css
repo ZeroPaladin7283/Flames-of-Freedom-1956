@@ -1,10 +1,13 @@
 nav {
     background-color: rgba(46, 39, 34, 0.676);
-    padding: 20px !important;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #logo {
-    height: 100px !important;
+    height: 100px;
     margin-left: 50px;
 }
 
@@ -13,11 +16,19 @@ nav {
     justify-content: center;
 }
 
+#navbarNav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+#navbarNav ul li {
+    margin: 0 15px;
+}
+
 #navbarNav ul li a {
     color: #D8CeC5;
-    font-size: 40px !important;
-    margin-left: 25px;
-    margin-right: 25px;
+    font-size: 40px;
     text-decoration: none;
     font-family: Callistoga;
 }
@@ -29,6 +40,73 @@ nav {
 }
 
 a:hover {
-    color: #afeca9 !important;
+    color: #afeca9;
     transition: 0.5s ease-in-out;
+}
+
+@media (max-width: 2556px) {
+    #logo {
+        height: 200px;
+    }
+
+    #navbarNav ul li a {
+        font-size: 55px;
+    }
+
+    #loggedIn {
+        height: 200px;
+    }
+}
+
+@media (max-width: 1024px) {
+    #logo {
+        height: 80px;
+        margin-left: 20px;
+    }
+
+    #navbarNav ul li a {
+        font-size: 30px;
+        margin: 0 10px;
+    }
+
+    #loggedIn {
+        height: 80px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    #logo {
+        height: 70px;
+        margin: 0 auto;
+    }
+
+    #navbarNav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #navbarNav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    #navbarNav ul li {
+        margin: 10px 0;
+    }
+
+    #navbarNav ul li a {
+        font-size: 25px;
+    }
+
+    #loggedIn {
+        height: 70px;
+        margin: 10px auto;
+    }
 }

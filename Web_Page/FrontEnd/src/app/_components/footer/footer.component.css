@@ -3,8 +3,11 @@
     align-items: center;
     position: absolute;
     bottom: 0;
+    width: 100%;
     padding: 20px;
     background-image: linear-gradient(to top, rgba(175, 149, 131, 0.684), rgba(46, 39, 34, 0.53));
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #downloadButton {
@@ -15,7 +18,8 @@
     margin-left: 50px;
     text-decoration: none;
     color: #D8CeC5;
-    font-size: 30px !important;
+    font-size: 30px;
+    white-space: nowrap;
 }
 
 #downloadButton:hover {
@@ -25,7 +29,7 @@
 
 #homeFooter .social p {
     margin: 0;
-    font-size: 40px !important;
+    font-size: 40px;
     display: flex;
     justify-content: right;
     padding-right: 50px;
@@ -39,4 +43,60 @@
 a:hover {
     color: #afeca9 !important;
     transition: 0.5s ease-in-out;
+}
+
+/* Reszponzív kiegészítések */
+
+@media (max-width: 1024px) {
+    #homeFooter {
+        padding: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #downloadButton {
+        font-size: 25px;
+        padding: 15px 40px;
+        margin-left: 0;
+        width: 80%;
+        text-align: center;
+    }
+
+    #homeFooter .social p {
+        font-size: 30px;
+        padding-right: 0;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #downloadButton {
+        font-size: 20px;
+        padding: 10px 30px;
+    }
+
+    #homeFooter .social p {
+        font-size: 25px;
+    }
+
+    #homeFooter .social p a {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    #downloadButton {
+        font-size: 18px;
+        padding: 10px 20px;
+        width: 90%;
+    }
+
+    #homeFooter .social p {
+        font-size: 20px;
+    }
+
+    #homeFooter .social p a {
+        font-size: 20px;
+    }
 }

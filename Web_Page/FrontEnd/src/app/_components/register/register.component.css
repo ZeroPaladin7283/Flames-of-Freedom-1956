@@ -7,10 +7,8 @@
 }
 
 form {
-    width: 700px !important;
-    margin: 0 auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    width: 700px;
+    margin: 100px auto;
     border-radius: 20px;
     padding: 50px;
     background-color: #D8CEC5;
@@ -24,9 +22,9 @@ form {
     display: flex;
     flex-direction: column;
     padding: 50px 0px 0px 25px;
-    font-size: 25px !important;
+    font-size: 25px;
     margin: 0 auto;
-    width: 500px !important;
+    width: 500px;
 }
 
 .input-group label {
@@ -34,20 +32,18 @@ form {
     text-align: left;
 }
 
-.input-group input {
-    border-radius: 20px !important;
+.input-group input, .input-group textarea {
+    border-radius: 20px;
     padding: 10px;
 }
 
 .input-group textarea {
-    height: 150px !important;
-    border-radius: 20px !important;
-    padding: 10px;
+    height: 150px;
 }
 
 form button {
-    width: 350px !important;
-    font-size: 35px !important;
+    width: 350px;
+    font-size: 35px;
     padding: 10px 30px;
     border-radius: 15px;
     margin-top: 30px;
@@ -64,21 +60,16 @@ form button:hover {
 
 #login-register {
     margin-top: 50px;
-    font-size: 30px !important;
+    font-size: 30px;
 }
 
 #login-register a:hover {
-    color: rgb(19, 89, 219) !important;
-    transition: none !important;
-}
-
-#bdselector {
-    margin-bottom: 50px;
+    color: rgb(19, 89, 219);
 }
 
 #register {
     display: flex;
-    font-size: 35px !important;
+    font-size: 35px;
     padding: 10px;
     border-radius: 15px;
     background-color: #405A85;
@@ -91,16 +82,64 @@ form button:hover {
 }
 
 #register:hover {
-    color: #D8CEC5 !important;
+    color: #D8CEC5;
     background-color: #3a69b6;
 }
 
 .error {
     color: rgb(171, 19, 19);
-    font-size: 30px !important;
+    font-size: 30px;
     margin-top: 30px;
     width: 450px;
     text-align: justify;
     display: flex;
     justify-content: center;
+}
+
+@media (max-width: 1024px) {
+    form {
+        width: 80%;
+        padding: 40px;
+    }
+
+    .input-group {
+        width: 90%;
+        padding-left: 0;
+    }
+
+    form button, #register {
+        width: 80%;
+        font-size: 30px;
+    }
+
+    .error {
+        width: 80%;
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .input-group {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    form button, #register {
+        width: 100%;
+        font-size: 25px;
+    }
+
+    .error {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    #login-register {
+        font-size: 25px;
+    }
 }

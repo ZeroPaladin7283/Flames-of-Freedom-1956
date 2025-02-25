@@ -17,6 +17,92 @@
     font-family: Jacques Francois;
 }
 
+/* Reszponzív módosítások */
+
+/* Tabletes nézet */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 3.5rem !important;
+    }
+
+    #downloadButton {
+        font-size: 25px !important;
+        padding: 15px 40px;
+    }
+
+    #homeFooter {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    #homeFooter .social p {
+        font-size: 30px !important;
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    #homeFooter .social p a {
+        padding-left: 15px;
+    }
+}
+
+/* Mobil nézet */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem !important;
+    }
+
+    #downloadButton {
+        font-size: 20px !important;
+        padding: 12px 30px;
+    }
+
+    #homeFooter {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    #homeFooter .social p {
+        font-size: 25px !important;
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    #homeFooter .social p a {
+        padding-left: 10px;
+    }
+}
+
+/* Nagyon kis képernyős mobil nézet */
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem !important;
+    }
+
+    #downloadButton {
+        font-size: 18px !important;
+        padding: 10px 25px;
+    }
+
+    #homeFooter {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #homeFooter .social p {
+        font-size: 20px !important;
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    #homeFooter .social p a {
+        padding-left: 8px;
+    }
+}
+
 #homeFooter {
     display: flex;
     align-items: center;

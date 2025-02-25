@@ -38,3 +38,81 @@
     height: 350px !important;
     width: 350px !important;
 }
+
+/* Reszponzív módosítások */
+
+/* Tabletes nézet */
+@media (max-width: 1024px) {
+    .mediaContent {
+        padding: 50px;
+        width: 90% !important;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .mediaContent div {
+        font-size: 30px !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #galleryPic {
+        height: 250px !important;
+        width: 250px !important;
+    }
+
+    .mediaContent p {
+        padding: 20px;
+    }
+}
+
+/* Mobil nézet */
+@media (max-width: 768px) {
+    .mediaContent {
+        padding: 30px;
+        width: 95% !important;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .mediaContent div {
+        font-size: 25px !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #galleryPic {
+        height: 200px !important;
+        width: 200px !important;
+    }
+
+    .mediaContent p {
+        padding: 10px;
+    }
+}
+
+/* Nagyon kis képernyős mobil nézet */
+@media (max-width: 480px) {
+    .mediaContent {
+        padding: 20px;
+        width: 100% !important;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .mediaContent div {
+        font-size: 20px !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #galleryPic {
+        height: 150px !important;
+        width: 150px !important;
+    }
+
+    .mediaContent p {
+        padding: 5px;
+        font-size: 18px !important;
+    }
+}

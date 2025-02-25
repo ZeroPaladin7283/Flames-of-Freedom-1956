@@ -86,3 +86,98 @@
     padding: 10px 20px;
     border-radius: 50px;
 }
+
+/* Media Queries for Responsiveness */
+
+/* Tabletes nézet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .devContent {
+        padding: 80px;
+        width: 90% !important;
+    }
+
+    .dev img {
+        width: 200px !important;
+    }
+
+    .devContent .row .dev p {
+        font-size: 20px !important;
+    }
+
+    .devContent .row .text {
+        padding-left: 100px;
+        padding-right: 100px;
+        font-size: 25px !important;
+    }
+
+    #admincontrols {
+        flex-direction: column !important;
+        font-size: 25px;
+    }
+
+    #deletepost {
+        margin-left: 0 !important;
+    }
+}
+
+/* Mobil nézet (max-width: 768px) */
+@media (max-width: 768px) {
+    .devContent {
+        padding: 60px;
+        width: 100% !important;
+    }
+
+    .dev img {
+        width: 150px !important;
+    }
+
+    .devContent .row .dev p {
+        font-size: 18px !important;
+    }
+
+    .devContent .row .text {
+        padding-left: 50px;
+        padding-right: 50px;
+        font-size: 20px !important;
+    }
+
+    #editpost, #deletepost {
+        font-size: 22px;
+        padding: 8px 16px;
+    }
+
+    #admincontrols {
+        flex-direction: column !important;
+        font-size: 20px;
+    }
+}
+
+/* Nagyon kis mobil nézet (max-width: 480px) */
+@media (max-width: 480px) {
+    .devContent {
+        padding: 40px;
+    }
+
+    .dev img {
+        width: 120px !important;
+    }
+
+    .devContent .row .dev p {
+        font-size: 16px !important;
+    }
+
+    .devContent .row .text {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 18px !important;
+    }
+
+    #editpost, #deletepost {
+        font-size: 18px;
+        padding: 6px 12px;
+    }
+
+    #admincontrols {
+        font-size: 18px;
+    }
+}

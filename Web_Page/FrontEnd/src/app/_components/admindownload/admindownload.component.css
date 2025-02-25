@@ -6,7 +6,7 @@
     background-attachment: fixed;
 }
 
-.downloadContent{
+.downloadContent {
     margin: 0 auto;
     align-items: center;
     padding: 100px;
@@ -127,4 +127,144 @@
 #homeButton:hover {
     color: #D8CEC5 !important;
     background-color: #3a69b6 !important;
+}
+
+/* Responzív módosítások */
+
+/* Tabletes nézet */
+@media (max-width: 1024px) {
+    .downloadContent {
+        padding: 80px;
+        font-size: 20px !important;
+    }
+
+    #gameDownload {
+        font-size: 25px !important;
+        padding: 12px 30px;
+    }
+
+    .reviews {
+        width: 90% !important;
+    }
+
+    .review-container {
+        flex-direction: column;
+        padding: 40px;
+    }
+
+    .review-profile {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .profile-pic {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .username {
+        font-size: 18px !important;
+    }
+
+    .review-text {
+        width: 100%;
+        font-size: 18px !important;
+    }
+
+    #homeButton {
+        font-size: 25px !important;
+        padding: 15px 40px;
+    }
+}
+
+/* Mobil nézet */
+@media (max-width: 768px) {
+    .downloadContent {
+        padding: 60px;
+        font-size: 18px !important;
+    }
+
+    #gameDownload {
+        font-size: 22px !important;
+        padding: 10px 25px;
+    }
+
+    .reviews {
+        width: 100% !important;
+    }
+
+    .review-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .review-profile {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .profile-pic {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .username {
+        font-size: 16px !important;
+    }
+
+    .review-text {
+        width: 100%;
+        font-size: 16px !important;
+    }
+
+    #homeButton {
+        font-size: 22px !important;
+        padding: 10px 20px;
+    }
+}
+
+/* Nagyon kis mobil képernyő */
+@media (max-width: 480px) {
+    .downloadContent {
+        padding: 40px;
+        font-size: 16px !important;
+    }
+
+    #gameDownload {
+        font-size: 20px !important;
+        padding: 8px 20px;
+    }
+
+    .reviews {
+        width: 100% !important;
+    }
+
+    .review-container {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .review-profile {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .profile-pic {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .username {
+        font-size: 14px !important;
+    }
+
+    .review-text {
+        width: 100%;
+        font-size: 14px !important;
+    }
+
+    #homeButton {
+        font-size: 20px !important;
+        padding: 8px 15px;
+    }
 }

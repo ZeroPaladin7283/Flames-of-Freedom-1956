@@ -10,13 +10,14 @@
     margin: 0 auto;
     align-items: center;
     padding: 100px;
-    font-size: 25px !important;
+    font-size: 25px;
     text-align: justify;
     background-color: rgba(46, 39, 34, 0.676);
     margin-top: 50px;
     margin-bottom: 50px;
     border-radius: 50px;
-    width: 80%;
+    width: 90%;
+    max-width: 800px;
     color: #D8CEC5;
 }
 
@@ -28,7 +29,7 @@
     background-color: #405A85;
     color: #D8CEC5;
     border: none;
-    font-size: 30px !important;
+    font-size: 30px;
     padding: 15px 35px;
     border-radius: 15px;
     margin-top: 25px;
@@ -37,12 +38,12 @@
 
 .downloadContent div #gameDownload:hover {
     background-color: #3a69b6;
-    color: #D8CEC5 !important;
+    color: #D8CEC5;
     transition: 0.5s ease-in-out;
 }
 
 .carousel-inner img {
-    height: 400px !important;
+    height: 400px;
 }
 
 .carouselPictures {
@@ -50,31 +51,32 @@
 }
 
 .gallery-container {
-    width: 100% !important;
+    width: 100%;
 }
 
 .reviews {
-    width: 700px !important;
+    width: 90%;
+    max-width: 700px;
     display: flex;
-    margin: 0 auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    flex-direction: column;
+    margin: 100px auto;
 }
 
 .review-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 80px;
-    height: 300px !important;
+    justify-content: center;
+    padding: 50px;
+    height: auto;
     background-color: #3d3d3da8;
     border-radius: 50px;
 }
 
 .carousel-inner .profile-pic {
-    height: 100% !important;
-    max-height: 150px !important;
-    width: 100% !important;
+    height: 100%;
+    max-height: 150px;
+    width: 100%;
     object-fit: cover;
     border: 5px solid #afeca9;
 }
@@ -84,28 +86,29 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 30%;
+    width: 100%;
 }
 
 .profile-pic {
-    width: 80px !important;
-    height: 80px !important;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     margin-bottom: 10px;
 }
 
 .username {
-    font-size: 20px !important;
+    font-size: 20px;
     font-weight: bold;
     color: #D8CEC5;
 }
 
 .review-text {
-    width: 65%;
-    font-size: 20px !important;
+    width: 100%;
+    font-size: 20px;
     line-height: 1.5;
     color: #D8CEC5;
     text-align: justify;
+    padding: 10px;
 }
 
 .carouselReviews {
@@ -120,11 +123,81 @@
     border-radius: 25px;
     margin-left: 50px;
     text-decoration: none;
-    font-size: 30px !important;
+    font-size: 30px;
     color: #D8CeC5;
 }
 
 #homeButton:hover {
-    color: #D8CEC5 !important;
-    background-color: #3a69b6 !important;
+    color: #D8CEC5;
+    background-color: #3a69b6;
+}
+
+@media (max-width: 2556px) {
+    .downloadContent {
+        font-size: 30px;
+        max-width: 1000px;
+    }
+
+    .review-text {
+        font-size: 25px;
+    }
+
+    #gameDownload, #homeButton {
+        font-size: 35px;
+        padding: 20px 50px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .downloadContent {
+        padding: 50px;
+        font-size: 22px;
+    }
+
+    .review-container {
+        padding: 40px;
+    }
+
+    #gameDownload, #homeButton {
+        font-size: 25px;
+        padding: 15px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .downloadContent {
+        padding: 30px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .downloadContent .summary {
+        padding-right: 0;
+    }
+
+    .review-container {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .profile-pic {
+        width: 60px;
+        height: 60px;
+    }
+
+    .username {
+        font-size: 18px;
+    }
+
+    .review-text {
+        font-size: 18px;
+    }
+
+    #gmaeDownload, #homeButton {
+        font-size: 20px;
+        padding: 10px 20px;
+        width: auto;
+        display: block;
+        margin: 20px auto;
+    }
 }
