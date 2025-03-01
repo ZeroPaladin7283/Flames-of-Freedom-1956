@@ -1,10 +1,13 @@
 nav {
     background-color: rgba(46, 39, 34, 0.676);
-    padding: 20px !important;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #logo {
-    height: 100px !important;
+    height: 150px;
     margin-left: 50px;
 }
 
@@ -13,40 +16,23 @@ nav {
     justify-content: center;
 }
 
-#navbarNav ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-#navbarNav ul li {
-    margin: 0 25px;
+#navbarNav ul li{
+    margin: 0 15px;
 }
 
 #navbarNav ul li a {
-    color: #D8CeC5;
-    font-size: 40px !important;
-    text-decoration: none;
+    color: #D8CEC5;
+    font-size: 40px;
     font-family: Callistoga;
 }
 
 #loggedIn {
-    height: 100px;
-    border-radius: 50%;
+    height: 150px;
     margin-right: 50px;
+    border-radius: 75px;
 }
 
-/* Hover állapot */
-a:hover {
-    color: #afeca9 !important;
-    transition: 0.5s ease-in-out;
-}
-
-/* Reszponzív módosítások */
-
-/* Tabletes nézet */
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
     #logo {
         height: 80px !important;
         margin-left: 20px;
@@ -68,7 +54,6 @@ a:hover {
     }
 }
 
-/* Mobil nézet */
 @media (max-width: 768px) {
     #logo {
         height: 70px !important;
@@ -95,7 +80,6 @@ a:hover {
     }
 }
 
-/* Nagyon kis képernyős mobil nézet */
 @media (max-width: 480px) {
     #logo {
         height: 60px !important;
@@ -120,4 +104,4 @@ a:hover {
     #loggedIn {
         display: none;
     }
-}
+} */

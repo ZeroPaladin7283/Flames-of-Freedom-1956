@@ -2,63 +2,56 @@
     background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("../../../assets/images/makarov\ BG.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position-x: center;
     background-attachment: fixed;
 }
 
-/* Developer Section */
 .devContent {
     background-color: rgba(61, 61, 61, 0.421);
     padding: 100px;
     width: 80%;
-    max-width: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 100px auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
     border-radius: 75px;
+    color: #D8CEC5;
 }
 
 .devContent .row div {
     margin-top: 50px;
     margin-bottom: 50px;
+    font-size: 35px;
 }
 
-/* Developer Profile Images */
+.dev {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .dev img {
     width: 250px;
-    max-width: 100%;
-    border: 5px solid #afeca9;
-    border-radius: 50%;
-    display: flex;
+    border: 5px solid #AFECA9;
+    border-radius: 150px;
     margin: 0 auto;
 }
 
-/* Developer Name */
 .devContent .row .dev p {
-    color: #D8CeC5;
-    font-size: 25px;
+    text-align: center;
     margin-top: 20px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
 }
 
-/* Developer Text */
 .devContent .row .text {
-    padding-left: 150px;
-    padding-right: 150px;
-    font-size: 30px;
     display: flex;
-    align-items: center;
+    padding-left: 100px;
     text-align: justify;
-    color: #D8CeC5;
+    align-items: center;
 }
 
-/* ====== Reszponzív beállítások ====== */
-
-/* Nagy kijelzők (4K, 2556px+) */
-@media (min-width: 2556px) {
+/* @media (min-width: 2556px) {
     .devContent {
         font-size: 30px;
         max-width: 1200px;
@@ -69,7 +62,6 @@
     }
 }
 
-/* Tablet (max-width: 1024px) */
 @media (max-width: 1024px) {
     .devContent {
         padding: 50px;
@@ -87,7 +79,6 @@
     }
 }
 
-/* Mobil (max-width: 768px) */
 @media (max-width: 768px) {
     .devContent {
         padding: 30px;
@@ -109,4 +100,4 @@
         font-size: 20px;
         text-align: center;
     }
-}
+} */

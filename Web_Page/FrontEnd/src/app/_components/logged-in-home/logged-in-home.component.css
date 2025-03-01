@@ -1,31 +1,25 @@
-.mainbg {
+.mainBg{
     background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("../../../assets/images/background.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: center;
     background-attachment: fixed;
+    background-position-x: center;
+    height: 100vh;
 }
 
 .title {
-    font-size: 5rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-size: 80px;
+    justify-content: center;
     text-align: center;
-    color: #D8CeC5;
+    padding: 20px;
+    margin-top: 11%;
+    color: #D8CEC5;
     font-family: Jacques Francois;
 }
 
-#homeFooter {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+footer {
     position: absolute;
     bottom: 0;
-    width: 100%;
-    padding: 20px;
     background-image: linear-gradient(to top, rgba(175, 149, 131, 0.684), rgba(46, 39, 34, 0.53));
 }
 
@@ -33,32 +27,19 @@
     background-color: #405A85;
     padding: 20px 50px;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 50px;
     margin-left: 50px;
     text-decoration: none;
-    color: #D8CeC5;
+    color: #D8CEC5;
     font-size: 30px;
 }
 
 #downloadButton:hover {
     color: #D8CEC5;
-    background-color: #3a69b6;
+    background-color: #3A69B6;
 }
 
-#homeFooter .social p {
-    margin: 0;
-    font-size: 40px;
-    display: flex;
-    justify-content: right;
-    padding-right: 50px;
-}
-
-#home footer .social p a {
-    padding-left: 20px;
-    color: #D8CeC5;
-}
-
-@media (max-width: 2556px) {
+/* @media (max-width: 2556px) {
     .title {
         font-size: 7rem;
     }
@@ -120,5 +101,5 @@
         font-size: 25px;
         justify-content: center;
     }
-}
+} */
 

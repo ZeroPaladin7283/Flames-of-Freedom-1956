@@ -7,7 +7,7 @@
                     <h1>Register</h1>
                     <div class="input-group">
                         <label for="username">Username</label>
-                        <input type="text" [(ngModel)]="registerUsername" name="username" id="username" placeholder="exampleuser" required="true">
+                        <input type="text" [(ngModel)]="registerUsername" name="username" id="username" placeholder="exampleuser" required="true" autofocus>
                     </div>
                     <div class="input-group">
                         <label for="email">E-mail</label>
@@ -26,7 +26,7 @@
                         <input type="date" [(ngModel)]="registerBDate" name="birthday" id="birthday">
                         <div class="error">{{errorMessage}}</div>
                     </div>
-                    <a id="register" (click)="onRegister()">Register</a>
+                    <button type="button" id="register" (click)="onRegister()">Register</button>
                     <p id="login-register">
                         Already have an account? <a href="/login">Login here</a>
                     </p>

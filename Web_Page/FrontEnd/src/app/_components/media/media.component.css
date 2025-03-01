@@ -1,5 +1,5 @@
 .secondbg {
-    background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("../../../assets/images/makarov\ BG.jpg");
+    background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url(../../../assets/images/makarov\ BG.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
@@ -21,26 +21,19 @@
 .mediaContent div {
     font-size: 35px;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.mediaContent p {
-    padding: 40px;
-    text-align: center;
-    color: #D8CeC5;
+    color: #D8CEC5;
+    text-align: justify;
+    padding: 20px;
 }
 
 #galleryPic {
     height: 350px;
     width: 350px;
-    border-radius: 20px;
-    object-fit: cover;
 }
 
+/*
 @media (max-width: 2556px) {
     .mediaContent {
         width: 70%;
@@ -98,3 +91,4 @@
         width: 250px;
     }
 }
+    */

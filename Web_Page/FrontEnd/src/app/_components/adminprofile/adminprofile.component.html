@@ -9,7 +9,7 @@
                     <label for="username">Username</label>
                     <div class="edit">
                         <input type="text" [(ngModel)]="profileUser" name="username" id="username"
-                            placeholder="ShadowFoxy0819" required="true"><a href=""><i
+                            placeholder="ShadowFoxy0819" required="true" autofocus><a href=""><i
                                 class="bi bi-pencil-square"></i></a>
                     </div>
                     <div class="error"></div>
@@ -50,16 +50,8 @@
                     </div>
                 </div>
                 <div class="buttons">
-                    <div class="logout">
-                        <a href="/home">
-                            Logout
-                        </a>
-                    </div>
-                    <div class="save">
-                        <a href="/adminprofile">
-                            Save Changes
-                        </a>
-                    </div>
+                    <button type="button" id="logout" (click)="onLogout()">Logout</button>
+                    <button type="button" disabled id="save">Save</button>
                 </div>
             </div>
         </div>

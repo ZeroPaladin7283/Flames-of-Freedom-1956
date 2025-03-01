@@ -54,5 +54,5 @@ export const routes: Routes = [
     {path: 'profile', component:ProfileComponent},
 
     /* Nem létező oldal */
-    {path: '**', redirectTo: 'not-found', pathMatch:'full'}
+    {path: '**', pathMatch:'full', component:NotFoundComponent}
 ];

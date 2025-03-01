@@ -7,44 +7,61 @@
 }
 
 form {
-    width: 700px !important;
-    margin: 0 auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    width: 700px;
+    margin: 100px auto;
     border-radius: 20px;
     padding: 50px;
     background-color: #D8CEC5;
     text-align: center;
+    font-size: 25px;
+}
+
+h1 {
+    font-size: 65px;
+}
+
+p {
+    font-size: 40px;
+    margin-top: 30px;
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
-    padding: 50px 0px 0px 25px;
-    font-size: 25px !important;
+    padding: 50px 0 0 25px;
     margin: 0 auto;
-    width: 500px !important;
+    width: 500px;
 }
 
-.input-group label {
+label {
     font-weight: bold;
     text-align: left;
 }
 
-.input-group input {
+input {
+    border-radius: 25px !important;
+    padding: 10px;
+    border: none;
+}
+
+input:focus {
+    outline: 3px solid #3A69B6;
+}
+
+textarea {
+    height: 150px;
     border-radius: 20px !important;
     padding: 10px;
 }
 
-.input-group textarea {
-    height: 150px !important;
-    border-radius: 20px !important;
-    padding: 10px;
+textarea:focus {
+    outline: 3px solid #3A69B6;
 }
 
-form button {
-    width: 350px !important;
-    font-size: 35px !important;
+
+button {
+    width: 350px;
+    font-size: 35px;
     padding: 10px 30px;
     border-radius: 15px;
     margin-top: 30px;
@@ -54,32 +71,24 @@ form button {
     color: #D8CEC5;
 }
 
-form button:hover {
-    background-color: #3a69b6;
+button:hover {
+    background-color: #3A69B6;
     transition: 0.5s ease-in-out;
 }
 
 .error {
     color: rgb(171, 19, 19);
-    font-size: 30px !important;
+    font-size: 40px;
     margin-top: 20px;
     text-align: center;
     font-family: Bookman Old Style;
 }
-
-h1 {
-    font-size: 70px !important;
-}
-
+/* 
 form p {
     font-size: 40px !important;
     text-align: center;
     margin-top: 25px;
 }
-
-/* Reszponzív kiegészítések */
-
-/* Tabletes nézet */
 @media (max-width: 1024px) {
     form {
         width: 80%;
@@ -114,7 +123,6 @@ form p {
     }
 }
 
-/* Mobil nézet */
 @media (max-width: 768px) {
     form {
         width: 95%;
@@ -149,7 +157,6 @@ form p {
     }
 }
 
-/* Nagyon kis képernyős mobil nézet */
 @media (max-width: 480px) {
     form {
         width: 95%;
@@ -184,4 +191,4 @@ form p {
     form p {
         font-size: 20px !important;
     }
-}
+} */

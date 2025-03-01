@@ -7,94 +7,109 @@
 }
 
 .profileCard {
-    width: 50%;
     margin: 100px auto;
     background-color: #D8CEC5;
     border-radius: 50px;
-    padding: 50px;
+    width: 50%;
+    font-size: 25px;
+    padding: 50px 150px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.input-group {
+    width: 100%;
+    gap: 15px;
     display: flex;
     flex-direction: column;
 }
 
-.profileCard h1 {
-    text-align: center;
-}
-
-.profileCard .input-group {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.profileCard .input-group label {
+label {
     font-size: 30px;
+    font-weight: bold;
 }
 
-.profileCard .input-group input, .profileCard .input-group textarea {
-    width: 50%;
-    padding: 10px;
-    border-radius: 10px;
+input {
+    width: 70%;
+    border-radius: 50px;
+    padding: 5px 15px;
+    border: none;
 }
 
-.profileCard .input-group textarea {
+input:focus {
+    outline: 3px solid #3A69B6;
+}
+
+textarea {
+    width: 70%;
+    border-radius: 15px;
+    padding: 5px 15px;
     min-height: 100px;
+    border: none;
 }
 
-.profileCard .input-group img {
+textarea:focus {
+    outline: 3px solid #3A69B6;
+}
+
+img {
     width: 150px;
 }
 
-.profileCard .input-group a {
+a {
     margin-left: 25px;
     font-size: 30px;
     color: #3D3D3D;
     text-decoration: none;
 }
 
-.profileCard .input-group a:hover {
-    color: #3D3D3D;
+a:hover {
+    color: #3D3D3D !important;
 }
 
-.profileCard .buttons {
+.buttons {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
     margin-top: 30px;
 }
 
-.profileCard .buttons div{
+.buttons div {
     width: 350px;
     display: flex;
     justify-content: center;
 }
 
-.profileCard .buttons div a {
+button {
     padding: 15px;
     width: 100%;
     text-align: center;
     background-color: #405A85;
     color: #D8CEC5;
-    text-decoration: none;
     font-size: 25px;
     font-weight: bold;
     border-radius: 15px;
+    border: none;
 }
 
-.profileCard .buttons div a:hover {
-    background-color: #3a69b6;
+#logout:hover {
+    background-color: #3A69B6;
     color: #D8CEC5;
+    transition: 0.5s ease-in-out;
 }
 
-.profileCard .buttons .save a {
-    background-color: #6767678f;
+#save {
+    background-color: #8b8b8b;
 }
 
-.profileCard .buttons .save a:hover {
-    background-color: #6767678f;
+#hover {
+    background-color: #6767678F;
 }
 
+/*
 @media (max-width: 1024px) {
     .profileCard {
         width: 75%;
@@ -152,4 +167,4 @@
         font-size: 20px;
         padding: 15px;
     }
-}
+} */

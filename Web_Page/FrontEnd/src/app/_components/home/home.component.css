@@ -1,29 +1,26 @@
+.mainBg{
+    background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("../../../assets/images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    height: 100vh;
+}
+
 .title {
-    display: flex;
+    font-size: 80px;
     justify-content: center;
-    align-items: center;
-    height: calc(100vh - 300px);
     text-align: center;
     padding: 20px;
+    margin-top: 11%;
+    color: #D8CEC5;
+    font-family: Jacques Francois;
 }
 
-.title p {
-    font-size: 4em;
-    width: 100%;
-    color: #D8CeC5;
-    font-family: "Jacques Francois", sans-serif;
-}
-
-#homeFooter {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+footer {
     position: absolute;
     bottom: 0;
-    width: 100%;
-    padding: 20px;
     background-image: linear-gradient(to top, rgba(175, 149, 131, 0.684), rgba(46, 39, 34, 0.53));
-    flex-wrap: wrap;
 }
 
 #downloadButton {
@@ -33,35 +30,16 @@
     border-radius: 50px;
     margin-left: 50px;
     text-decoration: none;
-    color: #D8CeC5;
+    color: #D8CEC5;
     font-size: 30px;
-    white-space: nowrap;
 }
 
 #downloadButton:hover {
-    color: #D8CEC5 !important;
-    background-color: #3a69b6;
+    color: #D8CEC5;
+    background-color: #3A69B6;
 }
 
-#homeFooter .social {
-    flex-grow: 1;
-    text-align: right;
-}
-
-#homeFooter .social p {
-    margin: 0;
-    font-size: 40px;
-    padding-right: 50px;
-    display: flex;
-    justify-content: right;
-}
-
-#homeFooter .social p a {
-    padding-left: 20px;
-    color: #D8CeC5;
-}
-
-/* Nagyobb kijelzők */
+/* 
 @media (max-width: 2556px) {
     .title {
         height: calc(100vh - 450px);
@@ -86,7 +64,7 @@
     }
 }
 
-/* Közepes kijelzők */
+
 @media (max-width: 1024px) {
     .title {
         height: calc(100vh - 350px);
@@ -117,7 +95,7 @@
     }
 }
 
-/* Mobil kijelzők */
+
 @media (max-width: 768px) {
     .title {
         height: auto;
@@ -154,7 +132,7 @@
     }
 }
 
-/* Kis mobil kijelzők */
+
 @media (max-width: 480px) {
     .title p {
         font-size: 2.5em;
@@ -174,3 +152,4 @@
         font-size: 25px;
     }
 }
+*/

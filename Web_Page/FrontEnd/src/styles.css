@@ -1,16 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 /* Universal Settings */
-body {
-    background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("assets/images/background.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position-x: center;
-    transform: none;
-    margin: 0;
-    padding: 0;
-}
-
 hr {
     border: 3.5px solid #D8CeC5 !important;
     opacity: 1;

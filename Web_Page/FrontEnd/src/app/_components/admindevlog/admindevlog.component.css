@@ -9,75 +9,75 @@
 .devContent {
     background-color: rgba(61, 61, 61, 0.421);
     padding: 100px;
-    width: 80% !important;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
     margin-bottom: 100px;
     border-radius: 75px;
+    color: #D8CEC5;
 }
 
 .devContent .row div {
     margin-top: 50px;
     margin-bottom: 50px;
+    font-size: 35px;
+}
+
+.dev {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .dev img {
-    width: 250px !important;
-    border: 5px solid #afeca9 !important;
-    border-radius: 50%;
-    display: flex;
+    width: 250px;
+    border: 5px solid #AFECA9;
+    border-radius: 150px;
     margin: 0 auto;
 }
 
 .devContent .row .dev p {
-    color: #D8CeC5;
-    font-size: 25px;
+    text-align: center;
     margin-top: 20px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
 }
 
 .devContent .row .text {
-    padding-left: 150px;
-    padding-right: 150px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    font-size: 30px !important;
     display: flex;
-    align-items: center;
+    padding-left: 100px;
     text-align: justify;
+    align-items: center;
     flex-direction: column;
-    color: #D8CeC5;
 }
 
 #admincontrols {
     display: flex;
-    flex-direction: row !important;
-    margin-top: 50px !important;
+    flex-direction: row;
+    margin-top: 50px;
     font-size: 30px;
-    padding: 10px !important;
+    padding: 10px;
 }
 
 #editpost {
-    text-decoration: none !important;
-    color: #D8CeC5 !important;
+    text-decoration: none;
+    color: #D8CeC5;
     padding: 10px 20px;
 }
 
 #editpost:hover {
-    color: #afeca9 !important;
+    color: #afeca9;
 }
 
 #deletepost {
     display: flex;
-    justify-content: end !important;
-    margin-left: 300px !important;
-    text-decoration: none !important;
+    justify-content: end;
+    margin-left: 300px;
+    text-decoration: none;
     color: #D8CeC5;
     padding: 10px 20px;
+    border-radius: 50px;
 }
 
 #deletepost:hover {
@@ -85,12 +85,10 @@
     background-color: rgb(175, 22, 22);
     padding: 10px 20px;
     border-radius: 50px;
+    transition: 0.8s;
 }
 
-/* Media Queries for Responsiveness */
-
-/* Tabletes nézet (max-width: 1024px) */
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
     .devContent {
         padding: 80px;
         width: 90% !important;
@@ -120,7 +118,6 @@
     }
 }
 
-/* Mobil nézet (max-width: 768px) */
 @media (max-width: 768px) {
     .devContent {
         padding: 60px;
@@ -152,7 +149,6 @@
     }
 }
 
-/* Nagyon kis mobil nézet (max-width: 480px) */
 @media (max-width: 480px) {
     .devContent {
         padding: 40px;
@@ -180,4 +176,4 @@
     #admincontrols {
         font-size: 18px;
     }
-}
+} */

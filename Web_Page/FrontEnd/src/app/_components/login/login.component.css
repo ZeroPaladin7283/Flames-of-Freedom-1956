@@ -13,57 +13,71 @@ form {
     padding: 50px;
     background-color: #D8CEC5;
     text-align: center;
+    font-size: 25px;
+}
+
+h1 {
+    font-size: 65px;
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
-    padding: 50px 0px 0px 25px;
-    font-size: 25px;
+    padding: 50px 0 0 25px;
     margin: 0 auto;
     width: 500px;
 }
 
-.input-group label {
+label {
     font-weight: bold;
     text-align: left;
 }
 
-.input-group input, .input-group textarea {
-    border-radius: 20px;
+input {
+    border-radius: 25px !important;
     padding: 10px;
-    width: 100%;
+    border: none;
 }
 
-.input-group textarea {
+input:focus {
+    outline: 3px solid #3A69B6;
+}
+
+textarea {
     height: 150px;
+    border-radius: 20px !important;
+    padding: 10px;
+}
+
+textarea:focus {
+    outline: 3px solid #3A69B6;
 }
 
 #forgot {
     display: flex;
-    font-size: 25px;
-    margin: 0 auto 50px;
-    width: fit-content;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-left: 80px;
 }
 
 #forgot:hover {
-    color: rgb(19, 89, 219);
+    color: rgb(19, 89, 219) !important;
 }
 
-form button {
+button {
     width: 350px;
     font-size: 35px;
     padding: 10px 30px;
     border-radius: 15px;
-    margin-top: 30px;
+    margin-top: 50px;
     font-weight: bold;
     border: none;
     background-color: #405A85;
     color: #D8CEC5;
 }
 
-form button:hover {
-    background-color: #3a69b6;
+button:hover {
+    background-color: #3A69B6;
     transition: 0.5s ease-in-out;
 }
 
@@ -72,9 +86,19 @@ form button:hover {
     font-size: 30px;
 }
 
-#registerhere:hover {
-    color: rgb(19, 89, 219);
+#login-register a:hover {
+    color: rgb(19, 89, 219) !important;
 }
+
+.error {
+    color: rgb(171, 19, 19);
+    font-size: 40px;
+    margin-top: 20px;
+    text-align: center;
+    font-family: Bookman Old Style;
+}
+
+/*
 
 .error {
     color: rgb(171, 19, 19);
@@ -142,4 +166,4 @@ form button:hover {
     .error {
         font-size: 25px;
     }
-}
+} */

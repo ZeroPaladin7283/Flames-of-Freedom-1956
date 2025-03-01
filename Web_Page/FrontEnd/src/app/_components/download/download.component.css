@@ -1,20 +1,18 @@
-.mainbg {
+.mainBg{
     background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("../../../assets/images/background.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: center;
     background-attachment: fixed;
+    background-position-x: center;
 }
 
 .downloadContent {
-    margin: 0 auto;
+    margin: 50px auto;
     align-items: center;
     padding: 100px;
-    font-size: 25px !important;
+    font-size: 25px;
     text-align: justify;
     background-color: rgba(46, 39, 34, 0.676);
-    margin-top: 50px;
-    margin-bottom: 50px;
     border-radius: 50px;
     width: 80%;
     color: #D8CEC5;
@@ -28,7 +26,7 @@
     background-color: #405A85;
     color: #D8CEC5;
     border: none;
-    font-size: 30px !important;
+    font-size: 30px;
     padding: 15px 35px;
     border-radius: 15px;
     margin-top: 25px;
@@ -37,12 +35,12 @@
 
 .downloadContent div #gameDownload:hover {
     background-color: #3a69b6;
-    color: #D8CEC5 !important;
+    color: #D8CEC5;
     transition: 0.5s ease-in-out;
 }
 
 .carousel-inner img {
-    height: 400px !important;
+    height: 400px;
 }
 
 .carouselPictures {
@@ -54,7 +52,7 @@
 }
 
 .reviews {
-    width: 700px !important;
+    width: 700px;
     display: flex;
     margin: 0 auto;
     margin-top: 100px;
@@ -66,14 +64,14 @@
     align-items: center;
     justify-content: space-between;
     padding: 80px;
-    height: 300px !important;
+    height: 300px;
     background-color: #3d3d3da8;
     border-radius: 50px;
+    border: 3px solid #AFECA9;
 }
 
 .carousel-inner .profile-pic {
     height: 100%;
-    max-height: 150px;
     width: 100%;
     object-fit: cover;
     border: 5px solid #afeca9;
@@ -129,9 +127,7 @@
     background-color: #3a69b6;
 }
 
-/* Reszponzív kiegészítések */
-
-@media (min-width: 2556px) {
+/* @media (min-width: 2556px) {
     .carouselGallery {
         width: 45%;
         margin: 0 auto;
@@ -269,4 +265,4 @@
         margin-left: 0;
         width: 90%;
     }
-}
+} */

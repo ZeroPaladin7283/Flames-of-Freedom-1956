@@ -5,3 +5,81 @@
     background-position-x: center;
     background-attachment: fixed;
 }
+
+form {
+    width: 700px;
+    margin: 100px auto;
+    border-radius: 20px;
+    padding: 50px;
+    background-color: #D8CEC5;
+    text-align: center;
+    font-size: 25px;
+}
+
+h1 {
+    font-size: 65px;
+}
+
+p {
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 500px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+}
+
+input {
+    border-radius: 25px !important;
+    padding: 10px;
+    border: none;
+}
+
+input:focus {
+    outline: 3px solid #3A69B6;
+}
+
+textarea {
+    height: 150px;
+    border-radius: 20px !important;
+    padding: 10px;
+    border: none;
+}
+
+textarea:focus {
+    outline: 3px solid #3A69B6;
+}
+
+
+button {
+    width: 350px;
+    font-size: 35px;
+    padding: 10px 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+    font-weight: bold;
+    border: none;
+    background-color: #405A85;
+    color: #D8CEC5;
+}
+
+button:hover {
+    background-color: #3A69B6;
+    transition: 0.5s ease-in-out;
+}
+
+.error {
+    color: rgb(171, 19, 19);
+    font-size: 40px;
+    margin-top: 20px;
+    text-align: center;
+    font-family: Bookman Old Style;
+}

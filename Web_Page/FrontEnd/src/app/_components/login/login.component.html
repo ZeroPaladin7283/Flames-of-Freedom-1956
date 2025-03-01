@@ -7,9 +7,9 @@
                     <h1>Login</h1>
                     <div class="input-group">
                         <label for="user">E-mail</label>
-                        <input type="text" [(ngModel)]="loginUser" name="user" id="user" placeholder="Enter your e-mail" required="true">
+                        <input type="text" [(ngModel)]="loginUser" name="user" id="user" placeholder="Enter your e-mail" required="true" autofocus>
                     </div>
-                    <div class="input-group">
+                    <div class="input-group" id="pass">
                         <label for="password">Password</label>
                         <input type="password" [(ngModel)]="loginPass" name="password" id="password" placeholder="*********" required="true">
                     </div>
@@ -17,7 +17,7 @@
                     <div class="error">{{errorMessage}}</div>
                     <button type="button" id="login" (click)="onLogin()">Login</button>
                     <p id="login-register">
-                        Dont't have an account? <a href="/register" id="registerhere">Register one here</a>
+                        Dont't have an account? <a href="/register">Register one here</a>
                     </p>
                 </form>
             </div>
