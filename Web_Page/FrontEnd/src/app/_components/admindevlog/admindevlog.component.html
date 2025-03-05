@@ -2,170 +2,17 @@
     <app-adminnavbar></app-adminnavbar>
     <div class="container-fluid devContent">
         <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                <img src="ZeroPaladin7283 pfp.png" alt="developer">
-                <p>
-                    ZeroPaladin7283
-                </p>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
-                <p>
-                    We implemented the key locations of the revolution, including Corvin Alley and the area around the
-                    Parliament, so that players can explore the true historical background of the events.
-                </p>
-                <div id="admincontrols">
-                    <a href="/admindevlog" id="editpost">
-                        Edit Post <i
-                        class="bi bi-pencil-square"></i>
-                    </a>
-                    <a href="/admindevlog" id="deletepost">
-                        Delete Post
-                    </a>
+            <div *ngFor="let log of logList" class="row">
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
+                    <img *ngIf="gitUsers[log.userId]" [src]="gitUsers[log.userId]?.avatar_url" alt="{{ gitUsers[log.userId]?.login }}">
+                    <p> {{ gitUsers[log.userId]?.login }}</p>
                 </div>
-            </div>
-
-            <hr>
-
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                <img src="ShadowFoxy PFP.jpg" alt="developer">
-                <p>
-                    ShadowFoxy0819
-                </p>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
-                <p>
-                    We fine-tuned the investigation mechanics so that players can uncover new evidence as the
-                    storyprogresses.
-                </p>
-                <div id="admincontrols">
-                    <a href="/admindevlog" id="editpost">
-                        Edit Post <i
-                        class="bi bi-pencil-square"></i>
-                    </a>
-                    <a href="/admindevlog" id="deletepost">
-                        Delete Post
-                    </a>
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
+                    <p>
+                        {{ log.log }}
+                    </p>
                 </div>
-            </div>
-
-            <hr>
-
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                <img src="Döme pfp.jpg" alt="developer">
-                <p>
-                    Döme
-                </p>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
-                <p>
-                    We added new, hidden clues that provide deeper insight into the events and characters of the
-                    revolution.
-                </p>
-                <div id="admincontrols">
-                    <a href="/admindevlog" id="editpost">
-                        Edit Post <i
-                        class="bi bi-pencil-square"></i>
-                    </a>
-                    <a href="/admindevlog" id="deletepost">
-                        Delete Post
-                    </a>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                <img src="ShadowFoxy PFP.jpg" alt="developer">
-                <p>
-                    ShadowFoxy0819
-                </p>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
-                <p>
-                    We optimized the game's performance, especially in larger, more crowded locations, to provide a
-                    smoother gaming experience.
-                </p>
-                <div id="admincontrols">
-                    <a href="/admindevlog" id="editpost">
-                        Edit Post <i
-                        class="bi bi-pencil-square"></i>
-                    </a>
-                    <a href="/admindevlog" id="deletepost">
-                        Delete Post
-                    </a>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                <img src="ShadowFoxy PFP.jpg" alt="developer">
-                <p>
-                    ShadowFoxy0819
-                </p>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
-                <p>
-                    We developed a new clue system that allows players to build logical chains and draw conclusions
-                    based on the evidence they discover.
-                </p>
-                <div id="admincontrols">
-                    <a href="/admindevlog" id="editpost">
-                        Edit Post <i
-                        class="bi bi-pencil-square"></i>
-                    </a>
-                    <a href="/admindevlog" id="deletepost">
-                        Delete Post
-                    </a>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                <img src="ZeroPaladin7283 pfp.png" alt="developer">
-                <p>
-                    ZeroPaladin7283
-                </p>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
-                <p>
-                    We expanded the unarmed combat system so that players can protect themselves in various ways when
-                    they find themselves in tight situations.
-                </p>
-                <div id="admincontrols">
-                    <a href="/admindevlog" id="editpost">
-                        Edit Post <i
-                        class="bi bi-pencil-square"></i>
-                    </a>
-                    <a href="/admindevlog" id="deletepost">
-                        Delete Post
-                    </a>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                <img src="Döme pfp.jpg" alt="developer">
-                <p>
-                    Döme
-                </p>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
-                <p>
-                    We added a new decision point that significantly impacts the outcome of the story and opens the path
-                    to multiple alternative endings.
-                </p>
-                <div id="admincontrols">
-                    <a href="/admindevlog" id="editpost">
-                        Edit Post <i
-                        class="bi bi-pencil-square"></i>
-                    </a>
-                    <a href="/admindevlog" id="deletepost">
-                        Delete Post
-                    </a>
-                </div>
+                <hr>
             </div>
         </div>
     </div>

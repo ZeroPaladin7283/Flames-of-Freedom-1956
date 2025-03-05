@@ -35,6 +35,8 @@ button {
     text-decoration: none;
     color: #D8CEC5;
     font-size: 30px;
+    font-family: Jacques Francois;
+    font-weight: bold;
     border: none;
 }
 
@@ -42,4 +44,18 @@ button:hover {
     color: #D8CEC5;
     background-color: #3A69B6;
     transition: 0.5s;
+}
+
+@media (min-width: 2560px) {
+    h1 {
+        font-size: 6rem;
+    }
+
+    p{
+        font-size: 3rem;
+    }
+
+    button {
+        font-size: 3rem;
+    }
 }

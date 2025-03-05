@@ -19,7 +19,7 @@
 }
 
 .downloadContent .summary {
-    padding-right: 100px;
+    padding: 1.5rem 3.5rem;
 }
 
 .downloadContent div #gameDownload {
@@ -39,8 +39,31 @@
     transition: 0.5s ease-in-out;
 }
 
+.carouselGallery {
+    padding: 1.5rem 3.5rem;
+}
+
 .carousel-inner img {
     height: 400px;
+}
+
+.carousel-control-prev-icon {
+    background-image: url('../../../assets/images/arrow.svg');
+    background-size: contain;
+    width: 2rem;
+    height: 2rem;
+    filter: saturate(500%) brightness(120%);
+    transform: rotate(180deg);
+    height: 100%;
+}
+
+.carousel-control-next-icon {
+    background-image: url('../../../assets/images/arrow.svg');
+    background-size: contain;
+    width: 2rem;
+    height: 2rem;
+    filter: saturate(500%) brightness(120%);
+    height: 100%;
 }
 
 .carouselPictures {
@@ -55,6 +78,7 @@
     width: 700px;
     display: flex;
     margin: 0 auto;
+    justify-content: center;
     margin-top: 100px;
     margin-bottom: 100px;
 }
@@ -67,6 +91,7 @@
     height: 300px;
     background-color: #3d3d3da8;
     border-radius: 50px;
+    border: 3px solid #AFECA9;
 }
 
 .carousel-inner .profile-pic {
@@ -74,6 +99,7 @@
     width: 100%;
     object-fit: cover;
     border: 5px solid #afeca9;
+    border-radius: 50%;
 }
 
 .review-profile {
@@ -82,13 +108,6 @@
     align-items: center;
     text-align: center;
     width: 30%;
-}
-
-.profile-pic {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 10px;
 }
 
 .username {
@@ -122,76 +141,89 @@
 }
 
 #homeButton:hover {
+    color: #D8CEC5 !important;
+}
+
+#homeButton:hover {
     color: #D8CEC5;
     background-color: #3a69b6;
 }
 
-/* @media (max-width: 2556px) {
+@media (min-width: 2560px) {
     .downloadContent {
-        font-size: 30px;
-        max-width: 1000px;
+        margin: 5rem auto;
+        padding: 6.5rem;
+        font-size: 2.25rem;
+        text-align: justify;
+        border-radius: 4rem;
+        width: 75%;
+    }
+    
+    .downloadContent div #gameDownload {
+        font-size: 2.8rem;
+        border-radius: 5rem;
+        margin-top: 2rem;
+    }
+    
+    .carousel-inner img {
+        height: 35rem;
     }
 
-    .review-text {
-        font-size: 25px;
+    .carousel-control-prev-icon {
+        background-image: url('../../../assets/images/arrow.svg');
+        background-size: contain;
+        width: 4rem;
+        height: 4rem;
+        filter: saturate(500%) brightness(120%);
+        transform: rotate(180deg);
+        height: 100%;
     }
-
-    #gameDownload, #homeButton {
-        font-size: 35px;
-        padding: 20px 50px;
+    
+    .carousel-control-next-icon {
+        background-image: url('../../../assets/images/arrow.svg');
+        background-size: contain;
+        width: 4rem;
+        height: 4rem;
+        filter: saturate(500%) brightness(120%);
+        height: 100%;
     }
-}
-
-@media (max-width: 1024px) {
-    .downloadContent {
-        padding: 50px;
-        font-size: 22px;
+    
+    .reviews {
+        width: 50rem;
+        margin: 8rem auto;
     }
-
+    
     .review-container {
-        padding: 40px;
+        width: 60rem;
+        height: 25rem;
+        border-radius: 4rem;
+        border: 0.5rem solid #AFECA9;
     }
-
-    #gameDownload, #homeButton {
-        font-size: 25px;
-        padding: 15px 30px;
+    
+    .carousel-inner .profile-pic {
+        border: 0.5rem solid #afeca9;
     }
-}
-
-@media (max-width: 768px) {
-    .downloadContent {
-        padding: 30px;
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .downloadContent .summary {
-        padding-right: 0;
-    }
-
-    .review-container {
-        padding: 30px;
-        text-align: center;
-    }
-
-    .profile-pic {
-        width: 60px;
-        height: 60px;
-    }
-
+    
     .username {
-        font-size: 18px;
+        font-size: 2rem;
     }
-
+    
     .review-text {
-        font-size: 18px;
+        width: 65%;
+        font-size: 1.8rem;
     }
 
-    #gmaeDownload, #homeButton {
-        font-size: 20px;
-        padding: 10px 20px;
-        width: auto;
-        display: block;
-        margin: 20px auto;
+    footer {
+        height: 15rem;
     }
-} */
+
+    #homeButton {
+        font-size: 4rem;
+        border-radius: 5rem;
+    }
+
+    .social a{
+        font-size: 4rem;
+        padding: 0 1.5rem;
+    }
+}

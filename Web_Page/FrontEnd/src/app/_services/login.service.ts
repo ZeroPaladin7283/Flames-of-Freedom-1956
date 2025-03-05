@@ -1,63 +1,73 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { jwtDecode } from 'jwt-decode';
 
-interface User{
-  email: string;
-  password: string;
-  username?: string;
-}
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+  private authenticatedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(!!localStorage.getItem('token'));
+  public authenticated$: Observable<boolean> = this.authenticatedSubject.asObservable();
+  private url = 'http://127.0.0.1:8080/Flames_of_Freedom_1956-1.0-SNAPSHOT/webresources/users';
 
-  private adminLogin: User[] = [
-    { email: 'ZeroPaladin@gmail.com', password: 'Jude1945!'},
-    { email: 'ShadowFoxy0819@gmail.com', password: 'ILoveFoxes0819?'},
-    { email: 'Döme@gmail.com', password: '1234Dome%' }
-  ];
+  constructor() {}
 
-  private userLogin: User[] = [
-    { email: 'jdoe@gmail.com' , password: 'Pass1234!'},
-    { email: 'kbrown@gmail.com' , password: 'abcDef12@'},
-    { email: 'tgreen@gmail.com' , password: 'zyxW9876#'},
-    { email: 'lwilson@gmail.com' , password: 'pasS5678$'},
-    { email: 'afoster@email.com' , password: 'passWord!1'},
-    { email: 'phall@email.com' , password: '12345Abcd%'},
-    { email: 'cgarcia@email.com' , password: '7yUi90op&'},
-    { email: 'sroberts@gmail.com' , password: 'strongPwd34!'},
-    { email: 'mperry@gmail.com' , password: 'A1s2d3f4@'},
-    { email: 'bturner@gmail.com' , password: 'qWeasd789#'},
-    { email: 'dfoster@gmail.com' , password: 'zaq12wSx$'},
-    { email: 'nkhan@gmail.com' , password: 'blueSky99%'},
-    { email: 'mlopez@email.com' , password: 'tryHarder56!'},
-    { email: 'kpatel@gmail.com' , password: 'randomPass23@'},
-    { email: 'zroberts@gmail.com' , password: 'UlTiMaTe123#'},
-    { email: 'swhite@gmail.com' , password: 'FootBall4Life$'},
-    { email: 'bgreen@gmail.com' , password: 'baskeTball98&'},
-    { email: 'tthomas@gmail.com' , password: 'SunShine987!'},
-    { email: 'rmitchell@gmail.com' , password: 'Challenge56@'},
-    { email: 'pallen@gmail.com' , password: 'SecuRity12$'},
-    { email: 'egonzales@gmail.com' , password: 'Strong4Ever#'},
-    { email: 'jmartin@gmail.com' , password: 'Pa$$w0rd12'},
-    { email: 'fyoung@gmail.com' , password: 'WinterisHere!'},
-    { email: 'testUser@gmail.com', password: 'testUser1sB3st!'},
-    { email: 'FoFFan1956@gmail.com', password: 'FoFTh3B3stG4me?'}
-  ]
+  async login(email: string, password: string): Promise<any> {
+    const loginCreds = { email, password };
 
-  constructor() { }
+    try {
+      const response = await fetch(`${this.url}/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(loginCreds)
+      });
 
-  adminLoginFunc(email: string, password: string): boolean {
-    return this.adminLogin.some(admin => admin.email === email && admin.password === password);
+      if (!response.ok) {
+        const error = await response.text();
+        throw new Error(`Error occured: ${response.status} - ${error}`);
+      }
+
+      const data = await response.json();
+      console.log('User data with JWT token: ', data);
+      
+      localStorage.setItem('token', data.result.jwt);
+      this.authenticatedSubject.next(true);
+
+      return data;
+    } catch (error) {
+      console.error('Error logging in: ', error);
+      throw error;
+    }
   }
 
-  userLoginFunc(email: string, password: string): boolean {
-    if(this.userLogin.some(user => user.email === email && user.password === password)) {
-      return true;
+  logOut(): void {
+    localStorage.removeItem('token');
+    this.authenticatedSubject.next(false);
+  }
+
+  private tokenDecoder(token: string): any {
+    try {
+      return jwtDecode(token);
+    } catch (error) {
+      console.error('Error trying to decode JWT token: ', error);
+      return null;
     }
+  }
 
-    const users: User[] = JSON.parse(localStorage.getItem('users') || '[]');
+  getUserId(): number | null {
+    const token = localStorage.getItem('token');
+    if(!token) return null;
 
-    return users.some(user => user.email === email && user.password === password);
+    const JWTToken = this.tokenDecoder(token);
+    return JWTToken?.id ? parseInt(JWTToken.id, 10) : null;
+  }
+
+  getIsAdmin(): boolean {
+    const token = localStorage.getItem('token');
+    if(!token) return false;
+
+    const JWTToken = this.tokenDecoder(token);
+    return JWTToken?.isAdmin === true;
   }
 }

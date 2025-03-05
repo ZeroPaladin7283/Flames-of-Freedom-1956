@@ -8,13 +8,14 @@
 }
 
 .title {
-    font-size: 80px;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    margin-top: 11%;
+    font-size: 5rem;
     color: #D8CEC5;
-    font-family: Jacques Francois;
+    font-family: "Jacques Francois", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 38vh);
+    width: 100%;
 }
 
 footer {
@@ -31,125 +32,14 @@ footer {
     margin-left: 50px;
     text-decoration: none;
     color: #D8CEC5;
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 #downloadButton:hover {
-    color: #D8CEC5;
+    color: #D8CEC5 !important;
     background-color: #3A69B6;
 }
 
-/* 
-@media (max-width: 2556px) {
-    .title {
-        height: calc(100vh - 450px);
-    }
-
-    .title p {
-        font-size: 7.5em;
-    }
-
-    #homeFooter {
-        padding: 40px;
-    }
-
-    #downloadButton {
-        padding: 30px 60px;
-        font-size: 60px;
-        border-radius: 70px;
-    }
-
-    #homeFooter .social p a {
-        font-size: 60px;
-    }
+.social a {
+    margin-right: 1.5rem;
 }
-
-
-@media (max-width: 1024px) {
-    .title {
-        height: calc(100vh - 350px);
-    }
-
-    .title p {
-        font-size: 5em;
-    }
-
-    #downloadButton {
-        padding: 20px 40px;
-        font-size: 40px;
-        margin-left: 20px;
-        border-radius: 50px;
-    }
-
-    #homeFooter {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 30px;
-    }
-
-    #homeFooter .social p {
-        font-size: 35px;
-        padding-right: 0;
-        justify-content: center;
-    }
-}
-
-
-@media (max-width: 768px) {
-    .title {
-        height: auto;
-        padding: 50px 20px;
-    }
-
-    .title p {
-        font-size: 3em;
-    }
-
-    #downloadButton {
-        padding: 15px 30px;
-        font-size: 25px;
-        margin-left: 0;
-        border-radius: 40px;
-        width: 80%;
-    }
-
-    #homeFooter {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        position: relative;
-    }
-
-    #homeFooter .social p {
-        font-size: 30px;
-        padding-right: 0;
-        justify-content: center;
-    }
-
-    #homeFooter .social p a {
-        font-size: 30px;
-    }
-}
-
-
-@media (max-width: 480px) {
-    .title p {
-        font-size: 2.5em;
-    }
-
-    #downloadButton {
-        font-size: 20px;
-        padding: 10px 20px;
-        width: 90%;
-    }
-
-    #homeFooter .social p {
-        font-size: 25px;
-    }
-
-    #homeFooter .social p a {
-        font-size: 25px;
-    }
-}
-*/

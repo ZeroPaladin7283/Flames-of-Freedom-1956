@@ -67,93 +67,32 @@ h1 {
 
 .communityContent .row .text a:hover {
     color: #63d157 !important;
+    cursor: pointer;
 }
 
-/* @media (max-width: 1024px) {
-    .communityContent {
-        width: 90%;
-        padding: 40px;
+@media (min-width: 2560px) {
+    .user img {
+        border: 0.5rem solid #AFECA9;
+    }
+
+    .user p {
+        font-size: 3rem;
     }
 
     h1 {
-        font-size: 40px;
-    }
-
-    .user img {
-        width: 200px;
-    }
-
-    .communityContent .row .text {
-        font-size: 22px;
-    }
-
-    .communityContent .row .text a {
-        font-size: 30px;
-        width: 50%;
-    }
-}
-
-@media (max-width: 768px) {
-    .communityContent {
-        width: 95%;
-        padding: 30px;
-        border-radius: 50px;
-    }
-
-    h1 {
-        font-size: 35px;
-    }
-
-    .user img {
-        width: 180px;
-    }
-
-    .communityContent .row {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .communityContent .row .text {
-        font-size: 20px;
+        font-size: 4rem;
     }
 
     .communityContent .row .text img {
-        width: 100%;
-        max-width: 350px;
+        width: 35rem;
     }
 
-    .communityContent .row .text a {
-        font-size: 28px;
-        width: 70%;
+    .communityContent .row .text p {
+        font-size: 3rem;
+    }
+
+    .text a {
+        font-size: 4rem;
+        width: 50% !important;
     }
 }
-
-@media (max-width: 480px) {
-    .communityContent {
-        padding: 20px;
-        border-radius: 30px;
-    }
-
-    h1 {
-        font-size: 30px;
-    }
-
-    .user img {
-        width: 150px;
-    }
-
-    .communityContent .row .text {
-        font-size: 18px;
-    }
-
-    .communityContent .row .text img {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .communityContent .row .text a {
-        font-size: 25px;
-        width: 90%;
-    }
-} */

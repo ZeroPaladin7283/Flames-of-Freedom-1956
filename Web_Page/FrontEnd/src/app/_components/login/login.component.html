@@ -1,27 +1,57 @@
 <div class="secondbg">
     <app-navbar></app-navbar>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <form action="" id="loginForm">
-                    <h1>Login</h1>
-                    <div class="input-group">
-                        <label for="user">E-mail</label>
-                        <input type="text" [(ngModel)]="loginUser" name="user" id="user" placeholder="Enter your e-mail" required="true" autofocus>
-                    </div>
-                    <div class="input-group" id="pass">
-                        <label for="password">Password</label>
-                        <input type="password" [(ngModel)]="loginPass" name="password" id="password" placeholder="*********" required="true">
-                    </div>
-                    <a href="#" id="forgot">Forgot Password?</a>
-                    <div class="error">{{errorMessage}}</div>
-                    <button type="button" id="login" (click)="onLogin()">Login</button>
-                    <p id="login-register">
-                        Dont't have an account? <a href="/register">Register one here</a>
-                    </p>
-                </form>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <form [formGroup]="loginForm">
+                        <h1>
+                            Login to your account
+                        </h1>
+                        <div class="input-group">
+                            <label for="user">
+                                E-mail
+                            </label>
+                            <input type="text" formControlName="email" placeholder="Enter your e-mail" required [ngClass]="getEmailClass()">
+                            <div *ngIf="email?.touched && email?.invalid" class="error">
+                                <div *ngIf="email?.errors?.['required']">
+                                    Email is required
+                                </div>
+                                <div *ngIf="email?.errors?.['email']">
+                                    Invalid email format
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group" id="pass">
+                            <label for="password">
+                                Password
+                            </label>
+                            <input
+                            type="password"
+                            formControlName="password" placeholder="*********" required [ngClass]="getPasswordClass()">
+                            <div *ngIf="password?.touched && password?.invalid" class="error">
+                                <div *ngIf="password?.errors?.['required']">
+                                    Password is required
+                                </div>
+                                <div *ngIf="password?.errors?.['minlength']">
+                                    Password must be at least 8 characters
+                                </div>
+                            </div>
+                        </div>
+                        <a routerLink="/login" id="forgot">
+                            Forgot Password
+                        </a>
+                        <div *ngIf="errorMessage" class="error">
+                            {{ errorMessage }}
+                        </div>
+                        <button type="button" id="login" (click)="onLogin()">
+                            Login
+                        </button>
+                        <p id="login-register">
+                            Don't have an account? <a routerLink="/register">Register one here</a>
+                        </p>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
     <app-footer></app-footer>
 </div>

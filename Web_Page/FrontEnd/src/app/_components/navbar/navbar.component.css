@@ -1,122 +1,48 @@
 nav {
     background-color: rgba(46, 39, 34, 0.676);
-    padding: 20px;
+    padding: 1.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 #logo {
-    height: 125px;
-    margin-left: 50px;
+    height: 8rem;
+    margin-left: 3rem;
 }
 
-#navbarNav {
-    display: flex;
+.navbar-toggler {
+    background-color: #3A69B6;
+    font-size: 1.5rem;
+    border: none;
+    margin-right: 3rem;
+}
+
+.navbar-toggler:focus, .navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+}
+
+#navbarSupportedContent {
     justify-content: center;
-}
-
-#navbarNav ul li{
-    margin: 0 15px;
-}
-
-#navbarNav ul li a {
-    color: #D8CEC5;
     font-size: 40px;
+}
+
+#navbarSupportedContent ul li a {
+    margin: 0 20px;
+    color: #D8CEC5;
     font-family: Callistoga;
 }
 
 #loggedOut {
-    height: 125px;
-    margin-right: 50px;
-    border-radius: 75px;
+    height: 8rem;
+    margin-right: 3rem;
+    border-radius: 50%;
+    border: 0.3rem solid #AFECA9;
 }
 
-/*
-@media (max-width: 2556px) {
-    #logo {
-        height: 200px;
-    }
-
-    #navbarNav ul li a {
-        font-size: 55px;
-    }
-
-    #loggedOut {
-        height: 200px;
-    }
+#loggedOut:hover {
+    border: 0.3rem solid #63D157 !important;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
 }
-
-@media (max-width: 1024px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
-        padding: 15px;
-    }
-
-    #logo {
-        height: 80px;
-        margin: 0 auto;
-    }
-
-    #navbarNav {
-        width: 100%;
-        justify-content: center;
-    }
-
-    #navbarNav ul {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    #navbarNav ul li {
-        margin: 10px;
-    }
-
-    #navbarNav ul li a {
-        font-size: 30px;
-    }
-
-    #loggedOut {
-        height: 80px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
-
-    #logo {
-        height: 70px;
-        margin-bottom: 10px;
-    }
-
-    #navbarNav {
-        width: 100%;
-    }
-
-    #navbarNav ul {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    #navbarNav ul li {
-        margin: 5px 0;
-    }
-
-    #navbarNav ul li a {
-        font-size: 25px;
-    }
-
-    #loggedOut {
-        height: 70px;
-        margin-top: 10px;
-    }
-}
-*/

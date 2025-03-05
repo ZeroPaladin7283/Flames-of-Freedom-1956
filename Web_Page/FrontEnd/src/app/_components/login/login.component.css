@@ -10,14 +10,14 @@ form {
     width: 700px;
     margin: 100px auto;
     border-radius: 20px;
-    padding: 50px;
+    padding: 3.5rem;
     background-color: #D8CEC5;
     text-align: center;
-    font-size: 25px;
+    font-size: 2rem;
 }
 
 h1 {
-    font-size: 65px;
+    font-size: 3.5rem;
 }
 
 .input-group {
@@ -25,7 +25,7 @@ h1 {
     flex-direction: column;
     padding: 50px 0 0 25px;
     margin: 0 auto;
-    width: 500px;
+    width: 100%;
 }
 
 label {
@@ -43,25 +43,17 @@ input:focus {
     outline: 3px solid #3A69B6;
 }
 
-textarea {
-    height: 150px;
-    border-radius: 20px !important;
-    padding: 10px;
-}
-
-textarea:focus {
-    outline: 3px solid #3A69B6;
-}
-
 #forgot {
     display: flex;
-    font-size: 30px;
-    padding-top: 10px;
-    padding-left: 80px;
+    font-size: 2.5rem;
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+    color: #405A85;
 }
 
 #forgot:hover {
-    color: rgb(19, 89, 219) !important;
+    color: #3A69B6 !important;
+    cursor: pointer;
 }
 
 button {
@@ -82,12 +74,19 @@ button:hover {
 }
 
 #login-register {
-    margin-top: 50px;
-    font-size: 30px;
+    margin-top: 4rem !important;
+    font-size: 2rem !important;
+    text-align: left;
+}
+
+#login-register a {
+    color: #405A85;
 }
 
 #login-register a:hover {
-    color: rgb(19, 89, 219) !important;
+    color: #3A69B6 !important;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
 }
 
 .error {
@@ -98,72 +97,76 @@ button:hover {
     font-family: Bookman Old Style;
 }
 
-/*
-
-.error {
-    color: rgb(171, 19, 19);
-    font-size: 30px;
-    text-align: center;
+.invalid {
+    border: 3px solid red;
 }
 
-@media (max-width: 2556px) {
+@media (min-width: 2560px) {
     form {
-        width: 900px;
-        padding: 70px;
+        width: 50rem;
+        font-size: 3rem;
+        padding: 4rem 4rem;
+        border-radius: 4rem;
     }
-
+    
+    h1 {
+        font-size: 3.5rem;
+    }
+    
     .input-group {
-        width: 600px;
-        font-size: 30px;
-    }
-
-    form button {
-        width: 400px;
-        font-size: 40px;
-    }
-}
-
-@media (max-width: 1024px) {
-    form {
-        width: 80%;
-        padding: 40px;
-    }
-
-    .input-group {
-        width: 90%;
-        font-size: 22px;
-        padding: 30px 0 0 15px;
-    }
-
-    form button {
-        width: 80%;
-        font-size: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    form {
-        width: 90%;
-        padding: 30px;
-    }
-
-    .input-group {
+        padding: 5rem 0 0 1.5rem;
         width: 100%;
-        font-size: 20px;
-        padding: 20px 0 0 10px;
+    }
+    
+    input {
+        padding: 1rem;
+        font-size: 2.4rem;
+        border-radius: 4rem !important;
     }
 
-    form button {
-        width: 100%;
-        font-size: 25px;
+    input:focus {
+        border:0.25rem solid #3A69B6;
     }
-
+    
     #forgot {
-        font-size: 20px;
-        margin-bottom: 30px;
+        font-size: 2.5rem;
+        padding-top: 1.5rem;
+        padding-left: 1rem;
+        margin-bottom: 4rem;
+        width: 21rem;
     }
-
+    
+    #forgot:hover {
+        color: rgb(19, 89, 219) !important;
+        cursor: pointer;
+    }
+    
+    button {
+        width: 35rem;
+        font-size: 4rem;
+        border-radius: 5rem;
+        font-weight: bold;
+        border: none;
+        background-color: #405A85;
+        color: #D8CEC5;
+    }
+    
+    #login-register {
+        margin-top: 50px;
+        font-size: 2.7rem !important;
+    }
+    
+    #login-register a:hover {
+        color: rgb(19, 89, 219) !important;
+    }
+    
     .error {
-        font-size: 25px;
+        color: rgb(171, 19, 19);
+        font-size: 3rem;
+        margin-bottom: 2rem;
     }
-} */
+    
+    .invalid {
+        border: 3px solid red;
+    }
+}

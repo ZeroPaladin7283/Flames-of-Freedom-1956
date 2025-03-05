@@ -67,105 +67,36 @@ h1 {
 
 .communityContent .row .text a:hover {
     color: #63d157 !important;
+    cursor: pointer;
 }
 
-/* 
-@media (max-width: 1024px) {
-    .communityContent {
-        width: 85%;
-        padding: 40px;
+hr {
+    opacity: 1;
+}
+
+@media (min-width: 2560px) {
+    .user img {
+        border: 0.5rem solid #AFECA9;
+    }
+
+    .user p {
+        font-size: 3rem;
     }
 
     h1 {
-        font-size: 40px !important;
-    }
-
-    .user img {
-        width: 200px !important;
-    }
-
-    .communityContent .row .user p {
-        font-size: 22px !important;
-    }
-
-    .communityContent .row .text p {
-        font-size: 22px !important;
+        font-size: 4rem;
     }
 
     .communityContent .row .text img {
-        width: 400px !important;
+        width: 35rem;
     }
 
-    .communityContent .row .text a {
-        font-size: 30px !important;
+    .communityContent .row .text p {
+        font-size: 3rem;
+    }
+
+    .text a {
+        font-size: 4rem;
         width: 50% !important;
     }
 }
-
-@media (max-width: 768px) {
-    .communityContent {
-        width: 90%;
-        padding: 30px;
-    }
-
-    h1 {
-        font-size: 30px !important;
-    }
-
-    .user img {
-        width: 180px !important;
-    }
-
-    .communityContent .row .user p {
-        font-size: 20px !important;
-    }
-
-    .communityContent .row .text p {
-        font-size: 18px !important;
-    }
-
-    .communityContent .row .text img {
-        width: 100% !important;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-
-    .communityContent .row .text a {
-        font-size: 28px !important;
-        width: 60% !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .communityContent {
-        width: 95%;
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 25px !important;
-    }
-
-    .user img {
-        width: 150px !important;
-    }
-
-    .communityContent .row .user p {
-        font-size: 18px !important;
-    }
-
-    .communityContent .row .text p {
-        font-size: 16px !important;
-    }
-
-    .communityContent .row .text img {
-        width: 100% !important;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .communityContent .row .text a {
-        font-size: 22px !important;
-        width: 80% !important;
-    }
-} */

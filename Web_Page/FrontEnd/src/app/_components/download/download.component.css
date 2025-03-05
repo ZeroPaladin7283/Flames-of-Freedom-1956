@@ -19,7 +19,7 @@
 }
 
 .downloadContent .summary {
-    padding-right: 100px;
+    padding: 1.5rem 3.5rem;
 }
 
 .downloadContent div #gameDownload {
@@ -39,8 +39,31 @@
     transition: 0.5s ease-in-out;
 }
 
+.carouselGallery {
+    padding: 1.5rem 3.5rem;
+}
+
 .carousel-inner img {
     height: 400px;
+}
+
+.carousel-control-prev-icon {
+    background-image: url('../../../assets/images/arrow.svg');
+    background-size: contain;
+    width: 2rem;
+    height: 2rem;
+    filter: saturate(500%) brightness(120%);
+    transform: rotate(180deg);
+    height: 100%;
+}
+
+.carousel-control-next-icon {
+    background-image: url('../../../assets/images/arrow.svg');
+    background-size: contain;
+    width: 2rem;
+    height: 2rem;
+    filter: saturate(500%) brightness(120%);
+    height: 100%;
 }
 
 .carouselPictures {
@@ -55,6 +78,7 @@
     width: 700px;
     display: flex;
     margin: 0 auto;
+    justify-content: center;
     margin-top: 100px;
     margin-bottom: 100px;
 }
@@ -75,6 +99,7 @@
     width: 100%;
     object-fit: cover;
     border: 5px solid #afeca9;
+    border-radius: 50%;
 }
 
 .review-profile {
@@ -83,13 +108,6 @@
     align-items: center;
     text-align: center;
     width: 30%;
-}
-
-.profile-pic {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 10px;
 }
 
 .username {
@@ -123,146 +141,89 @@
 }
 
 #homeButton:hover {
+    color: #D8CEC5 !important;
+}
+
+#homeButton:hover {
     color: #D8CEC5;
     background-color: #3a69b6;
 }
 
-/* @media (min-width: 2556px) {
-    .carouselGallery {
-        width: 45%;
-        margin: 0 auto;
-    }
-
-    #homeButton {
-        font-size: 50px;
-    }
-}
-
-@media (max-width: 1024px) {
+@media (min-width: 2560px) {
     .downloadContent {
-        padding: 50px;
-        font-size: 20px !important;
-        width: 90%;
+        margin: 5rem auto;
+        padding: 6.5rem;
+        font-size: 2.25rem;
+        text-align: justify;
+        border-radius: 4rem;
+        width: 75%;
     }
-
-    #gameDownload {
-        font-size: 25px;
-        padding: 12px 30px;
+    
+    .downloadContent div #gameDownload {
+        font-size: 2.8rem;
+        border-radius: 5rem;
+        margin-top: 2rem;
     }
-
-    .reviews {
-        flex-direction: column;
-        width: 90%;
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-
-    .review-container {
-        padding: 50px;
-        height: auto;
-        margin-bottom: 30px;
-    }
-
+    
     .carousel-inner img {
-        height: 300px !important;
+        height: 35rem;
     }
 
-    .review-profile {
-        width: 100%;
+    .carousel-control-prev-icon {
+        background-image: url('../../../assets/images/arrow.svg');
+        background-size: contain;
+        width: 4rem;
+        height: 4rem;
+        filter: saturate(500%) brightness(120%);
+        transform: rotate(180deg);
+        height: 100%;
     }
-
-    #homeButton {
-        padding: 15px 40px;
-        font-size: 25px;
-        margin-left: 0;
-        width: 80%;
+    
+    .carousel-control-next-icon {
+        background-image: url('../../../assets/images/arrow.svg');
+        background-size: contain;
+        width: 4rem;
+        height: 4rem;
+        filter: saturate(500%) brightness(120%);
+        height: 100%;
     }
-}
-
-@media (max-width: 768px) {
-    .downloadContent {
-        padding: 30px;
-        font-size: 18px !important;
-        width: 90%;
-    }
-
-    #gameDownload {
-        font-size: 20px;
-        padding: 10px 25px;
-    }
-
-    .carousel-inner img {
-        height: 250px !important;
-    }
-
+    
     .reviews {
-        flex-direction: column;
-        width: 90%;
+        width: 50rem;
+        margin: 8rem auto;
     }
-
+    
     .review-container {
-        padding: 30px;
-        height: auto;
+        width: 60rem;
+        height: 25rem;
+        border-radius: 4rem;
+        border: 0.5rem solid #AFECA9;
     }
-
+    
     .carousel-inner .profile-pic {
-        max-height: 120px !important;
+        border: 0.5rem solid #afeca9;
+    }
+    
+    .username {
+        font-size: 2rem;
+    }
+    
+    .review-text {
+        width: 65%;
+        font-size: 1.8rem;
+    }
+
+    footer {
+        height: 15rem;
     }
 
     #homeButton {
-        padding: 15px 35px;
-        font-size: 20px;
-        margin-left: 0;
-        width: 80%;
+        font-size: 4rem;
+        border-radius: 5rem;
+    }
+
+    .social a{
+        font-size: 4rem;
+        padding: 0 1.5rem;
     }
 }
-
-@media (max-width: 480px) {
-    .downloadContent {
-        padding: 20px;
-        font-size: 16px !important;
-        width: 95%;
-    }
-
-    #gameDownload {
-        font-size: 18px;
-        padding: 10px 20px;
-    }
-
-    .carousel-inner img {
-        height: 200px !important;
-    }
-
-    .reviews {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-
-    .review-container {
-        padding: 20px;
-        height: auto;
-    }
-
-    .profile-pic {
-        width: 60px !important;
-        height: 60px !important;
-    }
-
-    .username {
-        font-size: 18px !important;
-    }
-
-    .review-text {
-        width: 90%;
-        font-size: 16px !important;
-    }
-
-    #homeButton {
-        padding: 10px 30px;
-        font-size: 18px;
-        margin-left: 0;
-        width: 90%;
-    }
-} */

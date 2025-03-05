@@ -88,92 +88,55 @@
     transition: 0.8s;
 }
 
-/* @media (max-width: 1024px) {
-    .devContent {
-        padding: 80px;
-        width: 90% !important;
-    }
-
+@media (min-width: 2560px) {
     .dev img {
-        width: 200px !important;
+        border: 0.5rem solid #AFECA9;
     }
-
-    .devContent .row .dev p {
-        font-size: 20px !important;
+    
+    .dev  p{
+        font-size: 3rem;
     }
 
     .devContent .row .text {
-        padding-left: 100px;
-        padding-right: 100px;
-        font-size: 25px !important;
+        font-size: 3.5rem;
     }
 
     #admincontrols {
-        flex-direction: column !important;
-        font-size: 25px;
+        margin-top: 3rem !important;
     }
 
+    #admincontrols a {
+        display: flex;
+        width: 20rem !important;
+        justify-content: center !important;
+        font-size: 3rem;
+    }
+    
+    #editpost {
+        text-decoration: none;
+        color: #AFECA9;
+        padding: 0.5rem 2.5rem !important;
+    }
+    
+    #editpost:hover {
+        color: #63D157 !important;
+    }
+    
     #deletepost {
-        margin-left: 0 !important;
+        display: flex;
+        justify-content: end;
+        margin-left: 20rem;
+        text-decoration: none;
+        color: #D8CeC5;
+        padding: 0.5rem 2.5rem !important;
+        border-radius: 50px;
+    }
+    
+    #deletepost:hover {
+        color: #D8CeC5 !important;
+        background-color: rgb(175, 22, 22);
+        border-radius: 3rem;
+        padding: 1rem;
+        transition: 0.8s;
     }
 }
-
-@media (max-width: 768px) {
-    .devContent {
-        padding: 60px;
-        width: 100% !important;
-    }
-
-    .dev img {
-        width: 150px !important;
-    }
-
-    .devContent .row .dev p {
-        font-size: 18px !important;
-    }
-
-    .devContent .row .text {
-        padding-left: 50px;
-        padding-right: 50px;
-        font-size: 20px !important;
-    }
-
-    #editpost, #deletepost {
-        font-size: 22px;
-        padding: 8px 16px;
-    }
-
-    #admincontrols {
-        flex-direction: column !important;
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .devContent {
-        padding: 40px;
-    }
-
-    .dev img {
-        width: 120px !important;
-    }
-
-    .devContent .row .dev p {
-        font-size: 16px !important;
-    }
-
-    .devContent .row .text {
-        padding-left: 20px;
-        padding-right: 20px;
-        font-size: 18px !important;
-    }
-
-    #editpost, #deletepost {
-        font-size: 18px;
-        padding: 6px 12px;
-    }
-
-    #admincontrols {
-        font-size: 18px;
-    }
-} */

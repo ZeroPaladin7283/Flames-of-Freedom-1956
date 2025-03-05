@@ -2,107 +2,17 @@
     <app-navbar></app-navbar>
     <div class="container-fluid devContent">
         <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                <img [src]="gitUsers['admin2']?.avatar_url" alt="developer">
-                <p>
-                    {{ gitUsers['admin2']?.login }}
-                </p>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
-                <p>
-                    We implemented the key locations of the revolution, including Corvin Alley and the area around the
-                    Parliament, so that players can explore the true historical background of the events.
-                </p>
-            </div>
-
-            <hr>
-
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                <img [src]="gitUsers['admin1']?.avatar_url" alt="developer">
-                <p>
-                    {{ gitUsers['admin1']?.login }}
-                </p>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
-                <p>
-                    We fine-tuned the investigation mechanics so that players can uncover new evidence as the
-                    storyprogresses.
-                </p>
-            </div>
-
-            <hr>
-
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                <img [src]="gitUsers['admin1']?.avatar_url" alt="developer">
-                <p>
-                    {{ gitUsers['admin1']?.login }}
-                </p>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
-                <p>
-                    We added new, hidden clues that provide deeper insight into the events and characters of the
-                    revolution.
-                </p>
-            </div>
-
-            <hr>
-
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                <img [src]="gitUsers['admin1']?.avatar_url" alt="developer">
-                <p>
-                    {{ gitUsers['admin1']?.login }}
-                </p>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
-                <p>
-                    We optimized the game's performance, especially in larger, more crowded locations, to provide a
-                    smoother gaming experience.
-                </p>
-            </div>
-
-            <hr>
-
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                <img [src]="gitUsers['admin2']?.avatar_url" alt="developer">
-                <p>
-                    {{ gitUsers['admin2']?.login }}
-                </p>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
-                <p>
-                    We developed a new clue system that allows players to build logical chains and draw conclusions
-                    based on the evidence they discover.
-                </p>
-            </div>
-
-            <hr>
-
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                <img [src]="gitUsers['admin2']?.avatar_url" alt="developer">
-                <p>
-                    {{ gitUsers['admin2']?.login }}
-                </p>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
-                <p>
-                    We expanded the unarmed combat system so that players can protect themselves in various ways when
-                    they find themselves in tight situations.
-                </p>
-            </div>
-
-            <hr>
-
-            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                <img [src]="gitUsers['admin1']?.avatar_url" alt="developer">
-                <p>
-                    {{ gitUsers['admin1']?.login }}
-                </p>
-            </div>
-            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
-                <p>
-                    We added a new decision point that significantly impacts the outcome of the story and opens the path
-                    to multiple alternative endings.
-                </p>
+            <div *ngFor="let log of logList" class="row">
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
+                    <img *ngIf="gitUsers[log.userId]" [src]="gitUsers[log.userId]?.avatar_url" alt="{{ gitUsers[log.userId]?.login }}">
+                    <p> {{ gitUsers[log.userId]?.login }}</p>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
+                    <p>
+                        {{ log.log }}
+                    </p>
+                </div>
+                <hr>
             </div>
         </div>
     </div>
