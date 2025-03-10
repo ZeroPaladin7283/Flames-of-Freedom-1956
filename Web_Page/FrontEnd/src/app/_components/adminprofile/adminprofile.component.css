@@ -7,88 +7,225 @@
 }
 
 .profileCard {
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin: 100px auto;
     background-color: #D8CEC5;
     border-radius: 50px;
-    padding: 50px;
+    width: 50%;
+    font-size: 25px;
+    padding: 50px 150px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.input-group {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.profileCard h1 {
-    text-align: center;
+label {
+    font-size: 30px;
+    font-weight: bold;
 }
 
-.profileCard .input-group {
-    display: flex;
-    width: 100% !important;
+input {
+    width: 70%;
+    border-radius: 50px;
+    padding: 5px 15px;
+    border: none;
 }
 
-.profileCard .input-group label {
-    font-size: 30px !important;
+input:focus {
+    outline: 3px solid #3A69B6;
 }
 
-.profileCard .input-group input {
-    width: 50% !important;
+textarea {
+    width: 70%;
+    border-radius: 15px;
+    padding: 5px 15px;
+    min-height: 100px;
+    border: none;
 }
 
-.profileCard .input-group textarea {
-    width: 50% !important;
+textarea:focus {
+    outline: 3px solid #3A69B6;
 }
 
-.profileCard .input-group img {
-    width: 150px !important;
+img {
+    width: 150px;
 }
 
-.profileCard .input-group a {
-    margin-left: 25px;
-    font-size: 30px !important;
+a {
+    font-size: 30px;
     color: #3D3D3D;
+    text-decoration: none;
 }
 
-.profileCard .input-group a:hover {
+a:hover {
     color: #3D3D3D !important;
 }
 
-.profileCard .buttons {
-    display: flex;
-    flex-direction: row;
-    height: 150px !important;
-    margin: 0 auto;
-    align-items: center;
-}
-
-.profileCard .buttons div{
-    width: 350px !important;
+.buttons {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    gap: 15px;
+    margin-top: 30px;
 }
 
-.profileCard .buttons div a {
-    padding: 25px;
-    width: 250px !important;
+.buttons div {
+    width: 350px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 15px;
+    width: 100%;
     text-align: center;
     background-color: #405A85;
     color: #D8CEC5;
-    text-decoration: none;
-    font-size: 30px !important;
+    font-size: 25px;
     font-weight: bold;
     border-radius: 15px;
+    border: none;
 }
 
-.profileCard .buttons div a:hover {
-    background-color: #3a69b6;
-    color: #D8CEC5 !important;
+#logout:hover {
+    background-color: #3A69B6;
+    color: #D8CEC5;
+    transition: 0.5s ease-in-out;
 }
 
-.profileCard .buttons .save a {
-    background-color: #6767678f;
+#save {
+    background-color: #8b8b8b;
 }
 
-.profileCard .buttons .save a:hover {
-    background-color: #6767678f;
+#hover {
+    background-color: #6767678F;
+}
+
+@media (min-width: 2560px) {
+    .profileCard {
+        margin: 7rem auto;
+        border-radius: 3rem;
+        width: 35%;
+        padding: 3rem 5rem;
+    }
+    
+    h1 {
+        font-size: 4rem;
+        margin-bottom: 3rem;
+    }
+    
+    .input-group {
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+    
+    label {
+        font-size: 2.3rem;
+    }
+    
+    input {
+        width: 90%;
+        border-radius: 3rem;
+        padding: 1rem 1rem;
+    }
+    
+    input:focus {
+        outline: 0.35rem solid #3A69B6;
+    }
+    
+    textarea {
+        width: 90%;
+        border-radius: 1rem;
+        padding: 0.5rem 1rem;
+        min-height: 10rem;
+    }
+    
+    textarea:focus {
+        outline: 0.35rem solid #3A69B6;
+    }
+    
+    img {
+        width: 15rem;
+    }
+
+    a.profPic {
+        display: block;
+        width: 10%;
+    }
+
+    .bi-upload {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        gap: 1.5rem;
+        background-color: #405A85;
+        width: 16rem;
+        margin-top: 1.8rem;
+        padding: 0.5rem 1.8rem;
+        border-radius: 5rem;
+        color: #D8CEC5;
+        font-weight: bold;
+        margin-bottom: 5rem;
+        margin-left: -0.5rem;
+    }
+
+    .bi-upload:hover {
+        background-color: #3A69B6;
+        transition: 0.5s ease-in-out;
+    }
+    
+    a {
+        font-size: 2.5rem;
+        color: #3D3D3D;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        color: #3D3D3D !important;
+    }
+    
+    .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+    
+    .buttons div {
+        width: 25rem;
+        display: flex;
+        justify-content: center;
+    }
+    
+    button {
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+        background-color: #405A85;
+        color: #D8CEC5;
+        font-size: 25px;
+        font-weight: bold;
+        border-radius: 15px;
+        border: none;
+    }
+    
+    #logout:hover {
+        background-color: #3A69B6;
+        color: #D8CEC5;
+        transition: 0.5s ease-in-out;
+    }
+    
+    #save {
+        background-color: #8b8b8b;
+    }
+    
+    #hover {
+        background-color: #6767678F;
+    }
 }

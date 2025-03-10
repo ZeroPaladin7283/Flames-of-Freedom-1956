@@ -5,7 +5,7 @@
             <div class="col-12">
                 <form action="">
                     <h1>Contact Us</h1>
-                    <p>Please write your message below to contact us</p>
+                    <p>Please write your message below to contact our staff</p>
                     <div class="input-group">
                         <label for="username">Username</label>
                         <input type="text" [(ngModel)]="contactUsername" name="username" id="username"
@@ -19,8 +19,8 @@
                     <div class="input-group">
                         <label for="message">Message</label>
                         <textarea name="message" [(ngModel)]="contactMessage" id="message" required="true"></textarea>
-                        <div class="error">{{errorMessage}}</div>
                     </div>
+                    <div class="error">{{errorMessage}}</div>
                     <button type="submit" id="submit" (click)="onSubmit()">Submit</button>
                 </form>
             </div>

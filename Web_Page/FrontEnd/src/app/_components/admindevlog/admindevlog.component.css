@@ -9,75 +9,75 @@
 .devContent {
     background-color: rgba(61, 61, 61, 0.421);
     padding: 100px;
-    width: 80% !important;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
     margin-bottom: 100px;
     border-radius: 75px;
+    color: #D8CEC5;
 }
 
 .devContent .row div {
     margin-top: 50px;
     margin-bottom: 50px;
+    font-size: 35px;
+}
+
+.dev {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .dev img {
-    width: 250px !important;
-    border: 5px solid #afeca9 !important;
-    border-radius: 50%;
-    display: flex;
+    width: 250px;
+    border: 5px solid #AFECA9;
+    border-radius: 150px;
     margin: 0 auto;
 }
 
 .devContent .row .dev p {
-    color: #D8CeC5;
-    font-size: 25px;
+    text-align: center;
     margin-top: 20px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
 }
 
 .devContent .row .text {
-    padding-left: 150px;
-    padding-right: 150px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    font-size: 30px !important;
     display: flex;
-    align-items: center;
+    padding-left: 100px;
     text-align: justify;
+    align-items: center;
     flex-direction: column;
-    color: #D8CeC5;
 }
 
 #admincontrols {
     display: flex;
-    flex-direction: row !important;
-    margin-top: 50px !important;
-    font-size: 35px;
-    padding: 10px !important;
+    flex-direction: row;
+    margin-top: 50px;
+    font-size: 30px;
+    padding: 10px;
 }
 
 #editpost {
-    text-decoration: none !important;
-    color: #D8CeC5 !important;
+    text-decoration: none;
+    color: #D8CeC5;
     padding: 10px 20px;
 }
 
 #editpost:hover {
-    color: #afeca9 !important;
+    color: #afeca9;
 }
 
 #deletepost {
     display: flex;
-    justify-content: end !important;
-    margin-left: 300px !important;
-    text-decoration: none !important;
+    justify-content: end;
+    margin-left: 300px;
+    text-decoration: none;
     color: #D8CeC5;
     padding: 10px 20px;
+    border-radius: 50px;
 }
 
 #deletepost:hover {
@@ -85,4 +85,58 @@
     background-color: rgb(175, 22, 22);
     padding: 10px 20px;
     border-radius: 50px;
+    transition: 0.8s;
+}
+
+@media (min-width: 2560px) {
+    .dev img {
+        border: 0.5rem solid #AFECA9;
+    }
+    
+    .dev  p{
+        font-size: 3rem;
+    }
+
+    .devContent .row .text {
+        font-size: 3.5rem;
+    }
+
+    #admincontrols {
+        margin-top: 3rem !important;
+    }
+
+    #admincontrols a {
+        display: flex;
+        width: 20rem !important;
+        justify-content: center !important;
+        font-size: 3rem;
+    }
+    
+    #editpost {
+        text-decoration: none;
+        color: #AFECA9;
+        padding: 0.5rem 2.5rem !important;
+    }
+    
+    #editpost:hover {
+        color: #63D157 !important;
+    }
+    
+    #deletepost {
+        display: flex;
+        justify-content: end;
+        margin-left: 20rem;
+        text-decoration: none;
+        color: #D8CeC5;
+        padding: 0.5rem 2.5rem !important;
+        border-radius: 50px;
+    }
+    
+    #deletepost:hover {
+        color: #D8CeC5 !important;
+        background-color: rgb(175, 22, 22);
+        border-radius: 3rem;
+        padding: 1rem;
+        transition: 0.8s;
+    }
 }

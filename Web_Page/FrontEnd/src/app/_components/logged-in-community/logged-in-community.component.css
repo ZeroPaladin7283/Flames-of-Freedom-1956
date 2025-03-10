@@ -9,56 +9,90 @@
 .communityContent {
     background-color: rgba(61, 61, 61, 0.421);
     padding: 50px;
-    width: 80% !important;
+    width: 80%;
+    margin: 100px auto;
+    border-radius: 75px;
+    display: flex;
+    justify-content: center;
+    color: #D8CEC5;
+    flex-direction: column;
+    font-size: 35px;
+}
+
+.user {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    border-radius: 75px;
-    color: #D8CeC5;
 }
 
 .user img {
-    width: 250px !important;
-    border: 5px solid #afeca9 !important;
-    border-radius: 50%;
-    display: flex;
+    width: 250px;
+    border: 5px solid #AFECA9;
+    border-radius: 150px;
     margin: 0 auto;
-    margin-bottom: 25px;
 }
 
 .communityContent .row .user p {
-    display: flex;
-    justify-content: center;
-    font-size: 25px !important;
-    font-weight: bold;
-    color: #D8CeC5;
-    margin-bottom: 25px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .communityContent .row .text {
     display: flex;
-    font-size: 25px !important;
     flex-direction: column;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 50px;
 }
 
 .communityContent .row .text p {
     text-align: justify;
-} 
+    margin-bottom: 50px;
+}
 
 .communityContent .row .text img {
-    width: 450px !important;
-    display: flex;
+    width: 450px;
     margin: 0 auto;
-    margin-top: 50px;
     margin-bottom: 50px;
 }
 
 .communityContent .row .text a {
-    font-size: 35px !important;
-    width: 30% !important;
     text-decoration: none;
-    color: #D8CeC5;
-    margin-bottom: 50px;
+    width: 40%;
+    color: #AFECA9;
+}
+
+.communityContent .row .text a:hover {
+    color: #63d157 !important;
+    cursor: pointer;
+}
+
+@media (min-width: 2560px) {
+    .user img {
+        border: 0.5rem solid #AFECA9;
+    }
+
+    .user p {
+        font-size: 3rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    .communityContent .row .text img {
+        width: 35rem;
+    }
+
+    .communityContent .row .text p {
+        font-size: 3rem;
+    }
+
+    .text a {
+        font-size: 4rem;
+        width: 50% !important;
+    }
 }

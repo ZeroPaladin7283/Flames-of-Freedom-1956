@@ -1,91 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 /* Universal Settings */
-body {
-    background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("assets/images/background.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position-x: center;
-    transform: none;
-    margin: 0;
-    padding: 0;
-}
-
-#current a{
-    border-bottom: 3px solid #D8CEC5;
-}
-
-#current a:hover{
-    border-bottom: 3px solid #afeca9;
-}
-
 hr {
-    border: 3.5px solid #D8CeC5;
+    border: 3.5px solid #D8CeC5 !important;
     opacity: 1;
     border-radius: 5px;
     margin-bottom: 100px !important;
     margin-top: 50px !important;
-}
-
-form {
-    width: 700px !important;
-    margin: 0 auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    border-radius: 20px;
-    padding: 50px;
-    background-color: #D8CEC5;
-    text-align: center;
-}
-
-form p {
-    font-size: 25px !important;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    padding: 50px 0px 0px 25px;
-    font-size: 25px !important;
-    margin: 0 auto;
-    width: 500px !important;
-}
-
-.input-group label {
-    font-weight: bold;
-    text-align: left;
-}
-
-.input-group input {
-    border-radius: 20px !important;
-    padding: 10px;
-}
-
-.input-group textarea {
-    height: 150px !important;
-    border-radius: 20px !important;
-    padding: 10px;
-}
-
-form button {
-    width: 350px !important;
-    font-size: 35px !important;
-    padding: 10px 30px;
-    border-radius: 15px;
-    margin-top: 30px;
-    font-weight: bold;
-    border: none;
-    background-color: #405A85;
-    color: #D8CEC5;
-}
-
-form button:hover {
-    background-color: #3a69b6;
-    transition: 0.5s ease-in-out;
-}
-
-h1 {
-    font-size: 50px !important;
 }
 
 a:hover {

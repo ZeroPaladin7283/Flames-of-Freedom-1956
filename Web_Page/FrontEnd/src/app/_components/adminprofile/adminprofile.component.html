@@ -9,11 +9,10 @@
                     <label for="username">Username</label>
                     <div class="edit">
                         <input type="text" [(ngModel)]="profileUser" name="username" id="username"
-                            placeholder="ShadowFoxy0819" required="true"><a href=""><i
+                            placeholder="ShadowFoxy0819" required="true" autofocus><a href=""><i
                                 class="bi bi-pencil-square"></i></a>
                     </div>
                     <div class="error"></div>
-                    <p>{{profileUser}}</p>
                 </div>
                 <div class="input-group">
                     <label for="email">E-mail</label>
@@ -23,7 +22,6 @@
                                 class="bi bi-pencil-square"></i></a>
                     </div>
                     <div class="error"></div>
-                    <p>{{profileEmail}}</p>
                 </div>
                 <div class="input-group">
                     <label for="password">Password</label>
@@ -32,7 +30,6 @@
                             placeholder="*********" required="true"><a href=""><i class="bi bi-pencil-square"></i></a>
                     </div>
                     <div class="error"></div>
-                    <p>{{profilePass}}</p>
                 </div>
                 <div class="input-group">
                     <label for="description">Description</label>
@@ -41,29 +38,20 @@
                                 class="bi bi-pencil-square"></i></a>
                     </div>
                     <div class="error"></div>
-                    <p>{{profileDesc}}</p>
                 </div>
                 <div class="input-group">
                     <label for="profile_pic">Profile Picture</label>
                     <div class="edit">
-                        <img src="ZeroPaladin7283 pfp.png" alt="profile_pic"><a href=""><i class="bi bi-upload"></i></a>
+                        <img src="ZeroPaladin7283 pfp.png" alt="profile_pic"><a href="" class="profPic"><i class="bi bi-upload">Upload</i></a>
                     </div>
                 </div>
                 <div class="buttons">
-                    <div class="logout">
-                        <a href="/home">
-                            Logout
-                        </a>
-                    </div>
-                    <div class="save">
-                        <a href="/adminprofile">
-                            Save Changes
-                        </a>
-                    </div>
+                    <button type="button" id="logout" (click)="onLogout()">Logout</button>
+                    <button type="button" disabled id="save">Save</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <app-loggedinfooter></app-loggedinfooter>
+    <app-footer></app-footer>
 </div>

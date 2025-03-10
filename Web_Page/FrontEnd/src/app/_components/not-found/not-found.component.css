@@ -1,0 +1,61 @@
+.notFoundBg {
+    background-image: url(../../../assets/images/notfound.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
+    height: 100vh;
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+}
+
+p {
+    text-align: center;
+    margin: 50px auto;
+    font-size: 25px;
+}
+
+button {
+    background-color: #405A85;
+    padding: 10px 80px;
+    text-align: center;
+    border-radius: 50px;
+    margin-left: 50px;
+    text-decoration: none;
+    color: #D8CEC5;
+    font-size: 30px;
+    font-family: Jacques Francois;
+    font-weight: bold;
+    border: none;
+}
+
+button:hover {
+    color: #D8CEC5;
+    background-color: #3A69B6;
+    transition: 0.5s;
+}
+
+@media (min-width: 2560px) {
+    h1 {
+        font-size: 6rem;
+    }
+
+    p{
+        font-size: 3rem;
+    }
+
+    button {
+        font-size: 3rem;
+    }
+}
