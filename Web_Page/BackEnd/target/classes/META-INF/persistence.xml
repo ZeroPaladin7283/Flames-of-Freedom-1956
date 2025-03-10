@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.JavaMVCHelix_Flames_of_Freedom_1956_war_1.0-SNAPSHOTPU" transaction-type="JTA">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <jta-data-source>MySqlDS</jta-data-source>
+    <class>com.javamvchelix.flames_of_freedom_1956.model.Items</class>
+    <class>com.javamvchelix.flames_of_freedom_1956.model.Logs</class>
+    <class>com.javamvchelix.flames_of_freedom_1956.model.Tutorials</class>
+    <class>com.javamvchelix.flames_of_freedom_1956.model.Users</class>
+    <class>com.javamvchelix.flames_of_freedom_1956.model.BugCategory</class>
+    <class>com.javamvchelix.flames_of_freedom_1956.model.TutorialsXItems</class>
+    <class>com.javamvchelix.flames_of_freedom_1956.model.Images</class>
+    <class>com.javamvchelix.flames_of_freedom_1956.model.Categories</class>
+    <class>com.javamvchelix.flames_of_freedom_1956.model.BugReports</class>
+    <class>com.javamvchelix.flames_of_freedom_1956.model.CommentRatings</class>
+    <class>com.javamvchelix.flames_of_freedom_1956.model.Comments</class>
+    <class>com.javamvchelix.flames_of_freedom_1956.model.Posts</class>
+    <class>com.javamvchelix.flames_of_freedom_1956.model.PostRatings</class>
+    <class>com.javamvchelix.flames_of_freedom_1956.model.Characters</class>
+    <class>com.javamvchelix.flames_of_freedom_1956.model.TutorialsXCharacters</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/flames_of_freedom?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="root"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="hibernate.hbm2ddl.auto" value="none"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
+    </properties>
+  </persistence-unit>
+</persistence>
