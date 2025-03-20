@@ -43,80 +43,17 @@
         <div class="row slider">
             <div class="col-12 reviews">
                 <div id="carouselExample reviewCarousel" class="carousel slide" data-bs-ride="carousel"
-                    data-bs-interval="5000">
+                    data-bs-interval="3500">
                     <div class="carousel-inner">
-                        <div class="carousel-item active carouselReviews">
+                        <div class="carousel-item active carouselReviews" *ngFor="let review of reviewList; let i = index" [class.active]="i === 0">
                             <div class="review-container">
                                 <div class="review-profile">
-                                    <img src="Default pfp.png" alt="Profile Picture" class="profile-pic">
-                                    <p class="username">Kristof0727</p>
+                                    <img [src]="review.profilePic" alt="Profile Picture" class="profile-pic">
+                                    <p class="username">{{ review.username }}</p>
                                 </div>
                                 <div class="review-text">
                                     <p>
-                                        "The story is captivating, with decisions having real consequences, and the
-                                        revolutionary atmosphere of Budapest is perfectly conveyed. The detective storyline
-                                        is full of exciting twists—it's a must for anyone who loves historical dramas!"
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item carouselReviews">
-                            <div class="review-container">
-                                <div class="review-profile">
-                                    <img src="Default pfp.png" alt="Profile Picture" class="profile-pic">
-                                    <p class="username">Work Money Repeat</p>
-                                </div>
-                                <div class="review-text">
-                                    <p>
-                                        "You just can't put it down! Every moment is filled with tension and emotion, and
-                                        the characters are so lifelike that you almost feel like you’re fighting alongside
-                                        them. Flames of Freedom: 1956 perfectly captures the essence of the revolution!"
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item carouselReviews">
-                            <div class="review-container">
-                                <div class="review-profile">
-                                    <img src="Default pfp.png" alt="Profile Picture" class="profile-pic">
-                                    <p class="username">SzBmester13</p>
-                                </div>
-                                <div class="review-text">
-                                    <p>
-                                        "A unique and unforgettable adventure! Flames of Freedom: 1956 is not just a game
-                                        but also a time-travel experience that transports you to the past. The atmosphere,
-                                        the music, and the meticulously crafted story keep every player glued to the
-                                        screen."
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item carouselReviews">
-                            <div class="review-container">
-                                <div class="review-profile">
-                                    <img src="Default pfp.png" alt="Profile Picture" class="profile-pic">
-                                    <p class="username">P1tor</p>
-                                </div>
-                                <div class="review-text">
-                                    <p>
-                                        "Stunning storytelling and visual design! It’s crafted down to the smallest details,
-                                        as if we were right in the midst of the revolution. Our choices truly matter, and
-                                        the game never lets us be bored for a single moment."
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item carouselReviews">
-                            <div class="review-container">
-                                <div class="review-profile">
-                                    <img src="Default pfp.png" alt="Profile Picture" class="profile-pic">
-                                    <p class="username">Ben</p>
-                                </div>
-                                <div class="review-text">
-                                    <p>
-                                        "A captivating, emotionally charged time-travel journey. The game perfectly balances
-                                        tension and drama while presenting exciting detective challenges. Flames of Freedom:
-                                        1956 is a true masterpiece in storytelling!"
+                                        {{ review.review }}
                                     </p>
                                 </div>
                             </div>

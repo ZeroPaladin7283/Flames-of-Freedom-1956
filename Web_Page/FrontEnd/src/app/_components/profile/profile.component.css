@@ -6,92 +6,107 @@
     background-attachment: fixed;
 }
 
-.profileCard {
-    margin: 100px auto;
+form {
+    width: 45rem;
+    margin: 6.5rem auto;
+    border-radius: 1.5rem;
+    padding: 3.5rem;
     background-color: #D8CEC5;
-    border-radius: 50px;
-    width: 50%;
-    font-size: 25px;
-    padding: 50px 150px;
+    text-align: center;
+    font-size: 2rem;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 50px;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
 }
 
 .input-group {
-    width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 3.5rem;
 }
 
 label {
-    font-size: 30px;
     font-weight: bold;
+    text-align: left;
 }
 
 input {
-    width: 70%;
-    border-radius: 50px;
-    padding: 5px 15px;
+    width: 100%;
+    border-radius: 3.5rem;
+    padding: 0.5rem 1.5rem;
     border: none;
+    background-color: white;
+    font-size: 2rem;
 }
 
 input:focus {
-    outline: 3px solid #3A69B6;
-}
-
-textarea {
-    width: 70%;
-    border-radius: 15px;
-    padding: 5px 15px;
-    min-height: 100px;
-    border: none;
+    outline: 0.3rem solid #3A69B6;
 }
 
 textarea:focus {
-    outline: 3px solid #3A69B6;
+    outline: 0.3rem solid #3A69B6;
+}
+
+.edit {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    align-items: center;
 }
 
 img {
-    width: 150px;
+    display: flex;
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    justify-content: left;
+    flex-direction: row;
 }
 
-a {
-    font-size: 30px;
+#change {
+    width: 10%;
+    height: 5%;
+    margin-left: 1rem;
+    background: none;
     color: #3D3D3D;
-    text-decoration: none;
+    font-size: 2.5rem;
 }
 
-a:hover {
+#change:hover {
     color: #3D3D3D !important;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
+    gap: 1rem;
+    margin-top: 2.5rem;
 }
 
 .buttons div {
-    width: 350px;
+    width: 22rem;
     display: flex;
     justify-content: center;
 }
 
 button {
-    padding: 15px;
+    padding: 1rem;
     width: 100%;
     text-align: center;
     background-color: #405A85;
     color: #D8CEC5;
-    font-size: 25px;
+    font-size: 1.5rem;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: 1rem;
     border: none;
+}
+
+#logout {
+    transition: 0.5s ease-in-out;
 }
 
 #logout:hover {
@@ -104,8 +119,19 @@ button {
     background-color: #8b8b8b;
 }
 
-#hover {
-    background-color: #6767678F;
+#save:disabled {
+    background-color: #8b8b8b !important;
+    transition: 0.5s ease-in-out;
+}
+
+#save:not(:disabled) {
+    background-color: #405A85;
+    transition: 0.5s ease-in-out;
+}
+
+#save:hover {
+    background-color: #3A69B6;
+    transition: 0.5s ease-in-out;
 }
 
 @media (min-width: 2560px) {

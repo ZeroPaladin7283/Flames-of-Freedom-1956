@@ -26,10 +26,10 @@ footer {
 
 #downloadButton {
     background-color: #405A85;
-    padding: 20px 50px;
+    padding: 1.25rem 3.125rem;
     text-align: center;
-    border-radius: 50px;
-    margin-left: 50px;
+    border-radius: 3.125rem;
+    margin-left: 3.125rem;
     text-decoration: none;
     color: #D8CEC5;
     font-size: 2rem;
@@ -42,4 +42,20 @@ footer {
 
 .social a {
     margin-right: 1.5rem;
+}
+
+@media screen and (min-width: 2560px) {
+    .title {
+        font-size: 9rem;
+        height: calc(100vh - 45vh);
+    }
+
+    #downloadButton {
+        font-size: 3.8rem;
+    }
+
+    .social a {
+        font-size: 4rem;
+        margin-right: 3rem;
+    }
 }

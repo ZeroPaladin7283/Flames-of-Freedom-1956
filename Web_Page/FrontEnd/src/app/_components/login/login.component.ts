@@ -29,32 +29,21 @@ export class LoginComponent implements OnInit{
 
   async onLogin(): Promise<void> {
     this.errorMessage = '';
-
-    if(this.loginForm.invalid) {
-      if(!this.loginForm.get('email')?.value || !this.loginForm.get('password')?.value) {
-        this.errorMessage = 'Please fill in all fields!';
-      } else {
-        this.errorMessage = 'Invalid email or password!';
-      }
+  
+    if (this.loginForm.invalid) {
+      this.errorMessage = 'Please fill in all fields!';
       return;
     }
-
+  
     try {
       const { email, password } = this.loginForm.value;
-      await this.loginService.login(email, password);
-
-      alert("Login successfull!");
-
-      const isAdmin = this.loginService.getIsAdmin();
-
-      if(isAdmin) {
-        this.router.navigate(['/adminhome']);
-      } else {
-        this.router.navigate(['/logged-in-home']);
-      }
+      const user = await this.loginService.login(email, password);
+  
+      alert('Login successful!');
+      this.router.navigate(['/logged-in-home']);
     } catch (error) {
-      console.error('Error logging in: ', error);
-      alert('Error logging in: Invalid email or password!')
+      console.error('Error logging in:', error);
+      this.errorMessage = 'Invalid email or password!';
     }
   }
 

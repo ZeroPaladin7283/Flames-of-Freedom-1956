@@ -20,6 +20,13 @@ h1 {
     font-size: 60px;
 }
 
+.error-gif {
+    display: block;
+    margin: 20px auto;
+    width: 300px;
+    height: auto;
+}
+
 p {
     text-align: center;
     margin: 50px auto;

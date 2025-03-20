@@ -11,7 +11,7 @@
                             <label for="user">
                                 E-mail
                             </label>
-                            <input type="text" formControlName="email" placeholder="Enter your e-mail" required [ngClass]="getEmailClass()">
+                            <input type="text" formControlName="email" placeholder="Enter your e-mail" required [ngClass]="getEmailClass()" autofocus>
                             <div *ngIf="email?.touched && email?.invalid" class="error">
                                 <div *ngIf="email?.errors?.['required']">
                                     Email is required
@@ -29,12 +29,9 @@
                             type="password"
                             formControlName="password" placeholder="*********" required [ngClass]="getPasswordClass()">
                             <div *ngIf="password?.touched && password?.invalid" class="error">
-                                <div *ngIf="password?.errors?.['required']">
-                                    Password is required
-                                </div>
-                                <div *ngIf="password?.errors?.['minlength']">
-                                    Password must be at least 8 characters
-                                </div>
+                                <div *ngIf="password?.errors?.['required']">Password is required</div>
+                                <div *ngIf="password?.errors?.['minlength']">Password must be at least 8 characters</div>
+                                <div *ngIf="password?.errors?.['maxlength']">Password maximum character length is 24</div>
                             </div>
                         </div>
                         <a routerLink="/login" id="forgot">
@@ -47,7 +44,7 @@
                             Login
                         </button>
                         <p id="login-register">
-                            Don't have an account? <a routerLink="/register">Register one here</a>
+                            Don't have an account? <a href="/register">Register one here</a>
                         </p>
                     </form>
                 </div>

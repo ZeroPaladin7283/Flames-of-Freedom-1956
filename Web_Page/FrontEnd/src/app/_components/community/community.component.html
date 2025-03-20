@@ -3,7 +3,7 @@
     <div class="container-fluid communityContent">
         <div class="row" *ngFor="let post of postList">
             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 user">
-                <img src="Default pfp.png" alt="user">
+                <img [src]="post.profilePic" alt="user">
                 <p>
                     {{ post.username }}
                 </p>
@@ -13,7 +13,7 @@
                 <p>
                     {{ post.content }}
                 </p>
-                <img [src]="post.filePath || 'missing.png'" alt="missingPicture">
+                <img *ngIf="post.image" [src]="post.image" alt="picture">
                 <a href="/login">
                     Login to see comments
                 </a>

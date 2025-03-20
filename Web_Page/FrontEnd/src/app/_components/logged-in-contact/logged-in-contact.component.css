@@ -7,30 +7,30 @@
 }
 
 form {
-    width: 700px;
-    margin: 100px auto;
-    border-radius: 20px;
-    padding: 50px;
+    width: 45rem;
+    margin: 6.5rem auto;
+    border-radius: 1.5rem;
+    padding: 3.5rem;
     background-color: #D8CEC5;
     text-align: center;
-    font-size: 25px;
+    font-size: 2rem;
 }
 
 h1 {
-    font-size: 65px;
+    font-size: 4.5rem;
 }
 
 p {
-    font-size: 40px;
-    margin-top: 30px;
+    font-size: 2.5rem;
+    margin-top: 2rem;
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
-    padding: 50px 0 0 25px;
     margin: 0 auto;
-    width: 500px;
+    width: 100%;
+    margin-bottom: 2.5rem;
 }
 
 label {
@@ -39,36 +39,36 @@ label {
 }
 
 input {
-    border-radius: 25px !important;
-    padding: 10px;
+    border-radius: 3.5rem !important;
+    padding: 1rem;
     border: none;
 }
 
 input:focus {
-    outline: 3px solid #3A69B6;
+    outline: 0.3rem solid #3A69B6;
 }
 
 textarea {
-    height: 150px;
-    border-radius: 20px !important;
-    padding: 10px;
+    height: 10rem;
+    border-radius: 1.5rem !important;
+    padding: 1rem;
 }
 
 textarea:focus {
-    outline: 3px solid #3A69B6;
+    outline: 0.3rem solid #3A69B6;
 }
 
 
 button {
-    width: 350px;
-    font-size: 35px;
-    padding: 10px 30px;
-    border-radius: 15px;
-    margin-top: 30px;
+    width: 22rem;
+    font-size: 2.3rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5rem;
+    margin-top: 2rem;
     font-weight: bold;
     border: none;
     background-color: #405A85;
-    color: #D8CEC5;
+    color: #e0d9d2;
 }
 
 button:hover {
@@ -78,8 +78,8 @@ button:hover {
 
 .error {
     color: rgb(171, 19, 19);
-    font-size: 40px;
-    margin-top: 20px;
+    font-size: 2.8rem;
+    margin-top: 1.5rem;
     text-align: center;
     font-family: Bookman Old Style;
 }

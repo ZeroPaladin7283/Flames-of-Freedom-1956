@@ -8,29 +8,33 @@
 
 .mediaContent {
     background-color: rgba(48, 47, 47, 0.568);
-    padding: 100px;
+    padding: 6.25rem;
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    border-radius: 75px;
+    margin-top: 6.25rem;
+    margin-bottom: 6.25rem;
+    border-radius: 4.7rem;
 }
 
 .mediaContent div {
-    font-size: 35px;
+    font-size: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #D8CEC5;
     text-align: justify;
-    padding: 20px;
+    padding: 1.5rem;
 }
 
 #galleryPic {
-    height: 350px;
-    width: 350px;
+    height: 22rem;
+    width: 22rem;
+}
+
+hr {
+    opacity: 1;
 }
 
 @media (min-width: 2560px){

@@ -8,15 +8,15 @@
 
 .communityContent {
     background-color: rgba(61, 61, 61, 0.421);
-    padding: 50px;
+    padding: 3.5rem;
     width: 80%;
-    margin: 100px auto;
-    border-radius: 75px;
+    margin: 6.5rem auto;
+    border-radius: 4.7rem;
     display: flex;
     justify-content: center;
     color: #D8CEC5;
     flex-direction: column;
-    font-size: 35px;
+    font-size: 2rem;
 }
 
 .user {
@@ -27,41 +27,45 @@
 }
 
 .user img {
-    width: 250px;
-    border: 5px solid #AFECA9;
-    border-radius: 150px;
+    width: 13rem;
+    height: 13rem;
+    border: 0.3rem solid #AFECA9;
+    border-radius: 50%;
     margin: 0 auto;
 }
 
 .communityContent .row .user p {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1.5rem;
+    font-size: 2.5rem;
 }
 
 .communityContent .row .text {
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    padding: 3.5rem;
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 3.5rem;
 }
 
 .communityContent .row .text p {
     text-align: justify;
-    margin-bottom: 50px;
+    margin-bottom: 3.5rem;
 }
 
 .communityContent .row .text img {
-    width: 450px;
+    width: 20rem;
+    max-height: 25rem;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 3.5rem;
 }
 
 .communityContent .row .text a {
     text-decoration: none;
-    width: 40%;
+    font-size: 2.5rem;
+    width: 45%;
     color: #AFECA9;
 }
 
@@ -74,9 +78,10 @@ hr {
     opacity: 1;
 }
 
-@media (min-width: 2560px) {
+@media screen and (min-width: 2560px) {
     .user img {
         border: 0.5rem solid #AFECA9;
+        width: 18rem;
     }
 
     .user p {
@@ -96,7 +101,7 @@ hr {
     }
 
     .text a {
-        font-size: 4rem;
+        font-size: 3.5rem;
         width: 50% !important;
     }
 }

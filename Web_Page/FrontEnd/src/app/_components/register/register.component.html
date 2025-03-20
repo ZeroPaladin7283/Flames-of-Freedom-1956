@@ -7,25 +7,25 @@
                     <h1>Register</h1>
                     <div class="input-group">
                         <label for="username">Username</label>
-                        <input type="text" [(ngModel)]="registerUsername" name="username" id="username" placeholder="exampleuser" required="true">
+                        <input type="text" [(ngModel)]="username" name="username" id="username" placeholder="exampleuser" required="true" autofocus>
                     </div>
                     <div class="input-group">
                         <label for="email">E-mail</label>
-                        <input type="email" [(ngModel)]="registerEmail" name="email" id="email" placeholder="example@example.com" required="true">
+                        <input type="email" [(ngModel)]="email" name="email" id="email" placeholder="example@example.com" required="true">
                     </div>
                     <div class="input-group">
                         <label for="password">Password</label>
-                        <input type="password" [(ngModel)]="registerPass" name="password" id="password" placeholder="*********" required="true">
+                        <input type="password" [(ngModel)]="password" name="password" id="password" placeholder="*********" required="true">
                     </div>
                     <div class="input-group">
                         <label for="cpassword">Confirm Password</label>
-                        <input type="password" [(ngModel)]="registerCPass" name="cpassword" id="cpassword" placeholder="*********" required="true">
+                        <input type="password" [(ngModel)]="cpassword" name="cpassword" id="cpassword" placeholder="*********" required="true">
                     </div>
                     <div class="input-group" id="bdselector">
                         <label for="birthday">Select your date of birth</label>
-                        <input type="date" [(ngModel)]="registerBDate" name="birthday" id="birthday">
-                        <div class="error">{{errorMessage}}</div>
+                        <input type="date" [(ngModel)]="dateOfBirth" name="birthday" id="birthday">
                     </div>
+                    <div class="error">{{errorMessage}}</div>
                     <button type="button" id="register" (click)="onRegister()">Register</button>
                     <p id="login-register">
                         Already have an account? <a href="/login">Login here</a>

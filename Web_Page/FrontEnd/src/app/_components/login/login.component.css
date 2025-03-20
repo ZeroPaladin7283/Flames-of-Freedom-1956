@@ -7,9 +7,9 @@
 }
 
 form {
-    width: 700px;
-    margin: 100px auto;
-    border-radius: 20px;
+    width: 45rem;
+    margin: 6.5rem auto;
+    border-radius: 1.5rem;
     padding: 3.5rem;
     background-color: #D8CEC5;
     text-align: center;
@@ -18,14 +18,20 @@ form {
 
 h1 {
     font-size: 3.5rem;
+    margin-bottom: 4rem;
+}
+
+p {
+    font-size: 2.5rem;
+    margin-top: 2rem;
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
-    padding: 50px 0 0 25px;
     margin: 0 auto;
     width: 100%;
+    margin-bottom: 3.5rem;
 }
 
 label {
@@ -34,38 +40,40 @@ label {
 }
 
 input {
-    border-radius: 25px !important;
-    padding: 10px;
+    border-radius: 1.5rem !important;
+    padding: 1rem;
     border: none;
 }
 
 input:focus {
-    outline: 3px solid #3A69B6;
+    outline: 0.3rem solid #3A69B6;
 }
 
 #forgot {
     display: flex;
-    font-size: 2.5rem;
-    padding-top: 1.5rem;
+    font-size: 2.3rem;
     padding-left: 1.5rem;
-    color: #405A85;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+    color: #3A69B6;
+    width: 50%;
 }
 
 #forgot:hover {
-    color: #3A69B6 !important;
+    color: rgb(19, 89, 219) !important;
     cursor: pointer;
 }
 
 button {
-    width: 350px;
-    font-size: 35px;
-    padding: 10px 30px;
-    border-radius: 15px;
-    margin-top: 50px;
+    width: 22rem;
+    font-size: 2.3rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5rem;
+    margin-top: 2rem;
     font-weight: bold;
     border: none;
     background-color: #405A85;
-    color: #D8CEC5;
+    color: #e0d9d2;
 }
 
 button:hover {
@@ -74,66 +82,65 @@ button:hover {
 }
 
 #login-register {
-    margin-top: 4rem !important;
-    font-size: 2rem !important;
-    text-align: left;
+    margin-top: 3.5rem;
+    font-size: 2rem;
 }
 
 #login-register a {
-    color: #405A85;
+    color: #3A69B6;
+    text-decoration: underline;
 }
 
 #login-register a:hover {
-    color: #3A69B6 !important;
-    transition: 0.5s ease-in-out;
+    color: rgb(19, 89, 219) !important;
     cursor: pointer;
 }
 
 .error {
     color: rgb(171, 19, 19);
-    font-size: 40px;
-    margin-top: 20px;
+    font-size: 2.8rem;
+    margin-top: 1.5rem;
     text-align: center;
     font-family: Bookman Old Style;
 }
 
 .invalid {
-    border: 3px solid red;
+    border: 0.3rem solid red;
 }
 
-@media (min-width: 2560px) {
+@media screen and (min-width: 2560px) {
     form {
-        width: 50rem;
+        width: 65rem;
         font-size: 3rem;
-        padding: 4rem 4rem;
+        padding: 4rem 6rem;
         border-radius: 4rem;
     }
     
     h1 {
-        font-size: 3.5rem;
+        font-size: 5rem;
+        margin-bottom: 4rem;
     }
     
     .input-group {
-        padding: 5rem 0 0 1.5rem;
+        padding: 4rem 0 0 1.5rem;
         width: 100%;
     }
-    
+
     input {
-        padding: 1rem;
-        font-size: 2.4rem;
+        padding: 1.5rem;
         border-radius: 4rem !important;
     }
 
     input:focus {
-        border:0.25rem solid #3A69B6;
+        border: 0.3rem solid #3A69B6;
     }
     
     #forgot {
-        font-size: 2.5rem;
+        font-size: 3rem;
         padding-top: 1.5rem;
         padding-left: 1rem;
         margin-bottom: 4rem;
-        width: 21rem;
+        width: 25rem;
     }
     
     #forgot:hover {
@@ -150,20 +157,24 @@ button:hover {
         background-color: #405A85;
         color: #D8CEC5;
     }
-    
+
     #login-register {
-        margin-top: 50px;
-        font-size: 2.7rem !important;
+        margin-top: 3rem;
+        font-size: 3rem;
+    }
+
+    #login-register a {
+        text-decoration: underline;
+    }
+
+    .error {
+        color: rgb(171, 19, 19);
+        font-size: 4rem;
+        margin-bottom: 2rem;
     }
     
     #login-register a:hover {
         color: rgb(19, 89, 219) !important;
-    }
-    
-    .error {
-        color: rgb(171, 19, 19);
-        font-size: 3rem;
-        margin-bottom: 2rem;
     }
     
     .invalid {

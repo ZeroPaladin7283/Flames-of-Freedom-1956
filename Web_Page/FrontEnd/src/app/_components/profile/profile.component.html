@@ -2,52 +2,43 @@
     <app-loggedinnavbar></app-loggedinnavbar>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 profileCard">
-                <h1>Profile information</h1>
-                <div class="input-group">
-                    <label for="username">Username</label>
-                    <div class="edit">
-                        <input type="text" [(ngModel)]="profileUser" name="username" id="username"
-                            placeholder="ShadowFoxy0819" required="true" autofocus><a href=""><i
-                                class="bi bi-pencil-square"></i></a>
+            <div class="col-12">
+                <form action="">
+                    <h1>Profile information</h1>
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <div class="edit">
+                            <input type="text" [(ngModel)]="newUsername" name="username" placeholder="FOFAdmin" id="username" autofocus>
+                        </div>
+                        <div class="error"></div>
                     </div>
-                    <div class="error"></div>
-                </div>
-                <div class="input-group">
-                    <label for="email">E-mail</label>
-                    <div class="edit">
-                        <input type="email" [(ngModel)]="profileEmail" name="email" id="email"
-                            placeholder="fof1956admin@gmail.com" required="true"><a href=""><i
-                                class="bi bi-pencil-square"></i></a>
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <div class="edit">
+                            <input type="email" [(ngModel)]="newEmail" name="email" placeholder="example@gmail.com" id="email">
+                        </div>
+                        <div class="error"></div>
                     </div>
-                    <div class="error"></div>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <div class="edit">
-                        <input type="password" [(ngModel)]="profilePass" name="password" id="password"
-                            placeholder="*********" required="true"><a href=""><i class="bi bi-pencil-square"></i></a>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <div class="edit">
+                            <input type="password" [(ngModel)]="newPassword" name="password" placeholder="*********" id="password">
+                        </div>
+                        <div class="error"></div>
                     </div>
-                    <div class="error"></div>
-                </div>
-                <div class="input-group">
-                    <label for="description">Bio</label>
-                    <div class="edit">
-                        <textarea name="description" [(ngModel)]="profileDesc" id="description"></textarea><a href=""><i
-                                class="bi bi-pencil-square"></i></a>
+                    <div class="input-group">
+                        <label for="profile_pic">Profile Picture</label>
+                        <div class="edit">
+                            <img [src]="profilePic" alt="profile_pic">
+                            <button id="change"><i class="bi bi-upload"></i></button>
+                        </div>
                     </div>
-                    <div class="error"></div>
-                </div>
-                <div class="input-group">
-                    <label for="profile_pic">Profile Picture</label>
-                    <div class="edit">
-                        <img src="ShadowFoxy PFP.jpg" alt="profile_pic"><a href=""><i class="bi bi-upload">Upload</i></a>
+                    <div class="error">{{errorMessage}}</div>
+                    <div class="buttons">
+                        <button type="button" id="logout" (click)="onLogout()">Logout</button>
+                        <button type="button" [disabled]="!isSaveEnabled()" id="save" (click)="saveChanges()">Save</button>
                     </div>
-                </div>
-                <div class="buttons">
-                    <button type="button" id="logout" (click)="onLogout()">Logout</button>
-                    <button type="button" disabled id="save">Save</button>
-                </div>
+                </form>
             </div>
         </div>
     </div>

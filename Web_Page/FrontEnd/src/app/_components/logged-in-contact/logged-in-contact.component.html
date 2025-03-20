@@ -11,20 +11,17 @@
                         <input type="text" [(ngModel)]="contactUsername" name="username" id="username"
                             placeholder="exampleuser" required="true" autofocus>
                         <div class="error"></div>
-                        <p>{{contactUsername}}</p>
                     </div>
                     <div class="input-group">
                         <label for="email">E-mail</label>
                         <input type="email" [(ngModel)]="contactEmail" name="email" id="email"
                             placeholder="example@example.com" required="true">
                         <div class="error"></div>
-                        <p>{{contactEmail}}</p>
                     </div>
                     <div class="input-group">
                         <label for="message">Message</label>
                         <textarea name="message" [(ngModel)]="contactMessage" id="message" required="true"></textarea>
                         <div class="error"></div>
-                        <p>{{contactMessage}}</p>
                     </div>
                     <button type="submit" id="submit">Submit</button>
                 </form>

@@ -4,12 +4,15 @@
         <div class="row">
             <div *ngFor="let log of logList" class="row">
                 <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                    <img *ngIf="gitUsers[log.userId]" [src]="gitUsers[log.userId]?.avatar_url" alt="{{ gitUsers[log.userId]?.login }}">
-                    <p> {{ gitUsers[log.userId]?.login }}</p>
+                    <img *ngIf="gitUsers[log.adminId]" [src]="gitUsers[log.adminId]?.avatar_url" alt="{{ gitUsers[log.adminId]?.login }}">
+                    <p> {{ gitUsers[log.adminId]?.login }}</p>
                 </div>
                 <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
                     <p>
                         {{ log.log }}
+                    </p>
+                    <p id="status">
+                        Status: {{ log.status }}
                     </p>
                 </div>
                 <hr>

@@ -26,10 +26,10 @@ footer {
 
 #downloadButton {
     background-color: #405A85;
-    padding: 20px 50px;
+    padding: 1.5rem 3.5rem;
     text-align: center;
-    border-radius: 50px;
-    margin-left: 50px;
+    border-radius: 3.5rem;
+    margin-left: 3.5rem;
     text-decoration: none;
     color: #D8CEC5;
     font-size: 2rem;
@@ -38,6 +38,10 @@ footer {
 #downloadButton:hover {
     color: #D8CEC5 !important;
     background-color: #3A69B6;
+}
+
+.social a {
+    margin-right: 1.5rem;
 }
 
 @media (min-width: 2560px) {

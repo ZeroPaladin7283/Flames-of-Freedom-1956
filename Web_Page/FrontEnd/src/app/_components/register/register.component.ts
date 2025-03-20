@@ -3,6 +3,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from '../footer/footer.component';
 import { RegisterService } from '../../_services/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -12,78 +13,69 @@ import { RegisterService } from '../../_services/register.service';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  registerUsername: string = '';
-  registerEmail: string = '';
-  registerPass: string = '';
-  registerCPass: string = '';
-  registerBDate: string = '';
+  username: string = '';
+  email: string = '';
+  password: string = '';
+  cpassword: string = '';
+  dateOfBirth: Date = new Date('1111-01-01');
   errorMessage: string = '';
 
-  constructor(private registerService: RegisterService) { }
+  constructor(private registerService: RegisterService, private router: Router) { }
 
-  onRegister() {
-
+  async onRegister() {
     this.errorMessage = '';
-
+  
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const passRegex = /^(?!.*[s])(?=.*[A-Z])(?=.*\d).{8,24}$/;
-
-    if (!this.registerUsername || !this.registerEmail || !this.registerPass || !this.registerCPass || !this.registerBDate) {
+    const passRegex = /^(?!.*\s)(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()?\-._]).{8,24}$/;
+  
+    if (!this.username || !this.email || !this.password || !this.cpassword || !this.dateOfBirth) {
       this.errorMessage = 'Please fill in all fields!';
       return;
     }
-
-    if (!emailRegex.test(this.registerEmail)) {
-      this.errorMessage = 'Invalid email adress!';
+  
+    if (!emailRegex.test(this.email)) {
+      this.errorMessage = 'Invalid email address!';
       return;
     }
-
-    if (!passRegex.test(this.registerPass)) {
-      this.errorMessage = `Invalid password.
-      Password must be 8-24 characters long,
-      contain at least one uppercase letter,
-      one number, and have no spaces.`;
+  
+    if (!passRegex.test(this.password)) {
+      this.errorMessage = `Invalid password. Must be 8-24 characters, contain an uppercase letter, a number, and a special character.`;
       return;
     }
-
-    if (this.registerPass !== this.registerCPass) {
-      this.errorMessage = 'Passwords do not match!';
+  
+    if (this.password !== this.cpassword) {
+      this.errorMessage = 'passwords do not match!';
       return;
     }
-
-    const parsedBDate = new Date(this.registerBDate);
-    if (isNaN(parsedBDate.getTime()) || parsedBDate >= this.registerService.minDate) {
+  
+    if(new Date(this.dateOfBirth) >= this.registerService.minDate) {
       this.errorMessage = 'You are too young to play this game!';
       return;
     }
+  
+    try {
 
-    const isRegistered = this.registerService.registerFunc(
-      this.registerUsername,
-      this.registerEmail,
-      this.registerPass,
-      this.registerCPass,
-      parsedBDate
-    );
-
-    if (isRegistered) {
-      const users = JSON.parse(localStorage.getItem('users') || '[]');
-      users.push({
-        username: this.registerUsername,
-        email: this.registerEmail,
-        password: this.registerPass
-      });
-
-      localStorage.setItem('users', JSON.stringify(users));
-
-      this.registerUsername = '';
-      this.registerEmail = '';
-      this.registerPass = '';
-      this.registerCPass = '';
-      this.registerBDate = '';
+      await this.registerService.registerUser(
+        this.username,
+        this.email,
+        this.password,
+        this.dateOfBirth.toString(),
+      );
 
       alert('Registration successful!');
-    } else {
-      this.errorMessage = 'Invalid username, email or password!';
+      this.router.navigate(['/login'])
+
+      this.username = '';
+      this.email = '';
+      this.password = '';
+      this.cpassword = '';
+      this.dateOfBirth = new Date('1111-01-01');
+    } catch(error) {
+      if (error instanceof Error) {
+        this.errorMessage = error.message;
+      } else {
+        this.errorMessage = 'Registration failed! Please try again.';
+      }
     }
   }
 }

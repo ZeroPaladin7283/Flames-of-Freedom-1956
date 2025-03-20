@@ -7,7 +7,8 @@ nav {
 }
 
 #logo {
-    height: 8rem;
+    height: 9rem;
+    width: 9rem;
     margin-left: 3rem;
 }
 
@@ -25,20 +26,26 @@ nav {
 
 #navbarSupportedContent {
     justify-content: center;
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 
 #navbarSupportedContent ul li a {
-    margin: 0 20px;
+    margin: 0 1.5rem;
     color: #D8CEC5;
     font-family: Callistoga;
+    transition: 0.5s ease-in-out;
+}
+#navbarSupportedContent ul li a:hover {
+    transition: 0.5s ease-in-out;
 }
 
 #loggedIn {
-    height: 8rem;
+    height: 9rem;
+    width: 9rem;
     margin-right: 3rem;
     border-radius: 50%;
     border: 0.3rem solid #AFECA9;
+    transition: 0.5s ease-in-out;
 }
 
 #loggedIn:hover {

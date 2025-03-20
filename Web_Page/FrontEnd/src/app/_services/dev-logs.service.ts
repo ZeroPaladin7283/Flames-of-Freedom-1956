@@ -9,16 +9,6 @@ export class DevLogsService {
 
   constructor() {}
 
-  fetchGitUser(userId: number): Promise<any> {
-    const gitUser = userId === 16 ? 'PalcsiFerencKolos' : 'ZeroPaladin7283';
-    return fetch(`${this.baseUrl}${gitUser}`)
-    .then((response) => response.json())
-    .catch((error) => {
-      console.error('Error fetching Github user data: ', error);
-      return null;
-    });
-  }
-
   fetchLogsData(): Promise<any[]>{
     return fetch(this.logUrl)
     .then((response) => {
@@ -33,6 +23,16 @@ export class DevLogsService {
     .catch((error) => {
       console.error('Error fetching logs data: ', error);
       return[];
+    });
+  }
+
+  fetchGitUser(adminId: number): Promise<any> {
+    const gitUser = adminId === 19 ? 'PalcsiFerencKolos' : 'ZeroPaladin7283';
+    return fetch(`${this.baseUrl}${gitUser}`)
+    .then((response) => response.json())
+    .catch((error) => {
+      console.error('Error fetching Github user data: ', error);
+      return null;
     });
   }
 }
