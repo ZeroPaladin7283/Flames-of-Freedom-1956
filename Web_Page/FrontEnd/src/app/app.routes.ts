@@ -8,12 +8,7 @@ import { RegisterComponent } from './_components/register/register.component';
 import { DownloadComponent } from './_components/download/download.component';
 import { LoginComponent } from './_components/login/login.component';
 import { AdmincommunityComponent } from './_components/admincommunity/admincommunity.component';
-import { AdmincontactComponent } from './_components/admincontact/admincontact.component';
 import { AdmindevlogComponent } from './_components/admindevlog/admindevlog.component';
-import { AdmindownloadComponent } from './_components/admindownload/admindownload.component';
-import { AdminhomeComponent } from './_components/adminhome/adminhome.component';
-import { AdminmediaComponent } from './_components/adminmedia/adminmedia.component';
-import { AdminprofileComponent } from './_components/adminprofile/adminprofile.component';
 import { LoggedInCommunityComponent } from './_components/logged-in-community/logged-in-community.component';
 import { LoggedInContactComponent } from './_components/logged-in-contact/logged-in-contact.component';
 import { LoggedInDevlogComponent } from './_components/logged-in-devlog/logged-in-devlog.component';
@@ -37,12 +32,7 @@ export const routes: Routes = [
     
     /* Admin pages routes */
     {path: 'admincommunity', component:AdmincommunityComponent},
-    {path: 'admincontact', component:AdmincontactComponent},
     {path: 'admindevlog', component:AdmindevlogComponent},
-    {path: 'admindownload', component:AdmindownloadComponent},
-    {path: 'adminhome', component:AdminhomeComponent},
-    {path: 'adminmedia', component:AdminmediaComponent},
-    {path: 'adminprofile', component:AdminprofileComponent},
     
     /* Logged in pages routes */
     {path: 'logged-in-community', component:LoggedInCommunityComponent},

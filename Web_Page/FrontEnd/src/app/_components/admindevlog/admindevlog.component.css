@@ -8,21 +8,21 @@
 
 .devContent {
     background-color: rgba(61, 61, 61, 0.421);
-    padding: 100px;
+    padding: 6.5rem;
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    border-radius: 75px;
+    margin-top: 6.5rem;
+    margin-bottom: 6.5rem;
+    border-radius: 4.7rem;
     color: #D8CEC5;
 }
 
 .devContent .row div {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    font-size: 35px;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+    font-size: 2.5rem;
 }
 
 .dev {
@@ -33,59 +33,74 @@
 }
 
 .dev img {
-    width: 250px;
-    border: 5px solid #AFECA9;
-    border-radius: 150px;
+    width: 15.5rem;
+    border: 0.3rem solid #AFECA9;
+    border-radius: 12rem;
     margin: 0 auto;
 }
 
 .devContent .row .dev p {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1.5rem;
 }
 
 .devContent .row .text {
     display: flex;
-    padding-left: 100px;
+    padding-left: 6.5rem;
     text-align: justify;
     align-items: center;
     flex-direction: column;
 }
 
+#status {
+    width: 100%;
+    margin-top: 2.5rem;
+    text-align: left !important;
+}
+
 #admincontrols {
     display: flex;
-    flex-direction: row;
-    margin-top: 50px;
-    font-size: 30px;
-    padding: 10px;
+    flex-direction: row !important;
+    margin-top: 3.5rem !important;
 }
 
-#editpost {
+#admincontrols a {
+    display: flex;
+    justify-content: center !important;
+}
+
+#editLog {
     text-decoration: none;
     color: #D8CeC5;
-    padding: 10px 20px;
+    padding: 0.3rem 0.3rem;
+    width: 10rem;
 }
 
-#editpost:hover {
+#editLog:hover {
     color: #afeca9;
 }
 
 #deletepost {
     display: flex;
     justify-content: end;
-    margin-left: 300px;
+    margin-left: 25rem;
     text-decoration: none;
     color: #D8CeC5;
-    padding: 10px 20px;
+    padding: 0.6rem 1.3rem;
+    width: 20rem;
     border-radius: 50px;
 }
 
 #deletepost:hover {
     color: #D8CeC5 !important;
-    background-color: rgb(175, 22, 22);
-    padding: 10px 20px;
-    border-radius: 50px;
+    background-color: rgb(154, 19, 19);
+    padding: 0.6rem 1.3rem;
+    border-radius: 3.5rem;
     transition: 0.8s;
+}
+
+hr {
+    opacity: 1;
 }
 
 @media (min-width: 2560px) {

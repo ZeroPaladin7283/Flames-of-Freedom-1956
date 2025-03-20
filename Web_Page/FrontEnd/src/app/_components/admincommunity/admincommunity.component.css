@@ -8,15 +8,15 @@
 
 .communityContent {
     background-color: rgba(61, 61, 61, 0.421);
-    padding: 50px;
+    padding: 3.5rem;
     width: 80%;
-    margin: 100px auto;
-    border-radius: 75px;
+    margin: 6.5rem auto;
+    border-radius: 4.7rem;
     display: flex;
     justify-content: center;
     color: #D8CEC5;
     flex-direction: column;
-    font-size: 35px;
+    font-size: 2rem;
 }
 
 .user {
@@ -27,42 +27,44 @@
 }
 
 .user img {
-    width: 250px;
+    width: 13rem;
+    height: 13rem;
     border: 5px solid #AFECA9;
-    border-radius: 150px;
+    border-radius: 50%;
     margin: 0 auto;
 }
 
 .communityContent .row .user p {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1.5rem;
+    font-size: 2.5rem;
 }
 
 .communityContent .row .text {
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    padding: 3.5rem;
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 3.5rem;
 }
 
 .communityContent .row .text p {
     text-align: justify;
-    margin-bottom: 50px;
+    margin-bottom: 3.5rem;
 }
 
 .communityContent .row .text img {
-    width: 450px;
+    width: 20rem;
+    max-height: 25rem;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 3.5rem;
 }
 
 .communityContent .row .text a {
     text-decoration: none;
-    width: 40%;
-    font-size: 25px;
+    font-size: 2.5rem;
     color: #D8CEC5;
 }
 
@@ -78,99 +80,108 @@ h1 {
 
 #admincontrols a {
     display: flex;
-    width: 300px !important;
+    width: 40%;
     justify-content: center !important;
     padding: 10px;
+}
+
+#showComments {
+    width: 35% !important;
 }
 
 #deletepost {
     display: flex;
     justify-content: end !important;
-    margin-left: 500px !important;
-    border-radius: 50px;
+    margin-left: 15rem !important;
+    border-radius: 3.5rem;
+    padding: 0.6rem 1.3rem;
 }
 
 #deletepost:hover {
     color: #D8CeC5 !important;
-    background-color: rgb(175, 22, 22);
-    border-radius: 50px;
-    padding: 10px;
+    background-color: rgb(154, 19, 19);
+    border-radius: 3.5rem;
+    padding: 0.6rem 1.3rem;
     transition: 0.8s;
 }
 
-.secondbg {
-    background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("../../../assets/images/makarov\ BG.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-attachment: fixed;
-}
-
-.communityContent {
-    background-color: rgba(61, 61, 61, 0.421);
-    padding: 50px;
-    width: 80%;
-    margin: 100px auto;
-    border-radius: 75px;
-    display: flex;
-    justify-content: center;
-    color: #D8CEC5;
-    flex-direction: column;
-    font-size: 35px;
-}
-
-.user {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.user img {
-    width: 250px;
-    border: 5px solid #AFECA9;
-    border-radius: 150px;
-    margin: 0 auto;
-}
-
-.communityContent .row .user p {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.communityContent .row .text {
-    display: flex;
-    flex-direction: column;
-    padding: 50px;
-}
-
-h1 {
-    font-size: 50px;
-}
-
-.communityContent .row .text p {
-    text-align: justify;
-    margin-bottom: 50px;
-}
-
-.communityContent .row .text img {
-    width: 450px;
-    margin: 0 auto;
-    margin-bottom: 50px;
-}
-
-.communityContent .row .text a {
-    text-decoration: none;
-    width: 40%;
-    color: #AFECA9;
-}
-
-.communityContent .row .text a:hover {
-    color: #63D157 !important;
-    cursor: pointer;
+hr {
+    opacity: 1;
 }
 
 @media (min-width: 2560px) {
+    .secondbg {
+        background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("../../../assets/images/makarov\ BG.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-attachment: fixed;
+    }
+    
+    .communityContent {
+        background-color: rgba(61, 61, 61, 0.421);
+        padding: 50px;
+        width: 80%;
+        margin: 100px auto;
+        border-radius: 75px;
+        display: flex;
+        justify-content: center;
+        color: #D8CEC5;
+        flex-direction: column;
+        font-size: 35px;
+    }
+    
+    .user {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .user img {
+        width: 250px;
+        border: 5px solid #AFECA9;
+        border-radius: 150px;
+        margin: 0 auto;
+    }
+    
+    .communityContent .row .user p {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .communityContent .row .text {
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+    }
+    
+    h1 {
+        font-size: 50px;
+    }
+    
+    .communityContent .row .text p {
+        text-align: justify;
+        margin-bottom: 50px;
+    }
+    
+    .communityContent .row .text img {
+        width: 450px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+    
+    .communityContent .row .text a {
+        text-decoration: none;
+        width: 40%;
+        color: #AFECA9;
+    }
+    
+    .communityContent .row .text a:hover {
+        color: #63D157 !important;
+        cursor: pointer;
+    }
+
     .user img {
         border: 0.5rem solid #AFECA9;
     }
