@@ -89,6 +89,25 @@ button:hover {
     font-family: Bookman Old Style;
 }
 
+#register {
+    background-color: #8b8b8b;
+}
+
+#register:disabled {
+    background-color: #8b8b8b !important;
+    transition: 0.5s ease-in-out;
+}
+
+#register:not(:disabled) {
+    background-color: #405A85;
+    transition: 0.5s ease-in-out;
+}
+
+#register:hover {
+    background-color: #3A69B6;
+    transition: 0.5s ease-in-out;
+}
+
 
 @media screen and (min-width: 2560px) {
     form {

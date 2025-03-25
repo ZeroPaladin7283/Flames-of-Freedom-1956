@@ -40,7 +40,7 @@
                         <div *ngIf="errorMessage" class="error">
                             {{ errorMessage }}
                         </div>
-                        <button type="button" id="login" (click)="onLogin()">
+                        <button type="button" id="login" [disabled]="!isLoginEnabled()" (click)="onLogin()">
                             Login
                         </button>
                         <p id="login-register">

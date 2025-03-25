@@ -4,11 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { FooterComponent } from '../footer/footer.component';
 import { RegisterService } from '../../_services/register.service';
 import { Router } from '@angular/router';
+import { SuccessPopupComponent } from "../success-popup/success-popup.component";
+import { CommonModule } from '@angular/common';
+import { SimpleModalComponent } from "../simple-modal/simple-modal.component";
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, FormsModule],
+  imports: [NavbarComponent, FooterComponent, FormsModule, SuccessPopupComponent, CommonModule, SimpleModalComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
@@ -20,6 +23,25 @@ export class RegisterComponent {
   dateOfBirth: Date = new Date('1111-01-01');
   errorMessage: string = '';
   ccMe: boolean = false;
+
+  isPopupVisible = false;
+  isModalVisible = false;
+
+  showPopup() {
+    this.isPopupVisible = true;
+    }
+
+  hidePopup() {
+    this.isPopupVisible = false;
+    }
+
+  showModal() {
+    this.isModalVisible = true;
+    }
+
+  hideModal() {
+    this.isModalVisible = false;
+    }
 
   constructor(private registerService: RegisterService, private router: Router) { }
 
@@ -85,5 +107,24 @@ export class RegisterComponent {
       console.error('Error:', error);
       this.errorMessage = 'Failed to send message. Please try again later.';
     }
+  }
+
+  isRegisterEnabled(): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passRegex = /^(?!.*\s)(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()?\-._]).{8,24}$/;
+
+    if (!this.username && !this.email && !this.password) {
+      return false;
+    }
+
+    if (this.email && !emailRegex.test(this.email)) {
+      return false;
+    }
+
+    if (this.password && !passRegex.test(this.password)) {
+      return false;
+    }
+
+    return true;
   }
 }

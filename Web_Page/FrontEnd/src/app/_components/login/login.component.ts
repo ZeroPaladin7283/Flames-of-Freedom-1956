@@ -56,11 +56,30 @@ export class LoginComponent implements OnInit{
   }
 
   getEmailClass() {
-    return this.email?.touched && this.email?.invalid && !this.password?.value ? 'invalid' : '';
+    return this.email?.touched && this.email?.invalid ? 'invalid' : '';
   }
 
   getPasswordClass() {
-    return this.password?.touched && this.password?.invalid && !this.email?.value ? 'invalid' : '';
+    return this.password?.touched && this.password?.invalid ? 'invalid' : '';
+  }
+
+  isLoginEnabled(): boolean {
+    const emailValue = this.email?.value;
+    const passwordValue = this.password?.value;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passRegex = /^(?!.*\s)(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()?\-._]).{8,24}$/;
+
+    if (!emailValue || !passwordValue) {
+      return false;
+    }
+    if (!emailRegex.test(emailValue)) {
+      return false;
+    }
+    if (!passRegex.test(passwordValue)) {
+      return false;
+    }
+    return true;
   }
 }
 

@@ -108,6 +108,25 @@ button:hover {
     border: 0.3rem solid red;
 }
 
+#login {
+    background-color: #8b8b8b;
+}
+
+#login:disabled {
+    background-color: #8b8b8b !important;
+    transition: 0.5s ease-in-out;
+}
+
+#login:not(:disabled) {
+    background-color: #405A85;
+    transition: 0.5s ease-in-out;
+}
+
+#login:hover {
+    background-color: #3A69B6;
+    transition: 0.5s ease-in-out;
+}
+
 @media screen and (min-width: 2560px) {
     form {
         width: 65rem;
