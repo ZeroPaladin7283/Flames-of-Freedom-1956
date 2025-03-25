@@ -3,7 +3,6 @@ import { HomeComponent } from './_components/home/home.component';
 import { MediaComponent } from './_components/media/media.component';
 import { DevLogsComponent } from './_components/dev-logs/dev-logs.component';
 import { CommunityComponent } from './_components/community/community.component';
-import { ContactUsComponent } from './_components/contact-us/contact-us.component';
 import { RegisterComponent } from './_components/register/register.component';
 import { DownloadComponent } from './_components/download/download.component';
 import { LoginComponent } from './_components/login/login.component';
@@ -25,7 +24,6 @@ export const routes: Routes = [
     {path: 'media', component:MediaComponent},
     {path: 'dev-logs', component:DevLogsComponent},
     {path: 'community', component:CommunityComponent},
-    {path: 'contact-us', component:ContactUsComponent},
     {path: 'register', component:RegisterComponent},
     {path: 'download', component:DownloadComponent},
     {path: 'login', component:LoginComponent},

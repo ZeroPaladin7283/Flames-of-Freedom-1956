@@ -19,6 +19,7 @@ export class RegisterComponent {
   cpassword: string = '';
   dateOfBirth: Date = new Date('1111-01-01');
   errorMessage: string = '';
+  ccMe: boolean = false;
 
   constructor(private registerService: RegisterService, private router: Router) { }
 
@@ -54,7 +55,6 @@ export class RegisterComponent {
     }
   
     try {
-
       await this.registerService.registerUser(
         this.username,
         this.email,
@@ -66,7 +66,6 @@ export class RegisterComponent {
       this.router.navigate(['/login'])
 
       this.username = '';
-      this.email = '';
       this.password = '';
       this.cpassword = '';
       this.dateOfBirth = new Date('1111-01-01');
@@ -76,6 +75,15 @@ export class RegisterComponent {
       } else {
         this.errorMessage = 'Registration failed! Please try again.';
       }
+    }
+
+    try {
+      await this.registerService.sendRegEmail(this.email, this.ccMe);
+      alert('Message sent successfully!');
+      this.email = '';
+    } catch(error) {
+      console.error('Error:', error);
+      this.errorMessage = 'Failed to send message. Please try again later.';
     }
   }
 }

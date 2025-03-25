@@ -84,6 +84,25 @@ button:hover {
     font-family: Bookman Old Style;
 }
 
+#submit {
+    background-color: #8b8b8b;
+}
+
+#submit:disabled {
+    background-color: #8b8b8b !important;
+    transition: 0.5s ease-in-out;
+}
+
+#submit:not(:disabled) {
+    background-color: #405A85;
+    transition: 0.5s ease-in-out;
+}
+
+#submit:hover {
+    background-color: #3A69B6;
+    transition: 0.5s ease-in-out;
+}
+
 @media (min-width: 2560px) {
     form {
         width: 60rem;

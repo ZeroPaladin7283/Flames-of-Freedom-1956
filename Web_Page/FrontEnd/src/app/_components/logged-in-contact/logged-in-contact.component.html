@@ -1,32 +1,30 @@
 <div class="secondbg">
     <app-loggedinnavbar></app-loggedinnavbar>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <form action="">
-                    <h1>Contact Us</h1>
-                    <p>Please write your message below to contact us</p>
-                    <div class="input-group">
-                        <label for="username">Username</label>
-                        <input type="text" [(ngModel)]="contactUsername" name="username" id="username"
-                            placeholder="exampleuser" required="true" autofocus>
-                        <div class="error"></div>
-                    </div>
-                    <div class="input-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" [(ngModel)]="contactEmail" name="email" id="email"
-                            placeholder="example@example.com" required="true">
-                        <div class="error"></div>
-                    </div>
-                    <div class="input-group">
-                        <label for="message">Message</label>
-                        <textarea name="message" [(ngModel)]="contactMessage" id="message" required="true"></textarea>
-                        <div class="error"></div>
-                    </div>
-                    <button type="submit" id="submit">Submit</button>
-                </form>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <form>
+                        <h1>Contact Us</h1>
+                        <p>Please write your message below to contact us</p>
+                        <div class="input-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" [(ngModel)]="email" name="email" id="email" placeholder="example@example.com" required autofocus/>
+                            <div class="error" *ngIf="errorMessage && !email">Email is required</div>
+                        </div>
+                        <div class="input-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" [(ngModel)]="subject" name="subject" id="subject" required placeholder="ExampleSubject"/>
+                            <div class="error" *ngIf="errorMessage && !subject">Subject is required</div>
+                        </div>
+                        <div class="input-group">
+                            <label for="message">Message</label>
+                            <textarea [(ngModel)]="content" name="message" id="message" required placeholder="Example for a contact message"></textarea>
+                            <div class="error" *ngIf="errorMessage && !content">Message is required</div>
+                        </div>
+                        <button type="button" [disabled]="!isFormValid()" (click)="onSubmit()" id="submit">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
     <app-footer></app-footer>
 </div>

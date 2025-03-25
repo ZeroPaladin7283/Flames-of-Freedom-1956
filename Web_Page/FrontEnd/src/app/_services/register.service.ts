@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -30,4 +31,34 @@ export class RegisterService {
       throw error;
     }
   }
+
+  async sendRegEmail(to: string, ccMe: boolean): Promise<any> {
+    const regCreds = { to, ccMe };
+
+    console.log("Sending email request with data:", regCreds);
+
+    try {
+      const response = await fetch(`${this.userRegisterUrl}/sendSuccessReg`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(regCreds)
+      });
+
+      console.log("Response status:", response.status);
+
+      if (!response.ok) {
+        const errorDetail = await response.text();
+        console.error(`Error response: ${response.status} - ${errorDetail}`);
+        throw new Error(`Error: ${response.status} - ${errorDetail}`);
+      }
+
+      const responseData = await response.json();
+      console.log("Email sent successfully:", responseData);
+
+      return responseData;
+    } catch (error) {
+      console.error('Message could not be sent:', error);
+      throw error;
+    }
+}
 }
