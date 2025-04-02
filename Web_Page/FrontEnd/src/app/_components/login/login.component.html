@@ -11,7 +11,7 @@
                             <label for="user">
                                 E-mail
                             </label>
-                            <input type="text" formControlName="email" placeholder="Enter your e-mail" required [ngClass]="getEmailClass()" autofocus>
+                            <input type="text" formControlName="email" placeholder="Enter your e-mail" required [ngClass]="getEmailClass()">
                             <div *ngIf="email?.touched && email?.invalid" class="error">
                                 <div *ngIf="email?.errors?.['required']">
                                     Email is required
@@ -34,9 +34,8 @@
                                 <div *ngIf="password?.errors?.['maxlength']">Password maximum character length is 24</div>
                             </div>
                         </div>
-                        <a routerLink="/login" id="forgot">
-                            Forgot Password
-                        </a>
+                        <button (click)="showModal()" id="forgot">Forgot Password</button>
+                        <app-simple-modal *ngIf="isModalVisible" (close)="hideModal()"></app-simple-modal>
                         <div *ngIf="errorMessage" class="error">
                             {{ errorMessage }}
                         </div>

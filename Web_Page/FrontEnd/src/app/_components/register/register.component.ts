@@ -67,7 +67,7 @@ export class RegisterComponent {
     }
   
     if (this.password !== this.cpassword) {
-      this.errorMessage = 'passwords do not match!';
+      this.errorMessage = 'Passwords do not match!';
       return;
     }
   

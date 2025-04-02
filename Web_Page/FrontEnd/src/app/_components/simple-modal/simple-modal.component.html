@@ -1,7 +1,12 @@
 <div class="modal-overlay" (click)="closeModal()">
     <div class="modal-content" (click)="$event.stopPropagation()">
-        <h2>Ismét kurva ügyes vagy</h2>
-        <p>Ismételten kurva ügyes vagy</p>
-        <button (click)="closeModal()">Close</button>
+        <h2>Forgot Password</h2>
+        <p>Enter your email address, and we'll send you a temporary password.</p>
+
+        <input type="email" [(ngModel)]="email" placeholder="example@example.com" required>
+        <div class="buttons">
+            <button (click)="sendCode()" id="code">Send</button>
+            <button (click)="closeModal()" id="close">Close</button>
+        </div>
     </div>
 </div>

@@ -56,7 +56,8 @@ input:focus {
     margin-bottom: 2rem;
     text-decoration: underline;
     color: #3A69B6;
-    width: 50%;
+    width: 55%;
+    background: none;
 }
 
 #forgot:hover {

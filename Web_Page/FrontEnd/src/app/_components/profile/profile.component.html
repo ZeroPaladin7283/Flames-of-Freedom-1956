@@ -26,12 +26,15 @@
                         </div>
                         <div class="error"></div>
                     </div>
-                    <div class="input-group">
-                        <label for="profile_pic">Profile Picture</label>
+                    <div class="input-group profPic">
                         <div class="edit">
-                            <img [src]="profilePic" alt="profile_pic">
-                            <button id="change"><i class="bi bi-upload"></i></button>
+                            <img [src]="'data:image/jpg;base64,' + profilePic" alt="profile_pic" *ngIf="profilePic">
+                            <input type="file" accept="image/png, image/jpg, image/jpeg, image/jfif, image/webp" id="image" (change)="onFileSelected($event)" style="display: none;" />
                         </div>
+                        <label for="image" class="file-upload-label">
+                            <i class="bi bi-upload"></i>
+                            <span class="tooltip-text">Fájl kiválasztása</span>
+                        </label>
                     </div>
                     <div class="error">{{errorMessage}}</div>
                     <div class="buttons">

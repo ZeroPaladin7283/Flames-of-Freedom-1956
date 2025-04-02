@@ -26,9 +26,6 @@
                         <input type="date" [(ngModel)]="dateOfBirth" name="birthday" id="birthday">
                     </div>
                     <div class="error">{{errorMessage}}</div>
-                    <button (click)="showPopup()">Show Popup</button>
-                    <app-success-popup *ngIf="isPopupVisible" (close)="hidePopup()"></app-success-popup>
-                    <button (click)="showModal()">Show Modal</button>
                     <app-simple-modal *ngIf="isModalVisible" (close)="hideModal()"></app-simple-modal>
                     <button type="button" id="register" [disabled]="!isRegisterEnabled()" (click)="onRegister()">Register</button>
                     <p id="login-register">

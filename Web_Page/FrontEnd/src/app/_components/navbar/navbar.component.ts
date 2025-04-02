@@ -9,4 +9,9 @@ import { AfterViewInit, Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent{
+  isNavbarOpen = false;
+
+  toggleNavbar() {
+    this.isNavbarOpen = !this.isNavbarOpen;
+  }
 }

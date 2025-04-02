@@ -33,4 +33,17 @@ export class AdmindevlogComponent implements OnInit{
       });
     });
   }
+
+  deleteLog(id: number): void {
+    console.log("Deleting log with ID: ", id);
+
+    if(confirm('Are you sure you want to delete this log?')) {
+      this.devLogsService.deleteLog(id).then(response => {
+        console.log('Log deleted: ', response);
+
+      }).catch(error => {
+        console.error('Error occured in the deleting process: ', error);
+      })
+    }
+  }
 }

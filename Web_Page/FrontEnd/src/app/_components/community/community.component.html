@@ -3,7 +3,7 @@
     <div class="container-fluid communityContent">
         <div class="row" *ngFor="let post of postList">
             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 user">
-                <img [src]="post.profilePic" alt="user">
+                <img [src]="'data:image/jpg;base64,' + post.profilePic" alt="user">
                 <p>
                     {{ post.username }}
                 </p>

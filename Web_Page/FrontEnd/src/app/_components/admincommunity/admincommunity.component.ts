@@ -21,4 +21,17 @@ export class AdmincommunityComponent implements OnInit{
       this.postList = data;
     })
   }
+
+  deletePost(id: number): void {
+    console.log("Deleting post with ID:", id);
+
+    if(confirm('Are you sure you want to delete this post?')) {
+      this.communityService.deletePost(Number(id)).then(response => {
+        console.log('Post deleted: ', response);
+
+      }).catch(error => {
+        console.error('Error occured in the deleting process: ', error);
+      });
+    }
+  }
 }

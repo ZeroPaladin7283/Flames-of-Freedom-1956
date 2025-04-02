@@ -46,7 +46,7 @@
                         <div class="carousel-item active carouselReviews" *ngFor="let review of reviewList; let i = index" [class.active]="i === 0">
                             <div class="review-container">
                                 <div class="review-profile">
-                                    <img [src]="review.profilePic" alt="Profile Picture" class="profile-pic">
+                                    <img [src]="'data:image/jpg;base64,' + review.profilePic" alt="Profile Picture" class="profile-pic">
                                     <p class="username">{{ review.username }}</p>
                                 </div>
                                 <div class="review-text">

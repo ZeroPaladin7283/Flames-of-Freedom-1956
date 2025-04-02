@@ -35,8 +35,6 @@ export class RegisterService {
   async sendRegEmail(to: string, ccMe: boolean): Promise<any> {
     const regCreds = { to, ccMe };
 
-    console.log("Sending email request with data:", regCreds);
-
     try {
       const response = await fetch(`${this.userRegisterUrl}/sendSuccessReg`, {
         method: 'POST',

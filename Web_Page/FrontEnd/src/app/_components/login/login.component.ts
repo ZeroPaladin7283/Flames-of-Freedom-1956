@@ -5,11 +5,12 @@ import { FooterComponent } from '../footer/footer.component';
 import { LoginService } from '../../_services/login.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { SimpleModalComponent } from "../simple-modal/simple-modal.component";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NavbarComponent, FooterComponent, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule, NavbarComponent, FooterComponent, FormsModule, SimpleModalComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -17,6 +18,16 @@ export class LoginComponent implements OnInit{
   loginForm!: FormGroup;
   showPassword: boolean = false;
   errorMessage: string = '';
+
+  isModalVisible = false;
+
+  showModal() {
+    this.isModalVisible = true;
+  }
+
+  hideModal() {
+    this.isModalVisible = false;
+  }
 
   constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router) {}
 

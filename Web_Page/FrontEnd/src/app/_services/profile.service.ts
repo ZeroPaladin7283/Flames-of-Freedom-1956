@@ -27,8 +27,8 @@ export class ProfileService {
     }
   }
 
-  async changeInfo(userId: number, newUsername: string, newEmail: string, newPassword: string): Promise<any> {
-    const changeCreds = {id: userId, newUsername, newEmail, newPassword};
+  async changeInfo(userId: number, newUsername: string, newEmail: string, newPassword: string, imageIn: string): Promise<any> {
+    const changeCreds = {id: userId, newUsername, newEmail, newPassword, imageIn};
 
     try {
       const response = await fetch(`${this.userUrl}/changeInfo`, {
