@@ -19,6 +19,174 @@
     font-size: 2rem;
 }
 
+.create-post-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#showMore {
+    padding: 0.8rem 3.3rem;
+    border-radius: 50px;
+    border: 3px solid #D8CEC5;
+    background-color: transparent;
+    /* background-color: #D8946C; */
+    color: #D8CEC5;
+    transition: 0.5s ease-in-out;
+    font-weight: 600;
+}
+
+#showMore:hover {
+    background-color: rgb(177, 117, 64);
+}
+
+#submit {
+    background-color: #8B8B8B;
+    cursor: not-allowed;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#submit:disabled {
+    background-color: #8b8b8b !important;
+    transition: 0.5s ease-in-out;
+}
+
+#submit:not(:disabled) {
+    background-color: #4CAF50;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: #338837;
+    transition: 0.5s ease-in-out;
+}
+
+.create-post-btn {
+    margin-top: 5rem;
+    font-size: 2rem;
+    width: 30%;
+    background-color: #4CAF50;
+    color: #D8CEC5;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    font-weight: 600;
+}
+
+.create-post-btn:hover {
+    background-color: #338837;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #FEFEFE;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.modal-content form {
+    padding: 0 40px;
+}
+
+.modal-content h2 {
+    color: #3D3D3D;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.modal-content label {
+    color: #3D3D3D;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.modal-content input {
+    margin-bottom: 50px;
+    font-size: 1.5rem;
+}
+
+.modal-content select {
+    margin-bottom: 50px;
+    font-size: 1.5rem;
+}
+
+option {
+    font-size: 1.5rem;
+}
+
+.modal-content textarea {
+    margin-bottom: 50px;
+    font-size: 1.5rem;
+}
+
+.close {
+    color: #3D3D3D;
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: #3D3D3D;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form select, form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
 .user {
     display: flex;
     flex-direction: column;
@@ -74,35 +242,38 @@ h1 {
 
 #admincontrols {
     display: flex;
-    flex-direction: row !important;
-    margin-top: 50px !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20%;
 }
 
 #admincontrols a {
-    display: flex;
-    width: 40%;
-    justify-content: center !important;
-    padding: 10px;
+    text-decoration: none;
+    color: #D8CEC5;
+    border: 3px solid #D8CEC5;
+    padding: 0.5rem 3.5rem;
+    border-radius: 2rem;
+    transition: 0.5s ease-in-out;
 }
 
-#showComments {
-    width: 35% !important;
+#admincontrols button {
+    text-decoration: none;
+    color: #D8CEC5;
+    border: 3px solid #D8CEC5;
+    background: transparent;
+    padding: 0.5rem 3.5rem;
+    border-radius: 2rem;
+    transition: 0.5s ease-in-out;
 }
 
-#deletepost {
-    display: flex;
-    justify-content: end !important;
-    margin-left: 15rem !important;
-    border-radius: 3.5rem;
-    padding: 0.6rem 1.3rem;
+#showComments:hover {
+    color: #D8CEC5 !important;
+    background-color: #348337;
 }
 
 #deletepost:hover {
-    color: #D8CeC5 !important;
-    background-color: rgb(154, 19, 19);
-    border-radius: 3.5rem;
-    padding: 0.6rem 1.3rem;
-    transition: 0.8s;
+    color: #D8CEC5 !important;
+    background-color: rgb(154, 19, 19) !important;
 }
 
 hr {

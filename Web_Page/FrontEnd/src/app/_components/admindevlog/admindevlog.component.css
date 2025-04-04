@@ -8,21 +8,175 @@
 
 .devContent {
     background-color: rgba(61, 61, 61, 0.421);
-    padding: 6.5rem;
+    padding: 3.5rem;
     width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 6.5rem;
-    margin-bottom: 6.5rem;
+    margin: 6.5rem auto;
     border-radius: 4.7rem;
+    display: flex;
+    justify-content: center;
     color: #D8CEC5;
+    flex-direction: column;
+    font-size: 2rem;
 }
 
-.devContent .row div {
-    margin-top: 3.5rem;
-    margin-bottom: 3.5rem;
+.create-log-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#showMore {
+    padding: 0.8rem 3.3rem;
+    border-radius: 50px;
+    border: 3px solid #D8CEC5;
+    background-color: transparent;
+    color: #D8CEC5;
+    transition: 0.5s ease-in-out;
+    font-weight: 600;
+}
+
+#showMore:hover {
+    background-color: rgb(177, 117, 64);
+}
+
+#submit {
+    background-color: #8B8B8B;
+    cursor: not-allowed;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#submit:disabled {
+    background-color: #8b8b8b !important;
+    transition: 0.5s ease-in-out;
+}
+
+#submit:not(:disabled) {
+    background-color: #4CAF50;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+#submit:hover {
+    background-color: #338837;
+}
+
+.create-log-btn {
+    margin-top: 5rem;
+    font-size: 2rem;
+    width: 30%;
+    background-color: #4CAF50;
+    color: #D8CEC5;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    font-weight: 600;
+}
+
+.create-log-btn:hover {
+    background-color: #338837;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #FEFEFE;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.modal-content form {
+    padding: 0 40px;
+}
+
+.modal-content h2 {
+    color: #3D3D3D;
+    text-align: center;
     font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.modal-content label {
+    color: #3D3D3D;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    margin-bottom: 50px;
+    font-size: 1.5rem;
+}
+
+option {
+    font-size: 1.5rem;
+}
+
+.close {
+    color: #3D3D3D;
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: #3D3D3D;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form select,
+form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
 }
 
 .dev {
@@ -33,70 +187,69 @@
 }
 
 .dev img {
-    width: 15.5rem;
-    border: 0.3rem solid #AFECA9;
-    border-radius: 12rem;
+    width: 13rem;
+    height: 13rem;
+    border: 5px solid #AFECA9;
+    border-radius: 50%;
     margin: 0 auto;
 }
 
 .devContent .row .dev p {
     text-align: center;
     margin-top: 1.5rem;
+    font-size: 2.5rem;
 }
 
 .devContent .row .text {
     display: flex;
-    padding-left: 6.5rem;
-    text-align: justify;
-    align-items: center;
     flex-direction: column;
+    padding: 3.5rem;
+}
+
+.devContent .row .text p {
+    text-align: justify;
+    margin-bottom: 3.5rem;
 }
 
 #status {
-    width: 100%;
-    margin-top: 2.5rem;
-    text-align: left !important;
+    margin-top: 1.5rem;
+    font-weight: bold;
 }
 
 #admincontrols {
     display: flex;
-    flex-direction: row !important;
-    margin-top: 3.5rem !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40%;
 }
 
 #admincontrols a {
-    display: flex;
-    justify-content: center !important;
+    text-decoration: none;
+    color: #D8CEC5;
+    border: 3px solid #D8CEC5;
+    padding: 0.5rem 3.5rem;
+    border-radius: 2rem;
+    transition: 0.5s ease-in-out;
 }
 
-#editLog {
+#admincontrols button {
     text-decoration: none;
-    color: #D8CeC5;
-    padding: 0.3rem 0.3rem;
-    width: 10rem;
+    color: #D8CEC5;
+    border: 3px solid #D8CEC5;
+    background: transparent;
+    padding: 0.5rem 3.5rem;
+    border-radius: 2rem;
+    transition: 0.5s ease-in-out;
 }
 
 #editLog:hover {
-    color: #afeca9;
-}
-
-#deletepost {
-    display: flex;
-    justify-content: end;
-    margin-left: 25rem;
-    text-decoration: none;
-    color: #D8CeC5;
-    padding: 0.6rem 1.3rem;
-    width: 20rem;
-    border-radius: 50px;
+    color: #D8CEC5 !important;
+    background-color: #348337;
 }
 
 #deletepost:hover {
-    color: #D8CeC5 !important;
-    background-color: rgb(154, 19, 19);
-    padding: 0.6rem 1.3rem;
-    border-radius: 3.5rem;
-    transition: 0.8s;
+    color: #D8CEC5 !important;
+    background-color: rgb(154, 19, 19) !important;
 }
 
 hr {
@@ -107,51 +260,22 @@ hr {
     .dev img {
         border: 0.5rem solid #AFECA9;
     }
-    
-    .dev  p{
+
+    .dev p {
         font-size: 3rem;
     }
 
     .devContent .row .text {
-        font-size: 3.5rem;
-    }
-
-    #admincontrols {
-        margin-top: 3rem !important;
+        font-size: 3rem;
     }
 
     #admincontrols a {
-        display: flex;
-        width: 20rem !important;
-        justify-content: center !important;
         font-size: 3rem;
     }
-    
-    #editpost {
-        text-decoration: none;
-        color: #AFECA9;
-        padding: 0.5rem 2.5rem !important;
-    }
-    
-    #editpost:hover {
-        color: #63D157 !important;
-    }
-    
+
     #deletepost {
-        display: flex;
-        justify-content: end;
-        margin-left: 20rem;
-        text-decoration: none;
-        color: #D8CeC5;
-        padding: 0.5rem 2.5rem !important;
-        border-radius: 50px;
-    }
-    
-    #deletepost:hover {
-        color: #D8CeC5 !important;
         background-color: rgb(175, 22, 22);
-        border-radius: 3rem;
         padding: 1rem;
-        transition: 0.8s;
+        border-radius: 3rem;
     }
 }

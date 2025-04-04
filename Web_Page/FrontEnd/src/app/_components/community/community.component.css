@@ -19,6 +19,30 @@
     font-size: 2rem;
 }
 
+.create-post-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#showMore {
+    padding: 0.8rem 3.3rem;
+    border-radius: 50px;
+    border: 3px solid #D8CEC5;
+    background-color: transparent;
+    /* background-color: #D8946C; */
+    color: #D8CEC5;
+    transition: 0.5s ease-in-out;
+    font-weight: 600;
+}
+
+#showMore:hover {
+    background-color: rgb(177, 117, 64);
+}
+
 .user {
     display: flex;
     flex-direction: column;
@@ -73,6 +97,23 @@ h1 {
     color: #63d157 !important;
     cursor: pointer;
 }
+
+/* .communityContent .row .text a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    width: 60%;
+    color: #D8CEC5;
+    border: 3px solid #D8CEC5;
+    border-radius: 2rem;
+    padding: 0.5rem 3.5rem;
+    text-align: center;
+}
+
+.communityContent .row .text a:hover {
+    background-color: #348337;
+    color: #D8CEC5 !important;
+    cursor: pointer;
+} */
 
 hr {
     opacity: 1;

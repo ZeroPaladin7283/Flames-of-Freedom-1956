@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 export class DevLogsComponent implements OnInit{
   logList: any[] = [];
   gitUsers: { [key: number]: any } = {};
+  showAllLogs = false;
 
   constructor(private devLogsService: DevLogsService) {}
 
@@ -32,5 +33,9 @@ export class DevLogsComponent implements OnInit{
         this.gitUsers[adminId] = userData;
       });
     });
+  }
+  
+  toggleLogs() {
+    this.showAllLogs = !this.showAllLogs;
   }
 }

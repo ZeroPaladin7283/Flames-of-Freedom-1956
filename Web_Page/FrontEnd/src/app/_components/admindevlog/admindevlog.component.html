@@ -1,29 +1,45 @@
 <div class="secondbg">
     <app-loggedinnavbar></app-loggedinnavbar>
+
     <div class="container-fluid devContent">
-        <div class="row">
-            <div *ngFor="let log of logList" class="row">
-                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                    <img *ngIf="gitUsers[log.adminId]" [src]="gitUsers[log.adminId]?.avatar_url" alt="{{ gitUsers[log.adminId]?.login }}">
-                    <p> {{ gitUsers[log.adminId]?.login }}</p>
+        <div class="row" *ngFor="let log of (showAllLogs ? logList : logList.slice(0, 5))">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
+                <img *ngIf="gitUsers[log.adminId]" [src]="gitUsers[log.adminId]?.avatar_url" alt="{{ gitUsers[log.adminId]?.login }}">
+                <p>{{ gitUsers[log.adminId]?.login }}</p>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
+                <p>{{ log.log }}</p>
+                <p id="status">Status: {{ log.status }}</p>
+                <div id="admincontrols">
+                    <a href="/admindevlog" id="editLog">Edit Log</a>
+                    <button (click)="deleteLog(log.id)" id="deletepost">Delete Log</button>
                 </div>
-                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
-                    <p>
-                        {{ log.log }}
-                    </p>
-                    <p id="status">
-                        Status: {{ log.status }}
-                    </p>
-                    <div id="admincontrols">
-                        <a href="/admindevlog" id="editLog">
-                            Edit Log
-                        </a>
-                        <a href="/admindevlog" id="deletepost" (click)="deleteLog(log.id)">
-                            Delete Log
-                        </a>
+            </div>
+            <hr>
+        </div>
+
+        <div class="container-fluid" id="create">
+            <div class="row">
+                <div class="create-log-container">
+                    <button id="showMore" class="show-more-btn" (click)="toggleLogs()">
+                        {{ showAllLogs ? 'Show Less' : 'Show More' }}
+                    </button>
+                    <button id="createLog" class="create-log-btn" (click)="openCreateLogModal()">
+                        Create Developer Log
+                    </button>
+                    <div class="modal" *ngIf="showModal">
+                        <div class="modal-content">
+                            <span class="close" (click)="closeCreateLogModal()">&times;</span>
+                            <h2>Create a New Post</h2>
+                            <form (ngSubmit)="submitLog()">
+                                <label for="log">Developer Log:</label>
+                                <textarea id="log" [(ngModel)]="newLog.log" name="log" required></textarea>
+        
+                                <button type="submit" [disabled]="!isFormValid()" id="submit">Submit</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                <hr>
             </div>
         </div>
     </div>

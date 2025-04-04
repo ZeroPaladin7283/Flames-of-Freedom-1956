@@ -13,6 +13,7 @@ import { CommunityService } from '../../_services/community.service';
 })
 export class CommunityComponent implements OnInit{
   postList: any[] = [];
+  showAllPosts = false;
 
   constructor(private communityService: CommunityService){}
 
@@ -20,5 +21,9 @@ export class CommunityComponent implements OnInit{
     this.communityService.fetchPosts().then((data) => {
       this.postList = data;
     })
+  }
+
+  togglePosts() {
+    this.showAllPosts = !this.showAllPosts;
   }
 }
