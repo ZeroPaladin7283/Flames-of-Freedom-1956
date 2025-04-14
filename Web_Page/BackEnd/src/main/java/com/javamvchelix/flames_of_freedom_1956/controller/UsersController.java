@@ -6,12 +6,15 @@ package com.javamvchelix.flames_of_freedom_1956.controller;
 
 import com.javamvchelix.flames_of_freedom_1956.config.JWT;
 import com.javamvchelix.flames_of_freedom_1956.model.Users;
+import com.javamvchelix.flames_of_freedom_1956.repository.UsersRepository;
 import com.javamvchelix.flames_of_freedom_1956.service.UsersService;
 import java.sql.Date;
+import java.util.Map;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.POST;
@@ -105,48 +108,99 @@ public class UsersController {
     @GET
     @Path("getAllUser")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllUser(@HeaderParam("token") String jwt) {
-        int isValid = JWT.validateJWT(jwt);
-        
-        if(isValid == 1) {
-            JSONObject obj = layer.getAllUser();
-            return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
-        } else if (isValid == 2) {
-            return Response.status(498).entity("InvalidToken").type(MediaType.APPLICATION_JSON).build();
-        } else {
-            return Response.status(401).entity("TokenExpired").type(MediaType.APPLICATION_JSON).build();
-        }
+    public Response getAllUser() {
+        JSONObject obj = layer.getAllUser();
+        return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
     }
     
     @GET
     @Path("getUserById")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getUserById(@HeaderParam("token") String jwt, @QueryParam("id") Integer userId) {
-        int isValid = JWT.validateJWT(jwt);
-        
-        if(isValid == 1) {
-            JSONObject obj = layer.getUserById(userId);
-            return  Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
-        } else if (isValid == 2) {
-            return Response.status(498).entity("InvalidToken").type(MediaType.APPLICATION_JSON).build();
-        } else {
-            return Response.status(401).entity("TokenExpired").type(MediaType.APPLICATION_JSON).build();
-        }
+    public Response getUserById(@QueryParam("id") Integer userId) {
+        JSONObject obj = layer.getUserById(userId);
+        return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
     }
     
     @GET
     @Path("getDevelopers")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getDevelopers(@HeaderParam("token") String jwt) {
-        int isValid = JWT.validateJWT(jwt);
+    public Response getDevelopers() {
+        JSONObject obj = layer.getDevelopers();
+        return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
+    }
+    
+    @POST
+    @Path("changeInfo")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response changeInfo(String bodyString){
+        JSONObject body = new JSONObject(bodyString);
         
-        if(isValid == 1) {
-            JSONObject obj = layer.getDevelopers();
-            return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
-        } else if (isValid == 2) {
-            return Response.status(498).entity("InvalidToken").type(MediaType.APPLICATION_JSON).build();
-        } else {
-            return Response.status(401).entity("TokenExpired").type(MediaType.APPLICATION_JSON).build();
-        }
+        Users u = new Users(
+                body.getInt("id"),
+                body.getString("newUsername"),
+                body.getString("newEmail"),
+                body.getString("newPassword"),
+                body.getString("imageIn")
+        );
+        
+        JSONObject obj = layer.changeInfo(u);
+        return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
+    }
+    
+    @POST
+    @Path("sendEmail")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response sendEmail(String bodyString) {
+        JSONObject body = new JSONObject(bodyString);
+        Boolean obj = UsersRepository.sendEmail(
+                body.getString("to"), 
+                body.getBoolean("ccMe"), 
+                body.getString("subject"),
+                body.getString("content")
+        );
+        return Response.status(200).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
+    }
+    
+    @POST
+    @Path("sendSuccessReg")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response sendSuccessReg(String bodyString) {
+        JSONObject body = new JSONObject(bodyString);
+        Boolean obj = UsersRepository.sendSuccessReg(
+                body.getString("to"),
+                body.getBoolean("ccMe")
+        );
+        return Response.status(200).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
+    }
+    
+    @POST
+    @Path("temporaryPass")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response sendTemporaryPass(String bodyString) {
+        JSONObject body = new JSONObject(bodyString);
+        
+        Map<String, Object> response = UsersRepository.sendTemporaryPass(
+                body.getString("to"),
+                body.getBoolean("ccMe")
+        );
+        return Response.status(200).entity(response).type(MediaType.APPLICATION_JSON).build();
+    }
+    
+    @POST
+    @Path("changePassword")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response changePassword(String bodyString){
+        JSONObject body = new JSONObject(bodyString);
+        
+        Users u = new Users(
+                body.getString("emailIn"),
+                body.getString("passwordIn")
+        );
+        
+        JSONObject obj = layer.changePassword(u);
+        return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
     }
 }

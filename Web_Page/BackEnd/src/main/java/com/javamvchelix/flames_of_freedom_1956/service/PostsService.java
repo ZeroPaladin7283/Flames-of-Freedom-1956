@@ -5,6 +5,7 @@
 package com.javamvchelix.flames_of_freedom_1956.service;
 
 import com.javamvchelix.flames_of_freedom_1956.model.Posts;
+import com.javamvchelix.flames_of_freedom_1956.repository.PostsRepository;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -15,7 +16,7 @@ import org.json.JSONObject;
  */
 public class PostsService {
     
-    private Posts layer = new Posts();
+    protected PostsRepository layer = new PostsRepository();
     
     public JSONObject getAllPosts() {
         JSONObject toReturn = new JSONObject();
@@ -37,52 +38,11 @@ public class PostsService {
                 
                 toAdd.put("id", actualPost.getId());
                 toAdd.put("title", actualPost.getTitle());
-                toAdd.put("categoryId", actualPost.getCategoryId());
-                toAdd.put("imageId", actualPost.getImageId());
-                toAdd.put("content", actualPost.getContent());
-                toAdd.put("userId", actualPost.getUserId());
-                toAdd.put("createdAt", actualPost.getCreatedAt());
-                toAdd.put("isDeleted", actualPost.getIsDeleted());
-                toAdd.put("deletedAt", actualPost.getDeletedAt());
-                
-                result.put(toAdd);
-            }
-            
-            toReturn.put("result", result);
-        }
-        
-        toReturn.put("status", status);
-        toReturn.put("statusCode", statusCode);
-        return toReturn;
-    }
-    
-    public JSONObject getPostData() {
-        JSONObject toReturn = new JSONObject();
-        String status = "success";
-        int statusCode = 200;
-        List<Posts> modelResult = layer.getPostData();
-        
-        if(modelResult == null) {
-            status = "ModelException";
-            statusCode = 500;
-        } else if(modelResult.isEmpty()) {
-            status = "NoPostDataFound";
-            statusCode = 417;
-        } else {
-            JSONArray result = new JSONArray();
-            
-            for(Posts actualPost : modelResult) {
-                JSONObject toAdd = new JSONObject();
-                
-                toAdd.put("id", actualPost.getId());
-                toAdd.put("title", actualPost.getTitle());
                 toAdd.put("category", actualPost.getCategory());
-                toAdd.put("filePath", actualPost.getFilePath());
+                toAdd.put("image", actualPost.getImage());
                 toAdd.put("content", actualPost.getContent());
                 toAdd.put("username", actualPost.getUsername());
-                toAdd.put("createdAt", actualPost.getCreatedAt());
-                toAdd.put("isDeleted", actualPost.getIsDeleted());
-                toAdd.put("deletedAt", actualPost.getDeletedAt());
+                toAdd.put("profilePic", actualPost.getBase64Image());
                 
                 result.put(toAdd);
             }
@@ -99,29 +59,64 @@ public class PostsService {
         JSONObject toReturn = new JSONObject();
         String status = "success";
         int statusCode = 200;
-        Posts modelResult = new Posts(id);
+        Posts modelResult = layer.getPostById(id);
         
-        if(modelResult.getTitle() == null) {
+        if(modelResult == null) {
+            status = "ModelException";
+            statusCode = 500;
+        } else if(modelResult.getTitle() == null) {
             status = "PostNotFound";
             statusCode = 417;
         } else {
             JSONObject post = new JSONObject();
             
-            post.put("id", modelResult.getId());
             post.put("title", modelResult.getTitle());
             post.put("category", modelResult.getCategoryId());
-            post.put("file_path", modelResult.getImageId());
+            post.put("image", modelResult.getImage());
             post.put("content", modelResult.getContent());
-            post.put("username", modelResult.getUserId());
-            post.put("createdAt", modelResult.getCreatedAt());
-            post.put("isDeleted", modelResult.getIsDeleted());
-            post.put("deletedAt", modelResult.getDeletedAt());
+            post.put("userId", modelResult.getUserId());
             
             toReturn.put("result", post);
         }
         
         toReturn.put("status", status);
         toReturn.put("statusCode", statusCode);
+        return toReturn;
+    }
+    
+    public JSONObject deletePost(Posts p) {
+        JSONObject toReturn = new JSONObject();
+        String status = "success";
+        int statusCode = 200;
+        
+        Boolean modelResult = layer.deletePost(p);
+        
+        if(!modelResult) {
+            status = "ModelException";
+            statusCode = 500;
+        }
+        
+        toReturn.put("status", status);
+        toReturn.put("statusCode", statusCode);
+        
+        return toReturn;
+    }
+    
+    public JSONObject createPost(Posts p) {
+        JSONObject toReturn = new JSONObject();
+        String status = "success";
+        int statusCode = 200;
+        
+        Boolean modelResult = layer.createPost(p);
+        
+        if(!modelResult){
+            status = "ModelException";
+            statusCode = 500;
+        }
+        
+        toReturn.put("status", status);
+        toReturn.put("statusCode", statusCode);
+        
         return toReturn;
     }
 }

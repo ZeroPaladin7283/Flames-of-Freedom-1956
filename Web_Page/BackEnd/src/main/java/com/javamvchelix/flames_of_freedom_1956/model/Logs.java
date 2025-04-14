@@ -7,6 +7,7 @@ package com.javamvchelix.flames_of_freedom_1956.model;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -26,6 +27,7 @@ import javax.persistence.StoredProcedureQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -37,7 +39,9 @@ import javax.validation.constraints.Size;
 @Table(name = "logs")
 @NamedQueries({@NamedQuery(name = "Logs.findAll", query = "SELECT l FROM Logs l"), 
     @NamedQuery(name = "Logs.findById", query = "SELECT l FROM Logs l WHERE l.id = :id"), 
-    @NamedQuery(name = "Logs.findByUserId", query = "SELECT l FROM Logs l WHERE l.userId = :userId"), 
+    @NamedQuery(name = "Logs.findByAdminId", query = "SELECT l FROM Logs l WHERE l.adminId = :adminId"), 
+    @NamedQuery(name = "Logs.findByLog", query = "SELECT l FROM Logs l WHERE l.log = :log"),
+    @NamedQuery(name = "Logs.findByStatus", query= "SELECT l FROM Logs l WHERE l.status = :status"),
     @NamedQuery(name = "Logs.findByCreatedAt", query = "SELECT l FROM Logs l WHERE l.createdAt = :createdAt"), 
     @NamedQuery(name = "Logs.findByIsDeleted", query = "SELECT l FROM Logs l WHERE l.isDeleted = :isDeleted"), 
     @NamedQuery(name = "Logs.findByDeletedAt", query = "SELECT l FROM Logs l WHERE l.deletedAt = :deletedAt")})
@@ -51,14 +55,19 @@ public class Logs implements Serializable {
     private Integer id;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "user_id")
-    private int userId;
+    @Column(name = "admin_id")
+    private int adminId;
     @Basic(optional = false) 
     @NotNull 
     @Lob 
     @Size(min = 1, max = 65535) 
     @Column(name = "log")
     private String log;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 50)
+    @Column(name = "status")
+    private String status;
     @Column(name = "created_at") 
     @Temporal(TemporalType.DATE)
     private Date createdAt;
@@ -69,44 +78,38 @@ public class Logs implements Serializable {
     @Column(name = "deleted_at") 
     @Temporal(TemporalType.DATE)
     private Date deletedAt;
-
-    static EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.JavaMVCHelix_Flames_of_Freedom_1956_war_1.0-SNAPSHOTPU");
+    @Transient
+    private String username;
+    @Transient
+    private byte[] profilePic;
+    @Transient
+    private String base64Image;
     
     public Logs() {
     }
-
-    public Logs(Integer id) {
-        EntityManager em = emf.createEntityManager();
-        
-        try {
-            Logs l = em.find(Logs.class, id);
-            
-            this.id = l.getId();
-            this.userId = l.getUserId();
-            this.log = l.getLog();
-            this.isDeleted = l.getIsDeleted();
-        } catch (Exception ex) {
-            System.err.println("Hiba: " + ex.getLocalizedMessage());
-        } finally {
-            em.clear();
-            em.close();
-        }
+    
+    public Logs(Integer id, int adminId, String log, String status) {
+        this.id = id;
+        this.adminId = adminId;
+        this.log = log;
+        this.status = status;
     }
     
-    public Logs(Integer id, int userId, String log, Date createdAt, boolean isDeleted, Date deletedAt) {
+    public Logs(Integer id, byte[] profilePic, String username, String log, String status) {
         this.id = id;
-        this.userId = userId;
+        this.base64Image = profilePic != null ? Base64.getEncoder().encodeToString(profilePic) : null;
+        this.username = username;
         this.log = log;
-        this.createdAt = createdAt;
-        this.isDeleted = isDeleted;
-        this.deletedAt = deletedAt;
+        this.status = status;
     }
-
-    public Logs(Integer id, int userId, String log, boolean isDeleted) {
-        this.id = id;
-        this.userId = userId;
+    
+    public Logs(int adminId, String log) {
+        this.adminId = adminId;
         this.log = log;
-        this.isDeleted = isDeleted;
+    }
+    
+    public Logs(Integer id){
+        this.id = id;
     }
 
     public Integer getId() {
@@ -117,12 +120,12 @@ public class Logs implements Serializable {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getAdminId() {
+        return adminId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setAdminId(int adminId) {
+        this.adminId = adminId;
     }
 
     public String getLog() {
@@ -131,6 +134,14 @@ public class Logs implements Serializable {
 
     public void setLog(String log) {
         this.log = log;
+    }
+    
+    public String getStatus() {
+        return status;
+    }
+    
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Date getCreatedAt() {
@@ -157,6 +168,32 @@ public class Logs implements Serializable {
         this.deletedAt = deletedAt;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public byte[] getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(byte[] profilePic) {
+        this.profilePic = profilePic;
+    }
+
+    public String getBase64Image() {
+        return base64Image;
+    }
+
+    public void setBase64Image(String base64Image) {
+        this.base64Image = base64Image;
+    }
+    
+    
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -180,77 +217,5 @@ public class Logs implements Serializable {
     @Override
     public String toString() {
         return "com.javamvchelix.flames_of_freedom_1956.Logs[ id=" + id + " ]";
-    }
-    
-    public List<Logs> getAllLogs() {
-        EntityManager em = emf.createEntityManager();
-        
-        try{
-            StoredProcedureQuery spq = em.createStoredProcedureQuery("getAllLogs");
-            spq.execute();
-            
-            List<Logs> toReturn = new ArrayList();
-            List<Object[]> resultList = spq.getResultList();
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            
-            for(Object[] record : resultList) {
-                Logs l = new Logs(
-                        Integer.valueOf(record[0].toString()),
-                        Integer.valueOf(record[1].toString()),
-                        record[2].toString(),
-                        formatter.parse(record[3].toString()),
-                        Boolean.parseBoolean(record[4].toString()),
-                        record[5] == null ? null : formatter.parse(record[5].toString())
-                );
-                
-                toReturn.add(l);
-            }
-            return toReturn;
-        } catch (Exception e) {
-            System.err.println("Hiba: " + e.getLocalizedMessage());
-            return null;
-        } finally {
-            em.clear();
-            em.close();
-        }
-    }
-    
-    public Logs getLogById(Integer id) {
-        EntityManager em = emf.createEntityManager();
-        
-        try {
-            StoredProcedureQuery spq = em.createStoredProcedureQuery("getLogById");
-            
-            spq.registerStoredProcedureParameter("idIn", String.class, ParameterMode.IN);
-            
-            spq.setParameter("idIn", id);
-            
-            spq.execute();
-            
-            List<Object[]> resultList = spq.getResultList();
-            Logs toReturn = new Logs();
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            
-            for(Object[] o : resultList) {
-                Logs l = new Logs(
-                        Integer.valueOf(o[0].toString()),
-                        Integer.valueOf(o[1].toString()),
-                        o[2].toString(),
-                        formatter.parse(o[3].toString()),
-                        Boolean.parseBoolean(o[4].toString()),
-                        o[5] == null ? null : formatter.parse(o[5].toString())
-                );
-                toReturn = l;
-                System.out.println(l);
-            }
-            System.out.println(toReturn);
-            return toReturn;
-        } catch (Exception ex) {
-            System.err.println("Hiba: " + ex.getLocalizedMessage());
-            return null;
-        } finally {
-            em.clear();
-            em.close();
-        }
     }
 }

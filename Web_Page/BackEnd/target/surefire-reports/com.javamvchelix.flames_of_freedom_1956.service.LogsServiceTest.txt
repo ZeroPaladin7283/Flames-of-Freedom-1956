@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.javamvchelix.flames_of_freedom_1956.service.LogsServiceTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.810 s -- in com.javamvchelix.flames_of_freedom_1956.service.LogsServiceTest

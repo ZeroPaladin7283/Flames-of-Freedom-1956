@@ -5,6 +5,7 @@
 package com.javamvchelix.flames_of_freedom_1956.service;
 
 import com.javamvchelix.flames_of_freedom_1956.model.Logs;
+import com.javamvchelix.flames_of_freedom_1956.repository.LogsRepository;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -15,7 +16,7 @@ import org.json.JSONObject;
  */
 public class LogsService {
     
-    private Logs layer = new Logs();
+    protected LogsRepository layer = new LogsRepository();
     
     public JSONObject getAllLogs() {
         JSONObject toReturn = new JSONObject();
@@ -37,11 +38,10 @@ public class LogsService {
                 JSONObject toAdd = new JSONObject();
                 
                 toAdd.put("id", actualLog.getId());
-                toAdd.put("userId", actualLog.getUserId());
+                toAdd.put("profilePic", actualLog.getBase64Image());
+                toAdd.put("username", actualLog.getUsername());
                 toAdd.put("log", actualLog.getLog());
-                toAdd.put("createdAt", actualLog.getCreatedAt());
-                toAdd.put("isDeleted", actualLog.getIsDeleted());
-                toAdd.put("deletedAt", actualLog.getDeletedAt());
+                toAdd.put("status", actualLog.getStatus());
                 
                 result.put(toAdd);
             }
@@ -58,26 +58,63 @@ public class LogsService {
         JSONObject toReturn = new JSONObject();
         String status = "success";
         int statusCode = 200;
-        Logs modelResult = new Logs(id);
+        Logs modelResult = layer.getLogById(id);
         
-        if(modelResult.getLog() == null) {
+        if(modelResult == null) {
+            status = "ModelException";
+            statusCode = 500;
+        } else if(modelResult.getLog() == null) {
             status = "NoLogsFound";
             statusCode = 417;
         } else {
             JSONObject log = new JSONObject();
                 
                 log.put("id", modelResult.getId());
-                log.put("getUserId", modelResult.getUserId());
+                log.put("getAdminId", modelResult.getAdminId());
                 log.put("log", modelResult.getLog());
-                log.put("createdAt", modelResult.getCreatedAt());
-                log.put("isDeleted", modelResult.getIsDeleted());
-                log.put("deletedAt", modelResult.getDeletedAt());
+                log.put("status", modelResult.getStatus());
                 
                 toReturn.put("result", log);
         }
         
         toReturn.put("status", status);
         toReturn.put("statusCode", statusCode);
+        return toReturn;
+    }
+    
+    public JSONObject deleteLog(Logs l) {
+        JSONObject toReturn = new JSONObject();
+        String status = "success";
+        int statusCode = 200;
+        
+        Boolean modelResult = layer.deleteLog(l);
+        
+        if(!modelResult) {
+            status = "ModelException";
+            statusCode = 500;
+        }
+        
+        toReturn.put("status", status);
+        toReturn.put("statusCode", statusCode);
+        
+        return toReturn;
+    }
+    
+    public JSONObject createLog(Logs l) {
+        JSONObject toReturn = new JSONObject();
+        String status = "success";
+        int statusCode = 200;
+        
+        Boolean modelResult = layer.createLog(l);
+        
+        if(!modelResult){
+            status = "ModelException";
+            statusCode = 500;
+        }
+        
+        toReturn.put("status", status);
+        toReturn.put("statusCode", statusCode);
+        
         return toReturn;
     }
 }

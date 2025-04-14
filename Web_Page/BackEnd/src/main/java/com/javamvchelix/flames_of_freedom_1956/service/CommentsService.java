@@ -38,10 +38,7 @@ public class CommentsService {
                 toAdd.put("title", actualComment.getTitle());
                 toAdd.put("username", actualComment.getUsername());
                 toAdd.put("content", actualComment.getContent());
-                toAdd.put("filePath", actualComment.getFilePath());
                 toAdd.put("createdAt", actualComment.getCreatedAt());
-                toAdd.put("isDeleted", actualComment.getIsDeleted());
-                toAdd.put("deletedAt", actualComment.getDeletedAt());
                 
                 result.put(toAdd);
             }

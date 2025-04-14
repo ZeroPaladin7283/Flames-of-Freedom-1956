@@ -39,7 +39,7 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "Comments.findById", query = "SELECT c FROM Comments c WHERE c.id = :id"), 
     @NamedQuery(name = "Comments.findByPostId", query = "SELECT c FROM Comments c WHERE c.postId = :postId"), 
     @NamedQuery(name = "Comments.findByUserId", query = "SELECT c FROM Comments c WHERE c.userId = :userId"), 
-    @NamedQuery(name = "Comments.findByImageId", query = "SELECT c FROM Comments c WHERE c.imageId = :imageId"), 
+    @NamedQuery(name = "Comments.findByContent", query = "SELECT c FROM Comments c WHERE c.content = :content"),
     @NamedQuery(name = "Comments.findByCreatedAt", query = "SELECT c FROM Comments c WHERE c.createdAt = :createdAt"), 
     @NamedQuery(name = "Comments.findByIsDeleted", query = "SELECT c FROM Comments c WHERE c.isDeleted = :isDeleted"), 
     @NamedQuery(name = "Comments.findByDeletedAt", query = "SELECT c FROM Comments c WHERE c.deletedAt = :deletedAt")})
@@ -67,10 +67,6 @@ public class Comments implements Serializable {
     private String content;
     @Basic(optional = false) 
     @NotNull 
-    @Column(name = "image_id")
-    private int imageId;
-    @Basic(optional = false) 
-    @NotNull 
     @Column(name = "created_at") 
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
@@ -84,7 +80,6 @@ public class Comments implements Serializable {
     @Transient
     private String title;
     private String username;
-    private String filePath;
     
     static EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.JavaMVCHelix_Flames_of_Freedom_1956_war_1.0-SNAPSHOTPU");
 
@@ -101,7 +96,6 @@ public class Comments implements Serializable {
             this.postId = c.getPostId();
             this.userId = c.getUserId();
             this.content = c.getContent();
-            this.imageId = c.getImageId();
             this.createdAt = c.getCreatedAt();
             this.isDeleted = c.getIsDeleted();
         } catch (Exception ex) {
@@ -112,25 +106,19 @@ public class Comments implements Serializable {
         }
     }
 
-    public Comments(Integer id, int postId, int userId, String content, int imageId, Date createdAt, boolean isDeleted) {
+    public Comments(Integer id, int postId, int userId, String content, Date createdAt) {
         this.id = id;
         this.postId = postId;
         this.userId = userId;
         this.content = content;
-        this.imageId = imageId;
-        this.createdAt = createdAt;
-        this.isDeleted = isDeleted;
     }
     
-    public Comments(Integer id, String title, String username, String content, String filePath, Date createdAt, boolean isDeleted, Date deletedAt) {
+    public Comments(Integer id, String title, String username, String content, Date createdAt) {
         this.id = id;
         this.title = title;
         this.username = username;
         this.content = content;
-        this.filePath = filePath;
         this.createdAt = createdAt;
-        this.isDeleted = isDeleted;
-        this.deletedAt = deletedAt;
     }
 
     public Integer getId() {
@@ -163,14 +151,6 @@ public class Comments implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public int getImageId() {
-        return imageId;
-    }
-
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
     }
 
     public Date getCreatedAt() {
@@ -210,13 +190,6 @@ public class Comments implements Serializable {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-    public String getFilePath() {
-        return filePath;
-    }
-
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
     }
 
     @Override
@@ -261,10 +234,7 @@ public class Comments implements Serializable {
                         record[1].toString(),
                         record[2].toString(),
                         record[3].toString(),
-                        record[4] == null ? null : record[4].toString(),
-                        formatter.parse(record[5].toString()),
-                        Boolean.parseBoolean(record[6].toString()),
-                        record[7] == null ? null : formatter.parse(record[7].toString())
+                        formatter.parse(record[4].toString())
                 );
                 
                 toReturn.add(c);

@@ -1,4 +1,5 @@
 package com.javamvchelix.flames_of_freedom_1956.filters;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +21,8 @@ public class CorsFilter implements Filter {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
 
         // CORS konfiguráció
-        httpResponse.setHeader("Access-Control-Allow-Origin", "*");
+        // Cseréld le az "*" értéket a konkrét domainre
+        httpResponse.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
         httpResponse.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
         httpResponse.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
 
