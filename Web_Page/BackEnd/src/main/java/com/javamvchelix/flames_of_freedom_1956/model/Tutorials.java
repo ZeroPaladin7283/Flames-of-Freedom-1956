@@ -27,21 +27,40 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "tutorials")
-@NamedQueries({@NamedQuery(name = "Tutorials.findAll", query = "SELECT t FROM Tutorials t"), @NamedQuery(name = "Tutorials.findById", query = "SELECT t FROM Tutorials t WHERE t.id = :id"), @NamedQuery(name = "Tutorials.findByTitle", query = "SELECT t FROM Tutorials t WHERE t.title = :title"), @NamedQuery(name = "Tutorials.findByCreatedAt", query = "SELECT t FROM Tutorials t WHERE t.createdAt = :createdAt"), @NamedQuery(name = "Tutorials.findByIsDeleted", query = "SELECT t FROM Tutorials t WHERE t.isDeleted = :isDeleted"), @NamedQuery(name = "Tutorials.findByDeletedAt", query = "SELECT t FROM Tutorials t WHERE t.deletedAt = :deletedAt")})
+@NamedQueries({@NamedQuery(name = "Tutorials.findAll", query = "SELECT t FROM Tutorials t"), 
+    @NamedQuery(name = "Tutorials.findById", query = "SELECT t FROM Tutorials t WHERE t.id = :id"), 
+    @NamedQuery(name = "Tutorials.findByTitle", query = "SELECT t FROM Tutorials t WHERE t.title = :title"), 
+    @NamedQuery(name = "Tutorials.findByCreatedAt", query = "SELECT t FROM Tutorials t WHERE t.createdAt = :createdAt"), 
+    @NamedQuery(name = "Tutorials.findByIsDeleted", query = "SELECT t FROM Tutorials t WHERE t.isDeleted = :isDeleted"), 
+    @NamedQuery(name = "Tutorials.findByDeletedAt", query = "SELECT t FROM Tutorials t WHERE t.deletedAt = :deletedAt")})
 public class Tutorials implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Basic(optional = false) @Column(name = "id")
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    @Basic(optional = false) 
+    @Column(name = "id")
     private Integer id;
-    @Basic(optional = false) @NotNull @Size(min = 1, max = 100) @Column(name = "title")
+    @Basic(optional = false) 
+    @NotNull 
+    @Size(min = 1, max = 100) 
+    @Column(name = "title")
     private String title;
-    @Basic(optional = false) @NotNull @Lob @Size(min = 1, max = 65535) @Column(name = "content")
+    @Basic(optional = false) 
+    @NotNull 
+    @Lob 
+    @Size(min = 1, max = 65535) 
+    @Column(name = "content")
     private String content;
-    @Column(name = "created_at") @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_at") 
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
-    @Basic(optional = false) @NotNull @Column(name = "is_deleted")
+    @Basic(optional = false) 
+    @NotNull 
+    @Column(name = "is_deleted")
     private boolean isDeleted;
-    @Column(name = "deleted_at") @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "deleted_at") 
+    @Temporal(TemporalType.TIMESTAMP)
     private Date deletedAt;
 
     public Tutorials() {

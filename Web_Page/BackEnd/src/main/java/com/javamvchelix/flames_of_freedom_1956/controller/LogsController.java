@@ -5,6 +5,7 @@
 package com.javamvchelix.flames_of_freedom_1956.controller;
 
 import com.javamvchelix.flames_of_freedom_1956.config.JWT;
+import com.javamvchelix.flames_of_freedom_1956.model.Logs;
 import com.javamvchelix.flames_of_freedom_1956.service.LogsService;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -12,6 +13,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.QueryParam;
@@ -70,6 +72,35 @@ public class LogsController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getLogById(@QueryParam("id") Integer logId) {
         JSONObject obj = layer.getLogById(logId);
+        return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
+    }
+    
+    @POST
+    @Path("deleteLog")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteLog(String bodyString) {
+        JSONObject body = new JSONObject (bodyString);
+        
+        Logs l = new Logs(
+                body.getInt("id")
+        );
+        JSONObject obj = layer.deleteLog(l);
+        return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
+    }
+    
+    @POST
+    @Path("createLog")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response createLog(String bodyString) {
+        JSONObject body = new JSONObject (bodyString);
+        
+        Logs l = new Logs(
+                body.getInt("adminIdIn"),
+                body.getString("logIn")
+        );
+        JSONObject obj = layer.createLog(l);
         return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
     }
 }

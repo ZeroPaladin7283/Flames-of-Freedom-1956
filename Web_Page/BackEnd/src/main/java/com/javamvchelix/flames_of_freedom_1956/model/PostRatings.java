@@ -25,19 +25,34 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "post_ratings")
-@NamedQueries({@NamedQuery(name = "PostRatings.findAll", query = "SELECT p FROM PostRatings p"), @NamedQuery(name = "PostRatings.findById", query = "SELECT p FROM PostRatings p WHERE p.id = :id"), @NamedQuery(name = "PostRatings.findByPostId", query = "SELECT p FROM PostRatings p WHERE p.postId = :postId"), @NamedQuery(name = "PostRatings.findByRating", query = "SELECT p FROM PostRatings p WHERE p.rating = :rating"), @NamedQuery(name = "PostRatings.findByIsDeleted", query = "SELECT p FROM PostRatings p WHERE p.isDeleted = :isDeleted"), @NamedQuery(name = "PostRatings.findByDeletedAt", query = "SELECT p FROM PostRatings p WHERE p.deletedAt = :deletedAt")})
+@NamedQueries({@NamedQuery(name = "PostRatings.findAll", query = "SELECT p FROM PostRatings p"), 
+    @NamedQuery(name = "PostRatings.findById", query = "SELECT p FROM PostRatings p WHERE p.id = :id"), 
+    @NamedQuery(name = "PostRatings.findByPostId", query = "SELECT p FROM PostRatings p WHERE p.postId = :postId"), 
+    @NamedQuery(name = "PostRatings.findByRating", query = "SELECT p FROM PostRatings p WHERE p.rating = :rating"), 
+    @NamedQuery(name = "PostRatings.findByIsDeleted", query = "SELECT p FROM PostRatings p WHERE p.isDeleted = :isDeleted"), 
+    @NamedQuery(name = "PostRatings.findByDeletedAt", query = "SELECT p FROM PostRatings p WHERE p.deletedAt = :deletedAt")})
 public class PostRatings implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Basic(optional = false) @Column(name = "id")
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    @Basic(optional = false) 
+    @Column(name = "id")
     private Integer id;
-    @Basic(optional = false) @NotNull @Column(name = "post_id")
+    @Basic(optional = false) 
+    @NotNull 
+    @Column(name = "post_id")
     private int postId;
-    @Basic(optional = false) @NotNull @Column(name = "rating")
+    @Basic(optional = false) 
+    @NotNull 
+    @Column(name = "rating")
     private int rating;
-    @Basic(optional = false) @NotNull @Column(name = "is_deleted")
+    @Basic(optional = false) 
+    @NotNull 
+    @Column(name = "is_deleted")
     private boolean isDeleted;
-    @Column(name = "deleted_at") @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "deleted_at") 
+    @Temporal(TemporalType.TIMESTAMP)
     private Date deletedAt;
 
     public PostRatings() {

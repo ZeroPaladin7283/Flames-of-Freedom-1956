@@ -26,30 +26,44 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "categories")
-@NamedQueries({@NamedQuery(name = "Categories.findAll", query = "SELECT c FROM Categories c"), @NamedQuery(name = "Categories.findById", query = "SELECT c FROM Categories c WHERE c.id = :id"), @NamedQuery(name = "Categories.findByCategory", query = "SELECT c FROM Categories c WHERE c.category = :category"), @NamedQuery(name = "Categories.findByIsDeleted", query = "SELECT c FROM Categories c WHERE c.isDeleted = :isDeleted"), @NamedQuery(name = "Categories.findByDeletedAt", query = "SELECT c FROM Categories c WHERE c.deletedAt = :deletedAt")})
+@NamedQueries({@NamedQuery(name = "Categories.findAll", query = "SELECT c FROM Categories c"), 
+    @NamedQuery(name = "Categories.findById", query = "SELECT c FROM Categories c WHERE c.id = :id"), 
+    @NamedQuery(name = "Categories.findByCategory", query = "SELECT c FROM Categories c WHERE c.category = :category"), 
+    @NamedQuery(name = "Categories.findByIsDeleted", query = "SELECT c FROM Categories c WHERE c.isDeleted = :isDeleted"), 
+    @NamedQuery(name = "Categories.findByDeletedAt", query = "SELECT c FROM Categories c WHERE c.deletedAt = :deletedAt")})
 public class Categories implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Basic(optional = false) @Column(name = "id")
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    @Basic(optional = false) 
+    @Column(name = "id")
     private Integer id;
-    @Basic(optional = false) @NotNull @Size(min = 1, max = 100) @Column(name = "category")
+    @Basic(optional = false) 
+    @NotNull 
+    @Size(min = 1, max = 100) 
+    @Column(name = "category")
     private String category;
-    @Basic(optional = false) @NotNull @Column(name = "is_deleted")
+    @Basic(optional = false) 
+    @NotNull 
+    @Column(name = "is_deleted")
     private boolean isDeleted;
-    @Column(name = "deleted_at") @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "deleted_at") 
+    @Temporal(TemporalType.TIMESTAMP)
     private Date deletedAt;
 
     public Categories() {
-    }
-
-    public Categories(Integer id) {
-        this.id = id;
     }
 
     public Categories(Integer id, String category, boolean isDeleted) {
         this.id = id;
         this.category = category;
         this.isDeleted = isDeleted;
+    }
+    
+    public Categories(Integer id, String category) {
+        this.id = id;
+        this.category = category;
     }
 
     public Integer getId() {
@@ -108,5 +122,4 @@ public class Categories implements Serializable {
     public String toString() {
         return "com.javamvchelix.flames_of_freedom_1956.Categories[ id=" + id + " ]";
     }
-    
 }

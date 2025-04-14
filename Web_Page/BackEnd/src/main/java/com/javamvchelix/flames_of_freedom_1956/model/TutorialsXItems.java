@@ -25,19 +25,34 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "tutorials_x_items")
-@NamedQueries({@NamedQuery(name = "TutorialsXItems.findAll", query = "SELECT t FROM TutorialsXItems t"), @NamedQuery(name = "TutorialsXItems.findById", query = "SELECT t FROM TutorialsXItems t WHERE t.id = :id"), @NamedQuery(name = "TutorialsXItems.findByTutorialId", query = "SELECT t FROM TutorialsXItems t WHERE t.tutorialId = :tutorialId"), @NamedQuery(name = "TutorialsXItems.findByItemId", query = "SELECT t FROM TutorialsXItems t WHERE t.itemId = :itemId"), @NamedQuery(name = "TutorialsXItems.findByIsDeleted", query = "SELECT t FROM TutorialsXItems t WHERE t.isDeleted = :isDeleted"), @NamedQuery(name = "TutorialsXItems.findByDeletedAt", query = "SELECT t FROM TutorialsXItems t WHERE t.deletedAt = :deletedAt")})
+@NamedQueries({@NamedQuery(name = "TutorialsXItems.findAll", query = "SELECT t FROM TutorialsXItems t"), 
+    @NamedQuery(name = "TutorialsXItems.findById", query = "SELECT t FROM TutorialsXItems t WHERE t.id = :id"), 
+    @NamedQuery(name = "TutorialsXItems.findByTutorialId", query = "SELECT t FROM TutorialsXItems t WHERE t.tutorialId = :tutorialId"), 
+    @NamedQuery(name = "TutorialsXItems.findByItemId", query = "SELECT t FROM TutorialsXItems t WHERE t.itemId = :itemId"), 
+    @NamedQuery(name = "TutorialsXItems.findByIsDeleted", query = "SELECT t FROM TutorialsXItems t WHERE t.isDeleted = :isDeleted"), 
+    @NamedQuery(name = "TutorialsXItems.findByDeletedAt", query = "SELECT t FROM TutorialsXItems t WHERE t.deletedAt = :deletedAt")})
 public class TutorialsXItems implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Basic(optional = false) @Column(name = "id")
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    @Basic(optional = false) 
+    @Column(name = "id")
     private Integer id;
-    @Basic(optional = false) @NotNull @Column(name = "tutorial_id")
+    @Basic(optional = false) 
+    @NotNull 
+    @Column(name = "tutorial_id")
     private int tutorialId;
-    @Basic(optional = false) @NotNull @Column(name = "item_id")
+    @Basic(optional = false) 
+    @NotNull 
+    @Column(name = "item_id")
     private int itemId;
-    @Basic(optional = false) @NotNull @Column(name = "is_deleted")
+    @Basic(optional = false) 
+    @NotNull 
+    @Column(name = "is_deleted")
     private boolean isDeleted;
-    @Column(name = "deleted_at") @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "deleted_at") 
+    @Temporal(TemporalType.TIMESTAMP)
     private Date deletedAt;
 
     public TutorialsXItems() {

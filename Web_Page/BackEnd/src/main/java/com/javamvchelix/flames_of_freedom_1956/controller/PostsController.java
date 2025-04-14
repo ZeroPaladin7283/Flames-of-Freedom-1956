@@ -5,6 +5,7 @@
 package com.javamvchelix.flames_of_freedom_1956.controller;
 
 import com.javamvchelix.flames_of_freedom_1956.config.JWT;
+import com.javamvchelix.flames_of_freedom_1956.model.Posts;
 import com.javamvchelix.flames_of_freedom_1956.service.PostsService;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
@@ -12,6 +13,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.QueryParam;
@@ -66,18 +68,42 @@ public class PostsController {
     }
     
     @GET
-    @Path("getPostData")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getPostData() {
-        JSONObject obj = layer.getPostData();
-        return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
-    }
-    
-    @GET
     @Path("getPostById")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getPostById(@QueryParam("id") Integer postId) {
         JSONObject obj = layer.getPostById(postId);
+        return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
+    }
+    
+    @POST
+    @Path("deletePost")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deletePost(String bodyString){
+        JSONObject body = new JSONObject (bodyString);
+        
+        Posts p = new Posts(
+                body.getInt("id")
+        );
+        JSONObject obj = layer.deletePost(p);
+        return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
+    }
+    
+    @POST
+    @Path("createPost")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response createPost(String bodyString){
+        JSONObject body = new JSONObject (bodyString);
+        
+        Posts p = new Posts(
+                body.getString("titleIn"),
+                body.getInt("categoryIdIn"),
+                body.getString("contentIn"),
+                body.getInt("userIdIn")
+        );
+        
+        JSONObject obj = layer.createPost(p);
         return Response.status(obj.getInt("statusCode")).entity(obj.toString()).type(MediaType.APPLICATION_JSON).build();
     }
 }

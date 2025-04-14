@@ -26,23 +26,45 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "characters")
-@NamedQueries({@NamedQuery(name = "Characters.findAll", query = "SELECT c FROM Characters c"), @NamedQuery(name = "Characters.findById", query = "SELECT c FROM Characters c WHERE c.id = :id"), @NamedQuery(name = "Characters.findByName", query = "SELECT c FROM Characters c WHERE c.name = :name"), @NamedQuery(name = "Characters.findByHealth", query = "SELECT c FROM Characters c WHERE c.health = :health"), @NamedQuery(name = "Characters.findByDamage", query = "SELECT c FROM Characters c WHERE c.damage = :damage"), @NamedQuery(name = "Characters.findByIsBoss", query = "SELECT c FROM Characters c WHERE c.isBoss = :isBoss"), @NamedQuery(name = "Characters.findByIsDeleted", query = "SELECT c FROM Characters c WHERE c.isDeleted = :isDeleted"), @NamedQuery(name = "Characters.findByDeletedAt", query = "SELECT c FROM Characters c WHERE c.deletedAt = :deletedAt")})
+@NamedQueries({@NamedQuery(name = "Characters.findAll", query = "SELECT c FROM Characters c"), 
+    @NamedQuery(name = "Characters.findById", query = "SELECT c FROM Characters c WHERE c.id = :id"), 
+    @NamedQuery(name = "Characters.findByName", query = "SELECT c FROM Characters c WHERE c.name = :name"), 
+    @NamedQuery(name = "Characters.findByHealth", query = "SELECT c FROM Characters c WHERE c.health = :health"), 
+    @NamedQuery(name = "Characters.findByDamage", query = "SELECT c FROM Characters c WHERE c.damage = :damage"), 
+    @NamedQuery(name = "Characters.findByIsBoss", query = "SELECT c FROM Characters c WHERE c.isBoss = :isBoss"), 
+    @NamedQuery(name = "Characters.findByIsDeleted", query = "SELECT c FROM Characters c WHERE c.isDeleted = :isDeleted"), 
+    @NamedQuery(name = "Characters.findByDeletedAt", query = "SELECT c FROM Characters c WHERE c.deletedAt = :deletedAt")})
 public class Characters implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Basic(optional = false) @Column(name = "id")
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    @Basic(optional = false) 
+    @Column(name = "id")
     private Integer id;
-    @Basic(optional = false) @NotNull @Size(min = 1, max = 100) @Column(name = "name")
+    @Basic(optional = false) 
+    @NotNull 
+    @Size(min = 1, max = 100) 
+    @Column(name = "name")
     private String name;
-    @Basic(optional = false) @NotNull @Column(name = "health")
+    @Basic(optional = false) 
+    @NotNull 
+    @Column(name = "health")
     private int health;
-    @Basic(optional = false) @NotNull @Column(name = "damage")
+    @Basic(optional = false) 
+    @NotNull 
+    @Column(name = "damage")
     private int damage;
-    @Basic(optional = false) @NotNull @Column(name = "is_boss")
+    @Basic(optional = false) 
+    @NotNull 
+    @Column(name = "is_boss")
     private boolean isBoss;
-    @Basic(optional = false) @NotNull @Column(name = "is_deleted")
+    @Basic(optional = false) 
+    @NotNull 
+    @Column(name = "is_deleted")
     private boolean isDeleted;
-    @Column(name = "deleted_at") @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "deleted_at") 
+    @Temporal(TemporalType.TIMESTAMP)
     private Date deletedAt;
 
     public Characters() {

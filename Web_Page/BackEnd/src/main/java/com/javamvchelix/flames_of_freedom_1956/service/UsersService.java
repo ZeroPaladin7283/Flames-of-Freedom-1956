@@ -6,6 +6,7 @@ package com.javamvchelix.flames_of_freedom_1956.service;
 
 import com.javamvchelix.flames_of_freedom_1956.config.JWT;
 import com.javamvchelix.flames_of_freedom_1956.model.Users;
+import com.javamvchelix.flames_of_freedom_1956.repository.UsersRepository;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,7 +19,7 @@ import org.json.JSONObject;
  */
 public class UsersService {
     
-    private Users layer = new Users();
+    protected UsersRepository layer = new UsersRepository();
     private static final String EMAIL_REGEX = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$";
     
     public static boolean isValidEmail(String email) {
@@ -66,7 +67,7 @@ public class UsersService {
             } else {
                 if(modelResult.getId() == null) {
                     status = "userNotFound";
-                    statusCode = 417;
+                    statusCode = 404;
                 } else if(modelResult.getIsDeleted()) {
                     status = "userIsDeleted";
                     statusCode = 417;
@@ -74,12 +75,12 @@ public class UsersService {
                     JSONObject result = new JSONObject();
                     result.put("id", modelResult.getId());
                     result.put("username", modelResult.getUsername());
-                    result.put("image_id", modelResult.getImageId());
+                    result.put("profilePic", modelResult.getBase64Image());
                     result.put("github_id", modelResult.getGithubId());
                     result.put("email", modelResult.getEmail());
                     result.put("password", modelResult.getPassword());
-                    result.put("date_of_birth", modelResult.getDateOfBirth());
-                    result.put("is_admin", modelResult.getIsAdmin());
+                    result.put("dateOfBirth", modelResult.getDateOfBirth());
+                    result.put("isAdmin", modelResult.getIsAdmin());
                     result.put("registered_at", modelResult.getRegisteredAt());
                     result.put("is_deleted", modelResult.getIsDeleted());
                     result.put("deleted_at", modelResult.getDeletedAt());
@@ -105,8 +106,8 @@ public class UsersService {
         
         if(isValidEmail(u.getEmail())) {
             if(isValidPassword(u.getPassword())) {
-                boolean userIsExists = Users.isUserExists(u.getEmail());
-                if(Users.isUserExists(u.getEmail()) == null) {
+                boolean userIsExists = UsersRepository.isUserExists(u.getEmail());
+                if(UsersRepository.isUserExists(u.getEmail()) == null) {
                     status = "ModelException";
                     statusCode = 500;
                 } else if(userIsExists == true) {
@@ -141,8 +142,8 @@ public class UsersService {
         if(JWT.isAdmin(jwt)) {
             if(isValidPassword(u.getPassword())) {
                 if(isValidEmail(u.getEmail())) {
-                    boolean userIsExists = Users.isUserExists(u.getEmail());
-                    if(Users.isUserExists(u.getEmail()) == null) {
+                    boolean userIsExists = UsersRepository.isUserExists(u.getEmail());
+                    if(UsersRepository.isUserExists(u.getEmail()) == null) {
                         status = "ModelException";
                         statusCode = 500;
                     } else if(userIsExists == true) {
@@ -192,16 +193,14 @@ public class UsersService {
                 JSONObject toAdd = new JSONObject();
                 
                 toAdd.put("id", actualUser.getId());
-                toAdd.put("usernam", actualUser.getUsername());
-                toAdd.put("imageId", actualUser.getImageId());
+                toAdd.put("username", actualUser.getUsername());
+                toAdd.put("profilePic", actualUser.getBase64Image());
                 toAdd.put("githubId", actualUser.getGithubId());
                 toAdd.put("email", actualUser.getEmail());
                 toAdd.put("password", actualUser.getPassword());
                 toAdd.put("dateOfBirth", actualUser.getDateOfBirth());
                 toAdd.put("isAdmin", actualUser.getIsAdmin());
                 toAdd.put("registeredAt", actualUser.getRegisteredAt());
-                toAdd.put("isDeleted", actualUser.getIsDeleted());
-                toAdd.put("deletedAt", actualUser.getDeletedAt());
                 
                 result.put(toAdd);
             }
@@ -218,9 +217,9 @@ public class UsersService {
         JSONObject toReturn = new JSONObject();
         String status = "success";
         int statusCode = 200;
-        Users modelResult = new Users(id);
+        Users modelResult = layer.getUserById(id);
         
-        if(modelResult.getEmail() == null) {
+        if(modelResult.getId() == null) {
             status = "UserNotFound";
             statusCode = 417;
         } else {
@@ -228,15 +227,13 @@ public class UsersService {
             
             user.put("id", modelResult.getId());
             user.put("username", modelResult.getUsername());
-            user.put("imageId", modelResult.getImageId());
+            user.put("profilePic", modelResult.getBase64Image());
             user.put("githubId", modelResult.getGithubId());
             user.put("email", modelResult.getEmail());
             user.put("password", modelResult.getPassword());
             user.put("dateOfBirth", modelResult.getDateOfBirth());
             user.put("isAdmin", modelResult.getIsAdmin());
             user.put("registeredAt", modelResult.getRegisteredAt());
-            user.put("isDeleted", modelResult.getIsDeleted());
-            user.put("deletedAt", modelResult.getDeletedAt());
             
             toReturn.put("result", user);
         }
@@ -266,15 +263,13 @@ public class UsersService {
                 
                 toAdd.put("id", actualUser.getId());
                 toAdd.put("username", actualUser.getUsername());
-                toAdd.put("imageId", actualUser.getImageId());
+                toAdd.put("profilePic", actualUser.getBase64Image());
                 toAdd.put("githubId", actualUser.getGithubId());
                 toAdd.put("email", actualUser.getEmail());
                 toAdd.put("password", actualUser.getPassword());
                 toAdd.put("dateOfBirth", actualUser.getDateOfBirth());
                 toAdd.put("isAdmin", actualUser.getIsAdmin());
                 toAdd.put("registeredAt", actualUser.getRegisteredAt());
-                toAdd.put("isDeleted", actualUser.getIsDeleted());
-                toAdd.put("deletedAt", actualUser.getDeletedAt());
                 
                 result.put(toAdd);
             }
@@ -284,6 +279,42 @@ public class UsersService {
         
         toReturn.put("status", status);
         toReturn.put("statusCode", statusCode);
+        return toReturn;
+    }
+    
+    public JSONObject changeInfo(Users u) {
+        JSONObject toReturn = new JSONObject();
+        String status = "success";
+        int statusCode = 200;
+        
+        Boolean modelResult = layer.changeInfo(u);
+        
+        if(!modelResult){
+            status = "ModelException";
+            statusCode = 500;
+        }
+        
+        toReturn.put("status", status);
+        toReturn.put("statusCode", statusCode);
+        
+        return toReturn;
+    }
+    
+    public JSONObject changePassword(Users u) {
+        JSONObject toReturn = new JSONObject();
+        String status = "success";
+        int statusCode = 200;
+
+        Boolean modelResult = layer.changePassword(u);
+
+        if (!modelResult) {
+            status = "ModelException";
+            statusCode = 500;
+        }
+
+        toReturn.put("status", status);
+        toReturn.put("statusCode", statusCode);
+
         return toReturn;
     }
 }

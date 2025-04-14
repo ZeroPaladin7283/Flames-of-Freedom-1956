@@ -28,9 +28,11 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(com.javamvchelix.flames_of_freedom_1956.controller.CategoriesController.class);
         resources.add(com.javamvchelix.flames_of_freedom_1956.controller.CommentsController.class);
         resources.add(com.javamvchelix.flames_of_freedom_1956.controller.LogsController.class);
         resources.add(com.javamvchelix.flames_of_freedom_1956.controller.PostsController.class);
+        resources.add(com.javamvchelix.flames_of_freedom_1956.controller.ReviewController.class);
         resources.add(com.javamvchelix.flames_of_freedom_1956.controller.UsersController.class);
     }
     

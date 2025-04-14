@@ -25,19 +25,34 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "comment_ratings")
-@NamedQueries({@NamedQuery(name = "CommentRatings.findAll", query = "SELECT c FROM CommentRatings c"), @NamedQuery(name = "CommentRatings.findById", query = "SELECT c FROM CommentRatings c WHERE c.id = :id"), @NamedQuery(name = "CommentRatings.findByCommentId", query = "SELECT c FROM CommentRatings c WHERE c.commentId = :commentId"), @NamedQuery(name = "CommentRatings.findByRating", query = "SELECT c FROM CommentRatings c WHERE c.rating = :rating"), @NamedQuery(name = "CommentRatings.findByIsDeleted", query = "SELECT c FROM CommentRatings c WHERE c.isDeleted = :isDeleted"), @NamedQuery(name = "CommentRatings.findByDeletedAt", query = "SELECT c FROM CommentRatings c WHERE c.deletedAt = :deletedAt")})
+@NamedQueries({@NamedQuery(name = "CommentRatings.findAll", query = "SELECT c FROM CommentRatings c"), 
+    @NamedQuery(name = "CommentRatings.findById", query = "SELECT c FROM CommentRatings c WHERE c.id = :id"), 
+    @NamedQuery(name = "CommentRatings.findByCommentId", query = "SELECT c FROM CommentRatings c WHERE c.commentId = :commentId"), 
+    @NamedQuery(name = "CommentRatings.findByRating", query = "SELECT c FROM CommentRatings c WHERE c.rating = :rating"), 
+    @NamedQuery(name = "CommentRatings.findByIsDeleted", query = "SELECT c FROM CommentRatings c WHERE c.isDeleted = :isDeleted"), 
+    @NamedQuery(name = "CommentRatings.findByDeletedAt", query = "SELECT c FROM CommentRatings c WHERE c.deletedAt = :deletedAt")})
 public class CommentRatings implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Basic(optional = false) @Column(name = "id")
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    @Basic(optional = false) 
+    @Column(name = "id")
     private Integer id;
-    @Basic(optional = false) @NotNull @Column(name = "comment_id")
+    @Basic(optional = false) 
+    @NotNull 
+    @Column(name = "comment_id")
     private int commentId;
-    @Basic(optional = false) @NotNull @Column(name = "rating")
+    @Basic(optional = false) 
+    @NotNull 
+    @Column(name = "rating")
     private int rating;
-    @Basic(optional = false) @NotNull @Column(name = "is_deleted")
+    @Basic(optional = false) 
+    @NotNull 
+    @Column(name = "is_deleted")
     private boolean isDeleted;
-    @Column(name = "deleted_at") @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "deleted_at") 
+    @Temporal(TemporalType.TIMESTAMP)
     private Date deletedAt;
 
     public CommentRatings() {
