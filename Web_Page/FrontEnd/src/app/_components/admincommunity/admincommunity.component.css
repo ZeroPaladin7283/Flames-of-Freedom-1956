@@ -8,15 +8,182 @@
 
 .communityContent {
     background-color: rgba(61, 61, 61, 0.421);
-    padding: 50px;
+    padding: 56px;
     width: 80%;
-    margin: 100px auto;
+    margin: 104px auto;
     border-radius: 75px;
     display: flex;
     justify-content: center;
     color: #D8CEC5;
     flex-direction: column;
+    font-size: 32px;
+}
+
+.create-post-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#showMore {
+    padding: 13px 53px;
+    border-radius: 50px;
+    border: 3px solid #D8CEC5;
+    background-color: transparent;
+    color: #D8CEC5;
+    transition: 0.5s ease-in-out;
+    font-weight: 600;
+}
+
+#showMore:hover {
+    background-color: rgb(177, 117, 64);
+}
+
+#submit {
+    background-color: #8B8B8B;
+    cursor: not-allowed;
+    width: 50%;
+    margin: 0 auto;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#submit:disabled {
+    background-color: #8b8b8b !important;
+    transition: 0.5s ease-in-out;
+}
+
+#submit:not(:disabled) {
+    background-color: #4CAF50;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: #338837;
+    transition: 0.5s ease-in-out;
+}
+
+.create-post-btn {
+    margin-top: 50px;
+    font-size: 30px;
+    width: 30%;
+    background-color: #4CAF50;
+    color: #D8CEC5;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out !important;
+    font-weight: 600;
+}
+
+.create-post-btn:hover {
+    background-color: #338837;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #FEFEFE;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.modal-content form {
+    padding: 0 40px;
+}
+
+.modal-content h2 {
+    color: #3D3D3D;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.modal-content label {
+    color: #3D3D3D;
     font-size: 35px;
+    font-weight: bold;
+}
+
+.modal-content input {
+    margin-bottom: 50px;
+    font-size: 30px;
+}
+
+.modal-content select {
+    margin-bottom: 50px;
+    font-size: 30px;
+}
+
+option {
+    font-size: 30px;
+}
+
+.modal-content textarea {
+    margin-bottom: 50px;
+    font-size: 30px;
+}
+
+.close {
+    color: #3D3D3D;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: #3D3D3D;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form select, form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
 }
 
 .user {
@@ -27,197 +194,1347 @@
 }
 
 .user img {
-    width: 250px;
+    width: 208px;
+    height: 208px;
     border: 5px solid #AFECA9;
-    border-radius: 150px;
+    border-radius: 50%;
     margin: 0 auto;
 }
 
 .communityContent .row .user p {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 24px;
+    font-size: 40px;
 }
 
 .communityContent .row .text {
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    padding: 56px;
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 56px;
 }
 
 .communityContent .row .text p {
     text-align: justify;
-    margin-bottom: 50px;
+    margin-bottom: 56px;
 }
 
 .communityContent .row .text img {
-    width: 450px;
+    width: 320px;
+    max-height: 400px;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 56px;
 }
 
 .communityContent .row .text a {
     text-decoration: none;
-    width: 40%;
-    font-size: 25px;
+    font-size: 40px;
+    width: 60%;
     color: #D8CEC5;
+    border: 3px solid #D8CEC5;
+    border-radius: 32px;
+    padding: 8px 53px;
+    text-align: center;
 }
 
 .communityContent .row .text a:hover {
-    color: #AFECA9 !important;
+    background-color: #348337;
+    color: #D8CEC5 !important;
+    cursor: pointer;
+}
+
+hr {
+    opacity: 1;
 }
 
 #admincontrols {
     display: flex;
-    flex-direction: row !important;
-    margin-top: 50px !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30%;
 }
 
 #admincontrols a {
-    display: flex;
-    width: 300px !important;
-    justify-content: center !important;
-    padding: 10px;
+    text-decoration: none;
+    color: #D8CEC5;
+    border: 3px solid #D8CEC5;
+    padding: 5px 15px;
+    border-radius: 50px;
+    transition: background-color 0.5s ease-in-out !important;
+    width: 40%;
+    font-size: 30px;
 }
 
-#deletepost {
-    display: flex;
-    justify-content: end !important;
-    margin-left: 500px !important;
+#admincontrols button {
+    text-decoration: none;
+    color: #D8CEC5;
+    border: 3px solid #D8CEC5;
+    background: transparent;
+    padding: 5px 15px;
     border-radius: 50px;
+    transition: background-color 0.5s ease-in-out !important;
+    width: 30%;
+    font-size: 30px
+}
+
+#showComments:hover {
+    color: #D8CEC5 !important;
+    background-color: #348337;
 }
 
 #deletepost:hover {
-    color: #D8CeC5 !important;
-    background-color: rgb(175, 22, 22);
-    border-radius: 50px;
-    padding: 10px;
-    transition: 0.8s;
+    color: #D8CEC5 !important;
+    background-color: rgb(154, 19, 19) !important;
 }
 
-.secondbg {
-    background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("../../../assets/images/makarov\ BG.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-attachment: fixed;
-}
+@media screen and (min-width: 425px) {
+    .communityContent {
+        padding: 50px 30px;
+    }
 
-.communityContent {
-    background-color: rgba(61, 61, 61, 0.421);
-    padding: 50px;
-    width: 80%;
-    margin: 100px auto;
-    border-radius: 75px;
-    display: flex;
-    justify-content: center;
-    color: #D8CEC5;
-    flex-direction: column;
-    font-size: 35px;
-}
-
-.user {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.user img {
-    width: 250px;
-    border: 5px solid #AFECA9;
-    border-radius: 150px;
-    margin: 0 auto;
-}
-
-.communityContent .row .user p {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.communityContent .row .text {
-    display: flex;
-    flex-direction: column;
-    padding: 50px;
-}
-
-h1 {
-    font-size: 50px;
-}
-
-.communityContent .row .text p {
-    text-align: justify;
-    margin-bottom: 50px;
-}
-
-.communityContent .row .text img {
-    width: 450px;
-    margin: 0 auto;
-    margin-bottom: 50px;
-}
-
-.communityContent .row .text a {
-    text-decoration: none;
-    width: 40%;
-    color: #AFECA9;
-}
-
-.communityContent .row .text a:hover {
-    color: #63D157 !important;
-    cursor: pointer;
-}
-
-@media (min-width: 2560px) {
     .user img {
-        border: 0.5rem solid #AFECA9;
+        width: 150px;
+        height: 150px;
+    }
+
+    .communityContent .text {
+        padding: 0 !important;
     }
 
     .user p {
-        font-size: 3rem;
+        font-size: 25px;
     }
 
     h1 {
-        font-size: 4rem;
+        font-size: 35px;
+        text-align: left;
     }
 
     .communityContent .row .text img {
-        width: 35rem;
+        width: 250px;
+        max-height: 250px;
+        margin: 0 auto;
+        margin-bottom: 56px;
     }
 
-    .communityContent .row .text p {
-        font-size: 3rem;
+    .communityContent .row .text a {
+        font-size: 25px;
+        width: 100%;
+        border-radius: 32px;
+        padding: 8px 53px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
     }
 
-    .text a {
-        font-size: 4rem;
-        width: 50% !important;
+    #submit {
+        background-color: #8B8B8B;
+        cursor: not-allowed;
+        width: 80%;
+        margin: 0 auto;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    #submit:disabled {
+        background-color: #8b8b8b !important;
+        transition: 0.5s ease-in-out;
+    }
+    
+    #submit:not(:disabled) {
+        background-color: #4CAF50;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    
+    #submit:hover {
+        background-color: #338837;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .create-post-btn {
+        margin-top: 50px;
+        font-size: 30px;
+        width: 100%;
+        color: #D8CEC5;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        font-weight: 600;
+    }
+    
+    .modal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    
+    .modal-content {
+        background-color: #FEFEFE;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888888;
+        width: 100%;
+        max-width: 600px;
+        border-radius: 10px;
+    }
+    
+    .modal-content form {
+        padding: 0 10px;
+    }
+    
+    .modal-content h2 {
+        color: #3D3D3D;
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+    
+    .modal-content label {
+        color: #3D3D3D;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .modal-content input {
+        margin-bottom: 50px;
+        font-size: 20;
+    }
+    
+    .modal-content select {
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+    
+    option {
+        font-size: 20px;
+    }
+    
+    .modal-content textarea {
+        margin-bottom: 50px;
+        font-size: 20px;
+    }
+    
+    .close {
+        color: #3D3D3D;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #3D3D3D;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form input, form select, form textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #CCCCCC;
+    }
+    
+    form button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    form button:hover {
+        background-color: #45a049;
     }
 
     #admincontrols {
-        margin-top: 3rem !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
     }
     
     #admincontrols a {
+        text-decoration: none;
+        color: #D8CEC5;
+        border: 3px solid #D8CEC5;
+        padding: 5px 35px;
+        border-radius: 50px;
+        transition: 0.5s ease-in-out;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    #admincontrols button {
+        text-decoration: none;
+        color: #D8CEC5;
+        border: 3px solid #D8CEC5;
+        background: transparent;
+        padding: 0px 35px;
+        border-radius: 50px;
+        transition: 0.5s ease-in-out;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .communityContent {
+        padding: 65px !important;
+    }
+
+    .user img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .communityContent .text {
+        padding: 0 !important;
+    }
+
+    .user p {
+        font-size: 25px;
+    }
+
+    h1 {
+        font-size: 35px;
+        text-align: left;
+    }
+
+    .communityContent .row .text img {
+        width: 300px;
+        max-height: 300px;
+        margin: 0 auto;
+        margin-bottom: 56px;
+    }
+
+    .communityContent .row .text a {
+        font-size: 25px;
+        width: 80%;
+        border-radius: 32px;
+        padding: 8px 53px;
+        text-align: center;
         display: flex;
-        width: 100rem !important;
-        justify-content: center !important;
-        font-size: 3rem;
+        justify-content: center;
+    }
+
+    #submit {
+        background-color: #8B8B8B;
+        cursor: not-allowed;
+        width: 80%;
+        margin: 0 auto;
+        font-size: 30px;
+        font-weight: bold;
     }
     
-    #deletepost {
-        margin-left: 500px !important;
-        border-radius: 50px;
-        color: #D8CEC5 !important;
+    #submit:disabled {
+        background-color: #8b8b8b !important;
+        transition: 0.5s ease-in-out;
     }
     
-    #deletepost:hover {
-        color: #D8CeC5 !important;
-        background-color: rgb(175, 22, 22);
-        border-radius: 50px;
+    #submit:not(:disabled) {
+        background-color: #4CAF50;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    
+    #submit:hover {
+        background-color: #338837;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .create-post-btn {
+        margin-top: 50px;
+        font-size: 30px;
+        width: 100%;
+        color: #D8CEC5;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        font-weight: 600;
+    }
+    
+    .modal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    
+    .modal-content {
+        background-color: #FEFEFE;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 10px;
+    }
+    
+    .modal-content form {
+        padding: 0 10px;
+    }
+    
+    .modal-content h2 {
+        color: #3D3D3D;
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+    
+    .modal-content label {
+        color: #3D3D3D;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .modal-content input {
+        margin-bottom: 50px;
+        font-size: 20;
+    }
+    
+    .modal-content select {
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+    
+    option {
+        font-size: 20px;
+    }
+    
+    .modal-content textarea {
+        margin-bottom: 50px;
+        font-size: 20px;
+    }
+    
+    .close {
+        color: #3D3D3D;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #3D3D3D;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form input, form select, form textarea {
+        margin-bottom: 15px;
         padding: 10px;
-        transition: 0.8s;
+        border-radius: 5px;
+        border: 1px solid #CCCCCC;
+    }
+    
+    form button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    form button:hover {
+        background-color: #45a049;
+    }
+
+    #admincontrols {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        gap: 0%;
+    }
+    
+    #admincontrols a {
+        text-decoration: none;
+        color: #D8CEC5;
+        border: 3px solid #D8CEC5;
+        padding: 5px 35px;
+        border-radius: 50px;
+        transition: 0.5s ease-in-out;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    #admincontrols button {
+        text-decoration: none;
+        color: #D8CEC5;
+        border: 3px solid #D8CEC5;
+        background: transparent;
+        padding: 0px 35px;
+        border-radius: 50px;
+        transition: 0.5s ease-in-out;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .communityContent {
+        padding: 65px !important;
+    }
+
+    .user img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .communityContent .text {
+        padding-left: 50px !important;
+    }
+
+    .user p {
+        font-size: 25px;
+    }
+
+    h1 {
+        font-size: 35px;
+        text-align: justify;
+    }
+
+    .communityContent .row .text img {
+        width: 300px;
+        max-height: 300px;
+        margin: 0 auto;
+        margin-bottom: 56px;
+    }
+
+    .communityContent .row .text a {
+        font-size: 25px;
+        width: 60%;
+        border-radius: 32px;
+        padding: 8px 33px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        background-color: #8B8B8B;
+        cursor: not-allowed;
+        width: 60%;
+        margin: 0 auto;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    #submit:disabled {
+        background-color: #8b8b8b !important;
+        transition: 0.5s ease-in-out;
+    }
+    
+    #submit:not(:disabled) {
+        background-color: #4CAF50;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    
+    #submit:hover {
+        background-color: #338837;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .create-post-btn {
+        margin-top: 50px;
+        font-size: 30px;
+        width: 60%;
+        color: #D8CEC5;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        font-weight: 600;
+    }
+    
+    .modal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    
+    .modal-content {
+        background-color: #FEFEFE;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888888;
+        width: 60%;
+        max-width: 600px;
+        border-radius: 10px;
+    }
+    
+    .modal-content form {
+        padding: 0 10px;
+    }
+    
+    .modal-content h2 {
+        color: #3D3D3D;
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+    
+    .modal-content label {
+        color: #3D3D3D;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .modal-content input {
+        margin-bottom: 50px;
+        font-size: 20;
+    }
+    
+    .modal-content select {
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+    
+    option {
+        font-size: 20px;
+    }
+    
+    .modal-content textarea {
+        margin-bottom: 50px;
+        font-size: 20px;
+    }
+    
+    .close {
+        color: #3D3D3D;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #3D3D3D;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form input, form select, form textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #CCCCCC;
+    }
+    
+    form button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    form button:hover {
+        background-color: #45a049;
+    }
+
+    #admincontrols {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 !important;
+        margin: 0 !important;
+        margin: 0 auto !important;
+        gap: 0%;
+    }
+    
+    #admincontrols a {
+        text-decoration: none;
+        color: #D8CEC5;
+        border: 3px solid #D8CEC5;
+        padding: 5px 35px;
+        border-radius: 50px;
+        transition: 0.5s ease-in-out;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    #admincontrols button {
+        text-decoration: none;
+        color: #D8CEC5;
+        border: 3px solid #D8CEC5;
+        background: transparent;
+        padding: 5px 35px;
+        border-radius: 50px;
+        transition: 0.5s ease-in-out;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .communityContent {
+        padding: 65px !important;
+    }
+
+    .user img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .communityContent .text {
+        padding-left: 10px !important;
+    }
+
+    .user p {
+        font-size: 25px;
+    }
+
+    h1 {
+        font-size: 35px;
+        text-align: justify;
+    }
+
+    .communityContent .row .text img {
+        width: 300px;
+        max-height: 300px;
+        margin: 0 auto;
+        margin-bottom: 56px;
+    }
+
+    .communityContent .row .text a {
+        font-size: 25px;
+        width: 60%;
+        border-radius: 32px;
+        padding: 8px 33px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        background-color: #8B8B8B;
+        cursor: not-allowed;
+        width: 40%;
+        margin: 0 auto;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    #submit:disabled {
+        background-color: #8b8b8b !important;
+        transition: 0.5s ease-in-out;
+    }
+    
+    #submit:not(:disabled) {
+        background-color: #4CAF50;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    
+    #submit:hover {
+        background-color: #338837;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .create-post-btn {
+        margin-top: 50px;
+        font-size: 30px;
+        width: 50%;
+        color: #D8CEC5;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        font-weight: 600;
+    }
+    
+    .modal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    
+    .modal-content {
+        background-color: #FEFEFE;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888888;
+        width: 60%;
+        max-width: 600px;
+        border-radius: 10px;
+    }
+    
+    .modal-content form {
+        padding: 0 10px;
+    }
+    
+    .modal-content h2 {
+        color: #3D3D3D;
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+    
+    .modal-content label {
+        color: #3D3D3D;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .modal-content input {
+        margin-bottom: 50px;
+        font-size: 20;
+    }
+    
+    .modal-content select {
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+    
+    option {
+        font-size: 20px;
+    }
+    
+    .modal-content textarea {
+        margin-bottom: 50px;
+        font-size: 20px;
+    }
+    
+    .close {
+        color: #3D3D3D;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #3D3D3D;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form input, form select, form textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #CCCCCC;
+    }
+    
+    form button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    form button:hover {
+        background-color: #45a049;
+    }
+
+    #admincontrols {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10%;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    #admincontrols a {
+        text-decoration: none;
+        color: #D8CEC5;
+        border: 3px solid #D8CEC5;
+        padding: 5px 35px;
+        border-radius: 50px;
+        transition: 0.5s ease-in-out;
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    
+    #admincontrols button {
+        text-decoration: none;
+        color: #D8CEC5;
+        border: 3px solid #D8CEC5;
+        background: transparent;
+        padding: 5px 35px !important;
+        border-radius: 50px;
+        transition: 0.5s ease-in-out;
+        width: 50%;
+        height: fit-content;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .user img {
+        width: 200px;
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 45px;
+        text-align: justify;
+    }
+
+    .communityContent .row .text img {
+        width: 400px;
+        max-height: 400px;
+        margin: 0 auto;
+        margin-bottom: 56px;
+    }
+
+    .communityContent .row .text a {
+        font-size: 25px;
+        width: 35%;
+        border-radius: 32px;
+        padding: 8px 33px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        background-color: #8B8B8B;
+        cursor: not-allowed;
+        width: 30%;
+        margin: 0 auto;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    #submit:disabled {
+        background-color: #8b8b8b !important;
+        transition: 0.5s ease-in-out;
+    }
+    
+    #submit:not(:disabled) {
+        background-color: #4CAF50;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    
+    #submit:hover {
+        background-color: #338837;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .create-post-btn {
+        margin-top: 50px;
+        font-size: 30px;
+        width: 40%;
+        color: #D8CEC5;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        font-weight: 600;
+    }
+    
+    .modal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    
+    .modal-content {
+        background-color: #FEFEFE;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888888;
+        width: 60%;
+        max-width: 600px;
+        border-radius: 10px;
+    }
+    
+    .modal-content form {
+        padding: 0 10px;
+    }
+    
+    .modal-content h2 {
+        color: #3D3D3D;
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+    
+    .modal-content label {
+        color: #3D3D3D;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .modal-content input {
+        margin-bottom: 50px;
+        font-size: 20;
+    }
+    
+    .modal-content select {
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+    
+    option {
+        font-size: 20px;
+    }
+    
+    .modal-content textarea {
+        margin-bottom: 50px;
+        font-size: 20px;
+    }
+    
+    .close {
+        color: #3D3D3D;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #3D3D3D;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form input, form select, form textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #CCCCCC;
+    }
+    
+    form button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    form button:hover {
+        background-color: #45a049;
+    }
+
+    #admincontrols {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20%;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    #admincontrols a {
+        text-decoration: none;
+        color: #D8CEC5;
+        border: 3px solid #D8CEC5;
+        padding: 5px 35px;
+        border-radius: 50px;
+        transition: 0.5s ease-in-out;
+        width: 40%;
+        margin-bottom: 30px;
+        font-size: 35px;
+    }
+    
+    #admincontrols button {
+        text-decoration: none;
+        color: #D8CEC5;
+        border: 3px solid #D8CEC5;
+        background: transparent;
+        padding: 5px 35px !important;
+        border-radius: 50px;
+        transition: 0.5s ease-in-out;
+        width: 30%;
+        height: fit-content;
+        font-size: 35px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .communityContent {
+        padding: 65px !important;
+    }
+
+    .user img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .communityContent .text {
+        padding-left: 50px !important;
+        font-size: 40px;
+    }
+
+    .user p {
+        font-size: 65px !important;
+    }
+
+    h1 {
+        font-size: 65px;
+        text-align: justify;
+    }
+
+    .communityContent .row .text img {
+        width: 600px;
+        max-height: 600px;
+        margin: 0 auto;
+        margin-bottom: 56px;
+    }
+
+    .communityContent .row .text a {
+        font-size: 45px;
+        width: 60%;
+        border-radius: 60px;
+        padding: 25px 33px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        background-color: #8B8B8B;
+        cursor: not-allowed;
+        width: 30%;
+        margin: 0 auto;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    #submit:disabled {
+        background-color: #8b8b8b !important;
+        transition: 0.5s ease-in-out;
+    }
+    
+    #submit:not(:disabled) {
+        background-color: #4CAF50;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    
+    #submit:hover {
+        background-color: #338837;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .create-post-btn {
+        margin-top: 50px;
+        font-size: 30px;
+        width: 40%;
+        color: #D8CEC5;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        font-weight: 600;
+    }
+    
+    .modal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+        padding: 0;
+    }
+    
+    .modal-content {
+        background-color: #FEFEFE;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888888;
+        width: 80%;
+        border-radius: 10px;
+    }
+    
+    .modal-content form {
+        padding: 0 10px;
+    }
+    
+    .modal-content h2 {
+        color: #3D3D3D;
+        text-align: center;
+        font-size: 65px;
+        margin-bottom: 50px;
+    }
+    
+    .modal-content label {
+        color: #3D3D3D;
+        font-size: 45px;
+        font-weight: bold;
+    }
+    
+    .modal-content input {
+        margin-bottom: 50px;
+        font-size: 40px;
+    }
+    
+    .modal-content select {
+        margin-bottom: 50px;
+        font-size: 45px;
+    }
+    
+    option {
+        font-size: 40px;
+    }
+    
+    .modal-content textarea {
+        margin-bottom: 50px;
+        font-size: 40px;
+    }
+    
+    .close {
+        color: #3D3D3D;
+        font-size: 40px;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        margin-left: 50px;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #3D3D3D;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form input, form select, form textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #CCCCCC;
+    }
+    
+    form button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    form button:hover {
+        background-color: #45a049;
+    }
+
+    #admincontrols a {
+        text-decoration: none;
+        color: #D8CEC5;
+        border: 3px solid #D8CEC5;
+        padding: 5px 35px;
+        border-radius: 50px;
+        transition: 0.5s ease-in-out;
+        width: 40%;
+        margin-bottom: 30px;
+        font-size: 45px;
+    }
+    
+    #admincontrols button {
+        text-decoration: none;
+        color: #D8CEC5;
+        border: 3px solid #D8CEC5;
+        background: transparent;
+        padding: 5px 35px !important;
+        border-radius: 50px;
+        transition: 0.5s ease-in-out;
+        width: 30%;
+        height: fit-content;
+        font-size: 45px;
     }
 }

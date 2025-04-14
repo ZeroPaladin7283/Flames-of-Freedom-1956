@@ -1,9 +1,9 @@
 <div class="secondbg">
     <app-navbar></app-navbar>
     <div class="container-fluid communityContent">
-        <div class="row" *ngFor="let post of postList">
+        <div class="row" *ngFor="let post of (showAllPosts ? postList : postList.slice(0, 5))">
             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 user">
-                <img src="Default pfp.png" alt="user">
+                <img [src]="'data:image/jpg;base64,' + post.profilePic" alt="user">
                 <p>
                     {{ post.username }}
                 </p>
@@ -13,12 +13,21 @@
                 <p>
                     {{ post.content }}
                 </p>
-                <img [src]="post.filePath || 'missing.png'" alt="missingPicture">
+                <img *ngIf="post.image" [src]="post.image" alt="picture">
                 <a href="/login">
                     Login to see comments
                 </a>
             </div>
             <hr>
+        </div>
+        <div class="container-fluid" id="create">
+            <div class="row">
+                <div class="create-post-container">
+                    <button id="showMore" class="show-more-btn" (click)="togglePosts()">
+                        {{ showAllPosts ? 'Show Less' : 'Show More' }}
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
     <app-footer></app-footer>

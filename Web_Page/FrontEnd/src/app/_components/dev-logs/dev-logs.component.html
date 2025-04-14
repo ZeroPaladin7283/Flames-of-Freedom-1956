@@ -2,17 +2,27 @@
     <app-navbar></app-navbar>
     <div class="container-fluid devContent">
         <div class="row">
-            <div *ngFor="let log of logList" class="row">
-                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 dev">
-                    <img *ngIf="gitUsers[log.userId]" [src]="gitUsers[log.userId]?.avatar_url" alt="{{ gitUsers[log.userId]?.login }}">
-                    <p> {{ gitUsers[log.userId]?.login }}</p>
+            <div *ngFor="let log of (showAllLogs ? logList : logList.slice(0, 5))" class="row">
+                <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-xs-12 dev">
+                    <img [src]="'data:image/jpg;base64,' + log.profilePic" alt="user">
+                    <p> {{ log.username }}</p>
                 </div>
-                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 text">
+                <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-xs-12 text">
                     <p>
                         {{ log.log }}
                     </p>
+                    <p id="status">
+                        Status: {{ log.status }}
+                    </p>
                 </div>
                 <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="create-log-container">
+                <button id="showMore" class="show-more-btn" (click)="toggleLogs()">
+                    {{ showAllLogs ? 'Show Less' : 'Show More' }}
+                </button>
             </div>
         </div>
     </div>

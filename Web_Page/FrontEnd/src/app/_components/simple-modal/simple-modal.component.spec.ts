@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdmincontactComponent } from './admincontact.component';
+import { SimpleModalComponent } from './simple-modal.component';
 
-describe('AdmincontactComponent', () => {
-  let component: AdmincontactComponent;
-  let fixture: ComponentFixture<AdmincontactComponent>;
+describe('SimpleModalComponent', () => {
+  let component: SimpleModalComponent;
+  let fixture: ComponentFixture<SimpleModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AdmincontactComponent]
+      imports: [SimpleModalComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdmincontactComponent);
+    fixture = TestBed.createComponent(SimpleModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

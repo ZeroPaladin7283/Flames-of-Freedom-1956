@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { jwtDecode } from 'jwt-decode';
-
+import { JsonPipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -24,50 +24,50 @@ export class LoginService {
       });
 
       if (!response.ok) {
-        const error = await response.text();
-        throw new Error(`Error occured: ${response.status} - ${error}`);
+        throw new Error(`Error: ${response.status}`);
       }
 
       const data = await response.json();
       console.log('User data with JWT token: ', data);
-      
+
       localStorage.setItem('token', data.result.jwt);
+      localStorage.setItem('loggedInUser', JSON.stringify(data.result));
+      localStorage.setItem('userId', data.result.id);
+      localStorage.setItem('isAdmin', data.result.isAdmin.toString())
       this.authenticatedSubject.next(true);
 
       return data;
     } catch (error) {
-      console.error('Error logging in: ', error);
-      throw error;
+      console.warn('Server login failed, checking localStorage', error);
+
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      const user = users.find((u: any) => u.email === email && u.password === password);
+
+      if (!user) {
+        throw new Error('Invalid email or password');
+      }
+
+      localStorage.setItem('loggedInUser', JSON.stringify(user));
+      this.authenticatedSubject.next(true);
+
+      return user;
     }
-  }
-
-  logOut(): void {
-    localStorage.removeItem('token');
-    this.authenticatedSubject.next(false);
-  }
-
-  private tokenDecoder(token: string): any {
-    try {
-      return jwtDecode(token);
-    } catch (error) {
-      console.error('Error trying to decode JWT token: ', error);
-      return null;
-    }
-  }
-
-  getUserId(): number | null {
-    const token = localStorage.getItem('token');
-    if(!token) return null;
-
-    const JWTToken = this.tokenDecoder(token);
-    return JWTToken?.id ? parseInt(JWTToken.id, 10) : null;
   }
 
   getIsAdmin(): boolean {
-    const token = localStorage.getItem('token');
-    if(!token) return false;
-
-    const JWTToken = this.tokenDecoder(token);
-    return JWTToken?.isAdmin === true;
+    const user = JSON.parse(localStorage.getItem('loggedInUser') || 'null');
+    if(user) {
+      return user.is_admin || false;
+    }
+    return false;
   }
+  
+  // private tokenDecoder(token: string): any {
+  //   try {
+  //     return jwtDecode(token);
+  //   } catch (error) {
+  //     console.error('Error trying to decode JWT token: ', error);
+  //     return null;
+  //   }
+  // }
 }

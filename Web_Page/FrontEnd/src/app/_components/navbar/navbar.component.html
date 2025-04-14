@@ -1,14 +1,15 @@
 <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <a class="navbar" href="/home">
+	<div class="container-fluid">
+        <a class="navbar-brand" href="/home">
             <img src="logo.png" alt="logo" id="logo">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()" 
+            [attr.aria-expanded]="isNavbarOpen" aria-controls="navbarSupportedContent"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" [class.show]="isNavbarOpen" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" href="/media">Media</a>
                 </li>
@@ -17,9 +18,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/community">Community</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact-us">Contact Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/register">Register</a>
@@ -32,5 +30,5 @@
         <a class="navbar" href="/login">
             <img src="Default pfp.png" alt="loggedOut" id="loggedOut">
         </a>
-    </div>
+	</div>
 </nav>

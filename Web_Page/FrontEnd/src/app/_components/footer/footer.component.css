@@ -1,29 +1,192 @@
 footer {
-    padding: 3rem 0;
-    height: 15rem;
+    padding: 48px 0;
+    height: 240px;
 }
 
 .rights {
-    font-size: 1.5rem;
+    font-size: 24px;
 }
 
-.social a{
-    font-size: 2.5rem;
-    padding: 0 1.5rem;
+.social p {
+    margin-right: 20px;
+    padding: 0;
 }
 
-@media (min-width: 2560px) {
+.social p a {
+    font-size: 40px;
+    margin-right: 0px !important;
+    width: 10% !important;
+}
+
+@media screen and (min-width: 425px) {
     footer {
-        padding: 3.5rem 0;
-        height: 20rem;
+        padding: 20px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        min-height: fit-content;
+        justify-content: center;
+        align-items: center;
     }
 
     .rights {
-        font-size: 2.5rem;
+        font-size: 20px;
     }
 
-    .social a {
-        font-size: 4rem;
-        padding: 0 2.3rem;
+    .social {
+        display: flex;
+        justify-content: center;
+    }
+
+    .social p{
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .social p a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-size: 40px;
+        padding: 10px 20px;
+        margin-right: 20px !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    footer {
+        padding: 20px;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+        min-height: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rights {
+        font-size: 20px;
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+    }
+
+    .social p{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: right;
+    }
+
+    .social p a {
+        display: flex;
+        justify-content: center;
+        width: 20%;
+        font-size: 40px;
+        margin: 0;
+        margin-right: 20px !important;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    footer {
+        padding: 30px;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+        min-height: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rights {
+        font-size: 25px;
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+    }
+
+    .social p{
+        margin-right: 20px;
+        padding: 0;
+    }
+
+    .social p a {
+        display: flex;
+        justify-content: center;
+        width: 15%;
+        font-size: 45px;
+        margin-right: 20px !important;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    footer {
+        padding: 40px;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+        min-height: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rights {
+        font-size: 25px;
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+    }
+
+    .social p {
+        margin-right: 20px;
+        padding: 0;
+    }
+
+    .social p a {
+        font-size: 40px;
+        margin-right: 0px !important;
+        width: 10% !important;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    footer {
+        padding: 70px;
+        height: 300px;
+        display: flex;
+        flex-direction: row;
+        min-height: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rights {
+        font-size: 40px;
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+    }
+
+    .social p{
+        margin-right: 20px;
+        padding: 0;
+    }
+
+    .social p a {
+        display: flex;
+        justify-content: center;
+        width: 13%;
+        font-size: 75px;
     }
 }

@@ -5,11 +5,12 @@ import { FooterComponent } from '../footer/footer.component';
 import { LoginService } from '../../_services/login.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { SimpleModalComponent } from "../simple-modal/simple-modal.component";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NavbarComponent, FooterComponent, FormsModule],
+  imports: [CommonModule, ReactiveFormsModule, NavbarComponent, FooterComponent, FormsModule, SimpleModalComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -17,6 +18,16 @@ export class LoginComponent implements OnInit{
   loginForm!: FormGroup;
   showPassword: boolean = false;
   errorMessage: string = '';
+
+  isModalVisible = false;
+
+  showModal() {
+    this.isModalVisible = true;
+  }
+
+  hideModal() {
+    this.isModalVisible = false;
+  }
 
   constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router) {}
 
@@ -29,32 +40,21 @@ export class LoginComponent implements OnInit{
 
   async onLogin(): Promise<void> {
     this.errorMessage = '';
-
-    if(this.loginForm.invalid) {
-      if(!this.loginForm.get('email')?.value || !this.loginForm.get('password')?.value) {
-        this.errorMessage = 'Please fill in all fields!';
-      } else {
-        this.errorMessage = 'Invalid email or password!';
-      }
+  
+    if (this.loginForm.invalid) {
+      this.errorMessage = 'Please fill in all fields!';
       return;
     }
-
+  
     try {
       const { email, password } = this.loginForm.value;
-      await this.loginService.login(email, password);
-
-      alert("Login successfull!");
-
-      const isAdmin = this.loginService.getIsAdmin();
-
-      if(isAdmin) {
-        this.router.navigate(['/adminhome']);
-      } else {
-        this.router.navigate(['/logged-in-home']);
-      }
+      const user = await this.loginService.login(email, password);
+  
+      alert('Login successful!');
+      this.router.navigate(['/logged-in-home']);
     } catch (error) {
-      console.error('Error logging in: ', error);
-      alert('Error logging in: Invalid email or password!')
+      console.error('Error logging in:', error);
+      this.errorMessage = 'Invalid email or password!';
     }
   }
 
@@ -67,11 +67,30 @@ export class LoginComponent implements OnInit{
   }
 
   getEmailClass() {
-    return this.email?.touched && this.email?.invalid && !this.password?.value ? 'invalid' : '';
+    return this.email?.touched && this.email?.invalid ? 'invalid' : '';
   }
 
   getPasswordClass() {
-    return this.password?.touched && this.password?.invalid && !this.email?.value ? 'invalid' : '';
+    return this.password?.touched && this.password?.invalid ? 'invalid' : '';
+  }
+
+  isLoginEnabled(): boolean {
+    const emailValue = this.email?.value;
+    const passwordValue = this.password?.value;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passRegex = /^(?!.*\s)(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()?\-._]).{8,24}$/;
+
+    if (!emailValue || !passwordValue) {
+      return false;
+    }
+    if (!emailRegex.test(emailValue)) {
+      return false;
+    }
+    if (!passRegex.test(passwordValue)) {
+      return false;
+    }
+    return true;
   }
 }
 

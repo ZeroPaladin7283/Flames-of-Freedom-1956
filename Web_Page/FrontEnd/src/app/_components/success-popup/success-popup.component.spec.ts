@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdmindownloadComponent } from './admindownload.component';
+import { SuccessPopupComponent } from './success-popup.component';
 
-describe('AdmindownloadComponent', () => {
-  let component: AdmindownloadComponent;
-  let fixture: ComponentFixture<AdmindownloadComponent>;
+describe('SuccessPopupComponent', () => {
+  let component: SuccessPopupComponent;
+  let fixture: ComponentFixture<SuccessPopupComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AdmindownloadComponent]
+      imports: [SuccessPopupComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdmindownloadComponent);
+    fixture = TestBed.createComponent(SuccessPopupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
