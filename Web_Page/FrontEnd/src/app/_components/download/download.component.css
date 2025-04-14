@@ -1,4 +1,4 @@
-.mainBg{
+.mainBg {
     background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("../../../assets/images/background.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -7,29 +7,33 @@
 }
 
 .downloadContent {
-    margin: 3.5rem auto;
+    margin: 55px auto;
     align-items: center;
-    padding: 6.5rem;
-    font-size: 1.8rem;
+    display: flex;
+    flex-direction: row;
+    padding: 100px;
+    font-size: 30px;
     text-align: justify;
     background-color: rgba(46, 39, 34, 0.676);
-    border-radius: 3.5rem;
+    border-radius: 55px;
     width: 80%;
     color: #D8CEC5;
 }
 
 .downloadContent .summary {
-    padding: 1.5rem 3.5rem;
+    padding: 25px 55px;
+    display: flex;
+    flex-direction: row;
 }
 
 .downloadContent div #gameDownload {
     background-color: #405A85;
     color: #D8CEC5;
     border: none;
-    font-size: 2rem;
-    padding: 1rem 2.5rem;
-    border-radius: 3rem;
-    margin-top: 2rem;
+    font-size: 30px;
+    padding: 15px 40px;
+    border-radius: 50px;
+    margin-top: 35px;
     font-weight: bold;
 }
 
@@ -40,36 +44,33 @@
 }
 
 .carouselGallery {
-    padding: 1.5rem 3.5rem;
+    padding: 25px 55px;
 }
 
 .carousel-inner img {
-    height: 25rem;
+    height: 400px;
 }
 
 .carousel-control-prev-icon {
     background-image: url('../../../assets/images/arrow.svg');
     background-size: contain;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 40px;
+    height: 40px;
     filter: saturate(500%) brightness(120%);
     transform: rotate(180deg);
     height: 100%;
     background-color: rgba(18, 18, 19, 0.5);
-    position: absolute;
-    left: 0;
 }
 
 .carousel-control-next-icon {
     background-image: url('../../../assets/images/arrow.svg');
     background-size: contain;
-    width: 2rem;
-    height: 2rem;
+    width: 40px;
+    height: 40px;
     filter: saturate(500%) brightness(120%);
     height: 100%;
     background-color: rgba(18, 18, 19, 0.5);
     position: absolute;
-    right: 0;
 }
 
 .carouselPictures {
@@ -81,30 +82,28 @@
 }
 
 .reviews {
-    width: 45rem;
+    width: 100%;
     display: flex;
     margin: 0 auto;
     justify-content: center;
-    margin-top: 6.5rem;
-    margin-bottom: 6.5rem;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .review-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 5rem;
-    height: 20rem;
+    height: 320px;
     background-color: #3d3d3da8;
-    border-radius: 3.5rem;
-    border: 0.3rem solid #AFECA9;
+    border-radius: 55px;
+    border: 5px solid #AFECA9;
 }
 
 .carousel-inner .profile-pic {
-    height: 10rem;
-    width: 10rem;
+    height: 160px;
+    width: 160px;
     object-fit: cover;
-    border: 0.4rem solid #afeca9;
+    border: 4px solid #afeca9;
     border-radius: 50%;
 }
 
@@ -117,14 +116,14 @@
 }
 
 .username {
-    font-size: 1.6rem;
+    font-size: 25px;
     font-weight: bold;
     color: #D8CEC5;
 }
 
 .review-text {
     width: 65%;
-    font-size: 1.3rem;
+    font-size: 20px;
     line-height: 1.5;
     color: #D8CEC5;
     text-align: justify;
@@ -137,13 +136,14 @@
 
 #homeButton {
     background-color: #405A85;
-    padding: 1rem 3.5rem;
+    padding: 15px 55px;
     text-align: center;
-    border-radius: 2rem;
-    margin-left: 3.5rem;
+    border-radius: 30px;
+    margin-left: 55px;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 35px;
     color: #D8CeC5;
+    transition: background-color 0.5s ease-in-out;
 }
 
 #homeButton:hover {
@@ -156,84 +156,855 @@
 }
 
 .social a {
-    margin-right: 1.5rem;
+    margin-right: 25px;
 }
 
-@media screen and (min-width: 2560px) {
+@media screen and (min-width: 425px) {
     .downloadContent {
-        margin: 5rem auto;
-        padding: 6.5rem;
-        font-size: 2.25rem;
+        margin: 55px auto;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        font-size: 20px;
         text-align: justify;
-        border-radius: 4rem;
-        width: 75%;
+        background-color: rgba(46, 39, 34, 0.676);
+        border-radius: 55px;
+        width: 95%;
+        color: #D8CEC5;
+    }
+    
+    .downloadContent .summary {
+        padding: 35px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
     
     .downloadContent div #gameDownload {
-        font-size: 2.8rem;
-        border-radius: 5rem;
-        margin-top: 2rem;
+        background-color: #405A85;
+        color: #D8CEC5;
+        border: none;
+        font-size: 20px;
+        padding: 15px 40px;
+        border-radius: 50px;
+        margin-top: 35px;
+        font-weight: bold;
+        transition: background-color 0.5s ease-in-out;
+    }
+
+    .carouselGallery {
+        padding: 35px 20px;
     }
     
     .carousel-inner img {
-        height: 35rem;
+        height: 250px;
     }
 
     .carousel-control-prev-icon {
         background-image: url('../../../assets/images/arrow.svg');
         background-size: contain;
-        width: 4rem;
-        height: 4rem;
+        width: 25px;
+        height: 25px;
         filter: saturate(500%) brightness(120%);
         transform: rotate(180deg);
         height: 100%;
+        background-color: rgba(18, 18, 19, 0.5);
+        position: absolute;
+        left: 0;
     }
     
     .carousel-control-next-icon {
         background-image: url('../../../assets/images/arrow.svg');
         background-size: contain;
-        width: 4rem;
-        height: 4rem;
+        width: 25px;
+        height: 25px;
         filter: saturate(500%) brightness(120%);
         height: 100%;
+        background-color: rgba(18, 18, 19, 0.5);
+        position: absolute;
+        right: 0;
     }
-    
+
     .reviews {
-        width: 50rem;
-        margin: 8rem auto;
+        width: 50%;
+        display: flex;
+        margin: 100 auto;
+        justify-content: center;
     }
     
     .review-container {
-        width: 60rem;
-        height: 25rem;
-        border-radius: 4rem;
-        border: 0.5rem solid #AFECA9;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px;
+        height: 200px;
+        background-color: #3d3d3da8;
+        border-radius: 55px;
+        border: 5px solid #AFECA9;
+        width: 400px;
+        margin: 0 auto;
+        flex-direction: column;
     }
     
+    .review-profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 10px;
+        width: 30%;
+    }
+
     .carousel-inner .profile-pic {
-        border: 0.5rem solid #afeca9;
+        height: 80px;
+        width: 80px;
+        object-fit: cover;
+        border: 4px solid #afeca9;
+        border-radius: 50%;
     }
     
     .username {
-        font-size: 2rem;
+        font-size: 25px;
+        font-weight: bold;
+        color: #D8CEC5;
+    }
+    
+    .review-text {
+        width: 100%;
+        font-size: 20px;
+        line-height: 1.5;
+        color: #D8CEC5;
+        text-align: center;
+    }
+    
+    .carouselReviews {
+        transition: transform 2s ease;
+        width: 100%;
+    }
+    
+    #homeButton {
+        font-size: 20px;
+        padding: 10px 30px;
+        margin-left: 0px;
+    }
+
+    #reviewButtonPrev, #reviewButtonNext {
+        width: 5%;
+    }
+
+    #reviewButtonPrev .custom-carousel-icon{
+        border-radius: 0px 85px 85px 0px;
+        height: 80%;
+        width: 25px;
+        margin-left: 5px;
+    }
+
+    #reviewButtonNext .custom-carousel-icon{
+        border-radius: 0px 85px 85px 0px;
+        height: 80%;
+        width: 25px;
+        margin-right: 5px;
+    }
+
+    .social p {
+        margin-right: -5px;
+        padding: 0;
+    }
+
+    .social a {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .downloadContent .summary {
+        padding: 35px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .downloadContent div #gameDownload {
+        background-color: #405A85;
+        color: #D8CEC5;
+        border: none;
+        font-size: 20px;
+        padding: 15px 40px;
+        border-radius: 50px;
+        margin-top: 35px;
+        width: 50%;
+        margin: 0 auto;
+        font-weight: bold;
+        transition: background-color 0.5s ease-in-out;
+    }
+
+    .carouselGallery {
+        padding: 35px 20px;
+        width: 70%;
+    }
+    
+    .carousel-inner img {
+        height: 250px;
+    }
+
+    .carousel-control-prev-icon {
+        background-image: url('../../../assets/images/arrow.svg');
+        background-size: contain;
+        width: 30px;
+        height: 30px;
+        filter: saturate(500%) brightness(120%);
+        transform: rotate(180deg);
+        height: 100%;
+        background-color: rgba(18, 18, 19, 0.5);
+        position: absolute;
+        left: 0;
+    }
+    
+    .carousel-control-next-icon {
+        background-image: url('../../../assets/images/arrow.svg');
+        background-size: contain;
+        width: 30px;
+        height: 30px;
+        filter: saturate(500%) brightness(120%);
+        height: 100%;
+        background-color: rgba(18, 18, 19, 0.5);
+        position: absolute;
+        right: 0;
+    }
+
+    .reviews {
+        width: 50%;
+        display: flex;
+        margin: 100 auto;
+        justify-content: center;
+    }
+    
+    .review-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 250px;
+        background-color: #3d3d3da8;
+        border-radius: 55px;
+        border: 5px solid #AFECA9;
+        width: 600px;
+        flex-direction: column;
+    }
+    
+    .review-profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        height: 100%;
+    }
+
+    .carousel-inner .profile-pic {
+        height: 80px;
+        width: 80px;
+        object-fit: cover;
+        border: 4px solid #afeca9;
+        border-radius: 50%;
+    }
+    
+    .username {
+        font-size: 25px;
+        font-weight: bold;
+        color: #D8CEC5;
+    }
+    
+    .review-text {
+        width: 70%;
+        font-size: 20px;
+        line-height: 1.5;
+        color: #D8CEC5;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+        padding-left: 20px;
+    }
+    
+    .carouselReviews {
+        transition: transform 2s ease;
+        width: 100%;
+    }
+    
+    #homeButton {
+        font-size: 30px;
+        padding: 10px 30px;
+        margin-left: 20px;
+    }
+
+    #reviewButtonPrev, #reviewButtonNext {
+        width: 5%;
+    }
+
+    #reviewButtonPrev .custom-carousel-icon{
+        border-radius: 0px 85px 85px 0px;
+        height: 80%;
+        width: 25px;
+        margin-left: 5px;
+    }
+
+    #reviewButtonNext .custom-carousel-icon{
+        border-radius: 0px 85px 85px 0px;
+        height: 80%;
+        width: 25px;
+        margin-right: 5px;
+    }
+
+    .social p {
+        margin-right: 20px;
+        padding: 0;
+    }
+
+    .social a {
+        font-size: 40px;
+        margin-right: 10px;
+        padding: 0 20px 0 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .downloadContent {
+        margin: 55px 10;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        font-size: 30px;
+        text-align: justify;
+        background-color: rgba(46, 39, 34, 0.676);
+        border-radius: 55px;
+        width: 90%;
+        color: #D8CEC5;
+    }
+
+    .downloadContent .summary {
+        padding: 35px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+    }
+    
+    .downloadContent div #gameDownload {
+        background-color: #405A85;
+        color: #D8CEC5;
+        border: none;
+        font-size: 20px;
+        padding: 15px 40px;
+        border-radius: 50px;
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 45px;
+        font-weight: bold;
+        transition: background-color 0.5s ease-in-out;
+    }
+
+    .carouselGallery {
+        padding: 35px 20px;
+        width: 70%;
+    }
+    
+    .carousel-inner img {
+        height: 350px;
+    }
+
+    .carousel-control-prev-icon {
+        background-image: url('../../../assets/images/arrow.svg');
+        background-size: contain;
+        width: 40px;
+        height: 40px;
+        filter: saturate(500%) brightness(120%);
+        transform: rotate(180deg);
+        height: 100%;
+        background-color: rgba(18, 18, 19, 0.5);
+        position: absolute;
+        left: 0;
+    }
+    
+    .carousel-control-next-icon {
+        background-image: url('../../../assets/images/arrow.svg');
+        background-size: contain;
+        width: 40px;
+        height: 40px;
+        filter: saturate(500%) brightness(120%);
+        height: 100%;
+        background-color: rgba(18, 18, 19, 0.5);
+        position: absolute;
+        right: 0;
+    }
+
+    .reviews {
+        width: 50%;
+        display: flex;
+        margin: 100 auto;
+        justify-content: center;
+    }
+    
+    .review-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 350px;
+        background-color: #3d3d3da8;
+        border-radius: 55px;
+        border: 5px solid #AFECA9;
+        width: 700px;
+        padding: 20px;
+        flex-direction: column;
+    }
+    
+    .review-profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35%;
+        height: 100%;
+    }
+
+    .carousel-inner .profile-pic {
+        height: 120px;
+        width: 120px;
+        object-fit: cover;
+        border: 4px solid #afeca9;
+        border-radius: 50%;
+    }
+    
+    .username {
+        font-size: 35px;
+        font-weight: bold;
+        color: #D8CEC5;
     }
     
     .review-text {
         width: 65%;
-        font-size: 1.8rem;
+        font-size: 25px;
+        line-height: 1.5;
+        color: #D8CEC5;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+    }
+    
+    .carouselReviews {
+        transition: transform 2s ease;
+        width: 100%;
     }
 
-    footer {
-        height: 15rem;
+    #reviewButtonPrev, #reviewButtonNext {
+        width: 5%;
     }
 
+    #reviewButtonPrev .custom-carousel-icon{
+        border-radius: 0px 55px 55px 0px;
+        height: 90%;
+        width: 30px;
+        margin-left: 5px;
+    }
+
+    #reviewButtonNext .custom-carousel-icon{
+        border-radius: 0px 55px 55px 0px;
+        height: 90%;
+        width: 30px;
+        margin-right: 5px;
+    }
+    
     #homeButton {
-        font-size: 4rem;
-        border-radius: 5rem;
+        font-size: 35px;
+        padding: 10px 40px;
+        margin-left: 20px;
     }
 
-    .social a{
-        font-size: 4rem;
-        padding: 0 1.5rem;
+    .social p {
+        margin-right: 20px;
+        padding: 0;
+    }
+
+    .social a {
+        font-size: 40px;
+        margin-right: 10px;
+        padding: 0 20px 0 0;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .downloadContent {
+        margin: 55px 10;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        padding: 30px;
+        font-size: 30px;
+        text-align: justify;
+        background-color: rgba(46, 39, 34, 0.676);
+        border-radius: 55px;
+        width: 90%;
+        color: #D8CEC5;
+    }
+
+    .downloadContent .summary {
+        padding: 35px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+    }
+    
+    .downloadContent div #gameDownload {
+        background-color: #405A85;
+        color: #D8CEC5;
+        border: none;
+        font-size: 30px;
+        padding: 15px 40px;
+        border-radius: 50px;
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 45px;
+        font-weight: bold;
+        transition: background-color 0.5s ease-in-out;
+    }
+
+    .carouselGallery {
+        padding: 35px 20px;
+        width: 40%;
+        margin: 0 auto;
+    }
+    
+    .carousel-inner img {
+        height: 350px;
+    }
+
+    .carousel-control-prev-icon {
+        background-image: url('../../../assets/images/arrow.svg');
+        background-size: contain;
+        width: 40px;
+        height: 40px;
+        filter: saturate(500%) brightness(120%);
+        transform: rotate(180deg);
+        height: 100%;
+        background-color: rgba(18, 18, 19, 0.5);
+        position: absolute;
+        left: 0;
+    }
+    
+    .carousel-control-next-icon {
+        background-image: url('../../../assets/images/arrow.svg');
+        background-size: contain;
+        width: 40px;
+        height: 40px;
+        filter: saturate(500%) brightness(120%);
+        height: 100%;
+        background-color: rgba(18, 18, 19, 0.5);
+        position: absolute;
+        right: 0;
+    }
+
+    .reviews {
+        width: 50%;
+        display: flex;
+        margin: 100 auto;
+        justify-content: center;
+    }
+    
+    .review-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 350px;
+        background-color: #3d3d3da8;
+        border-radius: 55px;
+        border: 5px solid #AFECA9;
+        width: 900px;
+        padding: 20px;
+        flex-direction: column;
+    }
+    
+    .review-profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        height: 100%;
+        padding-left: 50px !important;
+    }
+
+    .carousel-inner .profile-pic {
+        height: 120px;
+        width: 120px;
+        object-fit: cover;
+        border: 4px solid #afeca9;
+        border-radius: 50%;
+    }
+    
+    .username {
+        font-size: 35px;
+        font-weight: bold;
+        color: #D8CEC5;
+    }
+    
+    .review-text {
+        width: 70%;
+        font-size: 25px;
+        line-height: 1.5;
+        padding: 50px;
+        color: #D8CEC5;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+    }
+
+    #reviewButtonPrev, #reviewButtonNext {
+        transform: translateY(5%);
+        height: 90%;
+        cursor: pointer;
+        width: 5%;
+    }
+    
+    .custom-carousel-icon {
+        border-radius: 55px;
+        margin: 0 10px;
+    }
+
+    #reviewButtonPrev .custom-carousel-icon{
+        border-radius: 0px 85px 85px 0px;
+        height: 106%;
+    }
+
+    #reviewButtonNext .custom-carousel-icon{
+        border-radius: 0px 85px 85px 0px;
+        height: 106%;
+    }
+    
+    #homeButton {
+        font-size: 35px;
+        padding: 10px 40px;
+        margin-left: 20px;
+    }
+
+    .social p {
+        margin-right: 20px;
+        padding: 0;
+    }
+
+    .social a {
+        font-size: 40px;
+        margin-right: 10px;
+        padding: 0 20px 0 0;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .downloadContent {
+        margin: 55px 10;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        padding: 40px;
+        font-size: 30px;
+        text-align: justify;
+        background-color: rgba(46, 39, 34, 0.676);
+        border-radius: 55px;
+        width: 80%;
+        color: #D8CEC5;
+    }
+
+    .carousel-inner .profile-pic {
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        border: 4px solid #afeca9;
+        border-radius: 50%;
+    }
+    
+    .username {
+        font-size: 30px;
+        font-weight: bold;
+        color: #D8CEC5;
+    }
+
+    .review-container {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .downloadContent {
+        margin: 55px 10;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        font-size: 30px;
+        text-align: justify;
+        background-color: rgba(46, 39, 34, 0.676);
+        border-radius: 55px;
+        width: 80%;
+        height: 900px;
+        color: #D8CEC5;
+    }
+
+    .downloadContent .summary {
+        padding: 35px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 40px;
+        width: 50%;
+    }
+    
+    .downloadContent div #gameDownload {
+        background-color: #405A85;
+        color: #D8CEC5;
+        border: none;
+        font-size: 40px;
+        padding: 15px 40px;
+        border-radius: 50px;
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 45px;
+        font-weight: bold;
+        transition: background-color 0.5s ease-in-out;
+    }
+
+    .carouselGallery {
+        padding: 35px 20px;
+        width: 40%;
+        margin: 0 auto;
+    }
+    
+    .carousel-inner img {
+        height: 500px;
+    }
+
+    .carousel-control-prev-icon {
+        background-image: url('../../../assets/images/arrow.svg');
+        background-size: contain;
+        width: 60px;
+        height: 60px;
+        filter: saturate(500%) brightness(120%);
+        transform: rotate(180deg);
+        height: 100%;
+        background-color: rgba(18, 18, 19, 0.5);
+        position: absolute;
+        left: 0;
+    }
+    
+    .carousel-control-next-icon {
+        background-image: url('../../../assets/images/arrow.svg');
+        background-size: contain;
+        width: 60px;
+        height: 60px;
+        filter: saturate(500%) brightness(120%);
+        height: 100%;
+        background-color: rgba(18, 18, 19, 0.5);
+        position: absolute;
+        right: 0;
+    }
+
+    .reviews {
+        width: 50%;
+        display: flex;
+        margin: 100 auto;
+        justify-content: center;
+    }
+    
+    .review-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 550px;
+        background-color: #3d3d3da8;
+        border-radius: 75px;
+        border: 5px solid #AFECA9;
+        width: 100%;
+        padding: 60px;
+        flex-direction: column;
+    }
+    
+    .review-profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        height: 100%;
+    }
+
+    .carousel-inner .profile-pic {
+        height: 180px;
+        width: 180px;
+        object-fit: cover;
+        border: 4px solid #afeca9;
+        border-radius: 50%;
+    }
+    
+    .username {
+        font-size: 40px;
+        font-weight: bold;
+        color: #D8CEC5;
+    }
+    
+    .review-text {
+        width: 70%;
+        font-size: 45px;
+        line-height: 1.5;
+        color: #D8CEC5;
+        padding: 10px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+    }
+    
+    .carouselReviews {
+        transition: transform 2s ease;
+        width: 100%;
+    }
+
+    #reviewButtonPrev, #reviewButtonNext {
+        width: 5%;
+    }
+
+    #reviewButtonPrev .custom-carousel-icon{
+        border-radius: 0px 85px 85px 0px;
+        height: 106%;
+    }
+
+    #reviewButtonNext .custom-carousel-icon{
+        border-radius: 0px 85px 85px 0px;
+        height: 106%;
+    }
+    
+    #homeButton {
+        font-size: 60px;
+        padding: 20px 95px;
+        border-radius: 75px;
+        margin-left: 50px;
+    }
+
+    .social p {
+        margin-right: 20px;
+        padding: 0;
+    }
+
+    .social a {
+        font-size: 65px;
+        margin-right: 50px;
+        padding: 0 20px 0 0;
     }
 }

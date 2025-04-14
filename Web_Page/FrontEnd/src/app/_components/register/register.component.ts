@@ -4,14 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { FooterComponent } from '../footer/footer.component';
 import { RegisterService } from '../../_services/register.service';
 import { Router } from '@angular/router';
-import { SuccessPopupComponent } from "../success-popup/success-popup.component";
 import { CommonModule } from '@angular/common';
 import { SimpleModalComponent } from "../simple-modal/simple-modal.component";
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, FormsModule, SuccessPopupComponent, CommonModule, SimpleModalComponent],
+  imports: [NavbarComponent, FooterComponent, FormsModule, CommonModule, SimpleModalComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
@@ -20,20 +19,11 @@ export class RegisterComponent {
   email: string = '';
   password: string = '';
   cpassword: string = '';
-  dateOfBirth: Date = new Date('1111-01-01');
+  dateOfBirth: Date | null = null;
   errorMessage: string = '';
   ccMe: boolean = false;
 
-  isPopupVisible = false;
   isModalVisible = false;
-
-  showPopup() {
-    this.isPopupVisible = true;
-    }
-
-  hidePopup() {
-    this.isPopupVisible = false;
-    }
 
   showModal() {
     this.isModalVisible = true;
@@ -86,11 +76,10 @@ export class RegisterComponent {
 
       alert('Registration successful!');
       this.router.navigate(['/login'])
-
       this.username = '';
       this.password = '';
       this.cpassword = '';
-      this.dateOfBirth = new Date('1111-01-01');
+      this.dateOfBirth = null;
     } catch(error) {
       if (error instanceof Error) {
         this.errorMessage = error.message;
@@ -113,7 +102,7 @@ export class RegisterComponent {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const passRegex = /^(?!.*\s)(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()?\-._]).{8,24}$/;
 
-    if (!this.username && !this.email && !this.password) {
+    if (!this.username || !this.email || !this.password || !this.cpassword || !this.dateOfBirth || this.dateOfBirth == null) {
       return false;
     }
 
@@ -122,6 +111,10 @@ export class RegisterComponent {
     }
 
     if (this.password && !passRegex.test(this.password)) {
+      return false;
+    }
+
+    if(this.cpassword != this.password) {
       return false;
     }
 

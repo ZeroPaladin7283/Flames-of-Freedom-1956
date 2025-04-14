@@ -58,5 +58,5 @@ export class RegisterService {
       console.error('Message could not be sent:', error);
       throw error;
     }
-}
+  }
 }

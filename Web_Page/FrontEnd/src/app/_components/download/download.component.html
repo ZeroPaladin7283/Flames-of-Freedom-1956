@@ -2,7 +2,7 @@
     <app-navbar></app-navbar>
     <div class="container-fluid">
         <div class="row downloadContent">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 summary">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 summary">
                 <p>
                     Step into the whirlwind of the 1956 hungarian revolution in an exciting detective game! The streets of
                     Budapest are filled with dangers, and your fate is in your hands. Follow in the footsteps of the
@@ -14,7 +14,7 @@
                     Download the Game
                 </button>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 carouselGallery">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 carouselGallery">
                 <div id="carouselExample" class="carousel slide">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -40,23 +40,33 @@
         </div>
         <div class="row slider">
             <div class="col-12 reviews">
-                <div id="carouselExample reviewCarousel" class="carousel slide" data-bs-ride="carousel"
-                    data-bs-interval="3500">
+                <div id="reviewCarousel" class="carousel slide">
                     <div class="carousel-inner">
                         <div class="carousel-item active carouselReviews" *ngFor="let review of reviewList; let i = index" [class.active]="i === 0">
-                            <div class="review-container">
-                                <div class="review-profile">
+                            <div class="review-container row">
+                                <div class="review-profile col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                     <img [src]="'data:image/jpg;base64,' + review.profilePic" alt="Profile Picture" class="profile-pic">
                                     <p class="username">{{ review.username }}</p>
                                 </div>
-                                <div class="review-text">
-                                    <p>
+                                <div class="review-text col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                    <p *ngIf="isSmallScreen">
+                                        {{ review.review | slice: 0: getFirstSentenceEnd(review.review) }}
+                                    </p>
+                                    <p *ngIf="!isSmallScreen">
                                         {{ review.review }}
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <button class="carousel-control-prev" id="reviewButtonPrev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon custom-carousel-icon"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" id="reviewButtonNext" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon custom-carousel-icon"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
         </div>

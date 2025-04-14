@@ -1,5 +1,7 @@
+import { transition } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-navbar',

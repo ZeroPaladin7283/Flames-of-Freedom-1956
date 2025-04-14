@@ -1,20 +1,19 @@
 nav {
     background-color: rgba(46, 39, 34, 0.676);
-    padding: 1.25rem;
+    padding: 20px;
     display: flex;
     align-items: center;
 }
 
 #logo {
-    height: 8rem;
-    margin-left: 3rem;
+    height: 130px;
+    margin-left: 50px;
 }
 
 .navbar-toggler {
     background-color: #3A69B6;
-    font-size: 1.5rem;
+    font-size: 25px; 
     border: none;
-    margin-right: 3rem;
 }
 
 .navbar-toggler:focus, .navbar-toggler:active {
@@ -27,12 +26,11 @@ nav {
 }
 
 #navbarSupportedContent ul li a {
-    margin: 0 1.5rem;
     color: #D8CEC5;
     font-family: Callistoga;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-size: 2.5rem;
+    font-size: 40px; 
 }
 
 #navbarSupportedContent ul li a:hover {
@@ -41,33 +39,122 @@ nav {
 }
 
 #loggedOut {
-    height: 8rem;
-    margin-right: 3rem;
+    height: 130px;
+    margin-right: 50px;
     border-radius: 50%;
-    border: 0.3rem solid #AFECA9;
-    transition: 0.5s ease-in-out;
+    border: 4.8px solid #AFECA9; 
+    transition: border 0.5s ease-in-out;
 }
 
 #loggedOut:hover {
-    border: 0.3rem solid #63D157 !important;
-    transition: 0.5s ease-in-out;
+    border: 4.8px solid #63D157 !important;
     cursor: pointer;
 }
 
-@media screen and (min-width: 2560px) {
-    nav {
-        padding: 2.5rem;
+@media screen and (min-width: 425px) {
+    #logo {
+        height: 70px;
+        margin-left: 0px;
     }
 
-    #logo {
-        height: 12rem;
+    #navbarSupportedContent ul {
+        gap: 0px;
     }
 
     #navbarSupportedContent ul li a {
-        font-size: 3.8rem;
+        font-size: 30px;
     }
 
     #loggedOut {
-        height: 12rem;
+        height: 70px;
+        margin-right: 0px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #logo {
+        height: 100px;
+        margin-left: 0px;
+    }
+
+    #navbarSupportedContent ul {
+        gap: 0px;
+    }
+
+    #navbarSupportedContent ul li a {
+        font-size: 30px;
+    }
+
+    #loggedOut {
+        height: 100px;
+        margin-right: 0px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #logo {
+        height: 80px;
+        margin-left: 10px;
+    }
+
+    #navbarSupportedContent ul {
+        gap: 20px;
+    }
+
+    #navbarSupportedContent ul li a {
+        font-size: 25px;
+    }
+
+    #loggedOut {
+        height: 80px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    #logo {
+        height: 110px;
+        margin-left: 20px;
+    }
+
+    #navbarSupportedContent ul {
+        gap: 20px;
+    }
+
+    #navbarSupportedContent ul li a {
+        font-size: 40px;
+    }
+
+    #loggedOut {
+        height: 110px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    #navbarSupportedContent ul {
+        gap: 50px;
+    }
+
+    #navbarSupportedContent ul li a {
+        font-size: 45px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    #logo {
+        height: 195px;
+    }
+
+    #navbarSupportedContent ul {
+        gap: 60px;
+    }
+
+    #navbarSupportedContent ul li a {
+        font-size: 70px; 
+    }
+
+    #loggedOut {
+        height: 195px;
     }
 }

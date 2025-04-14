@@ -1,14 +1,14 @@
-.mainBg{
+.mainBg {
     background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url("../../../assets/images/background.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position-x: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .title {
-    font-size: 5rem;
+    font-size: 80px;
     color: #D8CEC5;
     font-family: "Jacques Francois", serif;
     display: flex;
@@ -19,20 +19,20 @@
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
+    position: absolute !important;
+    bottom: 0 !important;
     background-image: linear-gradient(to top, rgba(175, 149, 131, 0.684), rgba(46, 39, 34, 0.53));
 }
 
 #downloadButton {
     background-color: #405A85;
-    padding: 1.25rem 3.125rem;
+    padding: 20px 50px;
     text-align: center;
-    border-radius: 3.125rem;
-    margin-left: 3.125rem;
+    border-radius: 50px;
+    margin-left: 50px;
     text-decoration: none;
     color: #D8CEC5;
-    font-size: 2rem;
+    font-size: 35px;
 }
 
 #downloadButton:hover {
@@ -40,22 +40,149 @@ footer {
     background-color: #3A69B6;
 }
 
-.social a {
-    margin-right: 1.5rem;
+@media screen and (min-width: 425px) {
+    .title {
+        font-size: 40px;
+        text-align: center;
+        height: calc(100vh - 32vh);
+    }
+
+    footer {
+        position: relative !important;
+        margin-top: 29px !important;
+        padding: 0 10px !important;
+    }
+
+    #downloadButton {
+        font-size: 15px;
+        padding: 10px 30px;
+        margin-left: 0px;
+    }
+
+    .social p {
+        margin-right: -10px;
+        padding: 0;
+    }
+
+    .social a {
+        font-size: 30px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .title {
+        font-size: 55px;
+        height: calc(100vh - 39vh);
+    }
+
+    footer {
+        position: relative !important;
+        margin-top: 23px !important;
+    }
+
+    #downloadButton {
+        font-size: 30px;
+        padding: 10px 30px;
+        margin-left: 20px;
+    }
+
+    .social p {
+        margin-right: 20px;
+        padding: 0;
+    }
+
+    .social a {
+        font-size: 40px;
+        margin-right: 10px;
+        padding: 0 20px 0 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .title {
+        font-size: 70px;
+        height: calc(100vh - 33vh);
+    }
+
+    footer {
+        position: absolute !important;
+        bottom: 0 !important;
+    }
+
+    #downloadButton {
+        font-size: 35px;
+        padding: 10px 40px;
+        margin-left: 20px;
+    }
+
+    .social p {
+        margin-right: 20px;
+        padding: 0;
+    }
+
+    .social a {
+        font-size: 40px;
+        margin-right: 10px;
+        padding: 0 20px 0 0;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .title {
+        font-size: 80px;
+        height: calc(100vh - 42vh);
+    }
+
+    footer {
+        position: absolute !important;
+        bottom: 0 !important;
+    }
+
+    #downloadButton {
+        font-size: 35px;
+        padding: 10px 40px;
+        margin-left: 20px;
+    }
+
+    .social p {
+        margin-right: 20px;
+        padding: 0;
+    }
+
+    .social a {
+        font-size: 40px;
+        margin-right: 10px;
+        padding: 0 20px 0 0;
+    }
 }
 
 @media screen and (min-width: 2560px) {
     .title {
-        font-size: 9rem;
-        height: calc(100vh - 45vh);
+        font-size: 145px;
+        height: calc(100vh - 38vh);
+    }
+
+    footer {
+        position: absolute !important;
+        bottom: 0 !important;
     }
 
     #downloadButton {
-        font-size: 3.8rem;
+        font-size: 60px;
+        padding: 20px 95px;
+        border-radius: 75px;
+        margin-left: 50px;
+    }
+
+    .social p {
+        margin-right: 20px;
+        padding: 0;
     }
 
     .social a {
-        font-size: 4rem;
-        margin-right: 3rem;
+        font-size: 65px;
+        margin-right: 50px;
+        padding: 0 20px 0 0;
     }
 }

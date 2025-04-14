@@ -21,17 +21,6 @@ export class DevLogsComponent implements OnInit{
   ngOnInit(): void {
     this.devLogsService.fetchLogsData().then((data) => {
       this.logList = data;
-
-      this.loadGitUsers();
-    });
-  }
-
-  loadGitUsers(): void {
-    const adminIds = Array.from(new Set(this.logList.map(log => log.adminId)));
-    adminIds.forEach((adminId) => {
-      this.devLogsService.fetchGitUser(adminId).then((userData) => {
-        this.gitUsers[adminId] = userData;
-      });
     });
   }
   

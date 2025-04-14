@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DevLogsService {
-  private baseUrl = `https://api.github.com/users/`;
   private logUrl = `http://127.0.0.1:8080/Flames_of_Freedom_1956-1.0-SNAPSHOT/webresources/logs/getAllLogs`;
   private deleteUrl = `http://127.0.0.1:8080/Flames_of_Freedom_1956-1.0-SNAPSHOT/webresources/logs/deleteLog`;
   private createUrl = `http://127.0.0.1:8080/Flames_of_Freedom_1956-1.0-SNAPSHOT/webresources/logs/createLog`;
@@ -27,17 +26,6 @@ export class DevLogsService {
       return[];
     });
   }
-
-  fetchGitUser(adminId: number): Promise<any> {
-    const gitUser = adminId === 19 ? 'PalcsiFerencKolos' : 'ZeroPaladin7283';
-    return fetch(`${this.baseUrl}${gitUser}`)
-    .then((response) => response.json())
-    .catch((error) => {
-      console.error('Error fetching Github user data: ', error);
-      return null;
-    });
-  }
-
 
   async deleteLog(id: number): Promise<any> {
     const deleteCreds = {id: id};

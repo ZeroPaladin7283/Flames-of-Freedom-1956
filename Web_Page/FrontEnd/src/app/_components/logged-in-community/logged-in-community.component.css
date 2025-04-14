@@ -8,15 +8,15 @@
 
 .communityContent {
     background-color: rgba(61, 61, 61, 0.421);
-    padding: 3.5rem;
+    padding: 56px;
     width: 80%;
-    margin: 6.5rem auto;
-    border-radius: 4.7rem;
+    margin: 104px auto;
+    border-radius: 75px;
     display: flex;
     justify-content: center;
     color: #D8CEC5;
     flex-direction: column;
-    font-size: 2rem;
+    font-size: 32px;
 }
 
 .create-post-container {
@@ -29,11 +29,10 @@
 }
 
 #showMore {
-    padding: 0.8rem 3.3rem;
+    padding: 13px 53px;
     border-radius: 50px;
     border: 3px solid #D8CEC5;
     background-color: transparent;
-    /* background-color: #D8946C; */
     color: #D8CEC5;
     transition: 0.5s ease-in-out;
     font-weight: 600;
@@ -80,7 +79,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    transition: 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out !important;
     font-weight: 600;
 }
 
@@ -195,8 +194,8 @@ form button:hover {
 }
 
 .user img {
-    width: 13rem;
-    height: 13rem;
+    width: 208px;
+    height: 208px;
     border: 5px solid #AFECA9;
     border-radius: 50%;
     margin: 0 auto;
@@ -204,69 +203,1116 @@ form button:hover {
 
 .communityContent .row .user p {
     text-align: center;
-    margin-top: 1.5rem;
-    font-size: 2.5rem;
+    margin-top: 24px;
+    font-size: 40px;
 }
 
 .communityContent .row .text {
     display: flex;
     flex-direction: column;
-    padding: 3.5rem;
+    padding: 56px;
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 56px;
 }
 
 .communityContent .row .text p {
     text-align: justify;
-    margin-bottom: 3.5rem;
+    margin-bottom: 56px;
 }
 
 .communityContent .row .text img {
-    width: 20rem;
-    max-height: 25rem;
+    width: 320px;
+    max-height: 400px;
     margin: 0 auto;
-    margin-bottom: 3.5rem;
+    margin-bottom: 56px;
 }
 
 .communityContent .row .text a {
     text-decoration: none;
-    font-size: 2.5rem;
+    font-size: 40px;
+    width: 60%;
     color: #D8CEC5;
+    border: 3px solid #D8CEC5;
+    border-radius: 32px;
+    padding: 8px 53px;
+    text-align: center;
 }
 
 .communityContent .row .text a:hover {
-    color: #AFECA9 !important;
+    background-color: #348337;
+    color: #D8CEC5 !important;
+    cursor: pointer;
 }
 
-hr{
+hr {
     opacity: 1;
 }
 
-@media (min-width: 2560px) {
+@media screen and (min-width: 425px) {
+    .communityContent {
+        padding: 50px 30px;
+    }
+
     .user img {
-        border: 0.5rem solid #AFECA9;
+        width: 150px;
+        height: 150px;
+    }
+
+    .communityContent .text {
+        padding: 0 !important;
     }
 
     .user p {
-        font-size: 3rem;
+        font-size: 25px;
     }
 
     h1 {
-        font-size: 4rem;
+        font-size: 35px;
+        text-align: left;
     }
 
     .communityContent .row .text img {
-        width: 35rem;
+        width: 250px;
+        max-height: 250px;
+        margin: 0 auto;
+        margin-bottom: 56px;
     }
 
-    .communityContent .row .text p {
-        font-size: 3rem;
+    .communityContent .row .text a {
+        font-size: 25px;
+        width: 100%;
+        border-radius: 32px;
+        padding: 8px 53px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
     }
 
-    .text a {
-        font-size: 4rem;
-        width: 50% !important;
+    #submit {
+        background-color: #8B8B8B;
+        cursor: not-allowed;
+        width: 80%;
+        margin: 0 auto;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    #submit:disabled {
+        background-color: #8b8b8b !important;
+        transition: 0.5s ease-in-out;
+    }
+    
+    #submit:not(:disabled) {
+        background-color: #4CAF50;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    
+    #submit:hover {
+        background-color: #338837;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .create-post-btn {
+        margin-top: 50px;
+        font-size: 30px;
+        width: 100%;
+        color: #D8CEC5;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        font-weight: 600;
+    }
+    
+    .modal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    
+    .modal-content {
+        background-color: #FEFEFE;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888888;
+        width: 100%;
+        max-width: 600px;
+        border-radius: 10px;
+    }
+    
+    .modal-content form {
+        padding: 0 10px;
+    }
+    
+    .modal-content h2 {
+        color: #3D3D3D;
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+    
+    .modal-content label {
+        color: #3D3D3D;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .modal-content input {
+        margin-bottom: 50px;
+        font-size: 20;
+    }
+    
+    .modal-content select {
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+    
+    option {
+        font-size: 20px;
+    }
+    
+    .modal-content textarea {
+        margin-bottom: 50px;
+        font-size: 20px;
+    }
+    
+    .close {
+        color: #3D3D3D;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #3D3D3D;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form input, form select, form textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #CCCCCC;
+    }
+    
+    form button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    form button:hover {
+        background-color: #45a049;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .communityContent {
+        padding: 65px !important;
+    }
+
+    .user img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .communityContent .text {
+        padding: 0 !important;
+    }
+
+    .user p {
+        font-size: 25px;
+    }
+
+    h1 {
+        font-size: 35px;
+        text-align: left;
+    }
+
+    .communityContent .row .text img {
+        width: 300px;
+        max-height: 300px;
+        margin: 0 auto;
+        margin-bottom: 56px;
+    }
+
+    .communityContent .row .text a {
+        font-size: 25px;
+        width: 80%;
+        border-radius: 32px;
+        padding: 8px 53px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        background-color: #8B8B8B;
+        cursor: not-allowed;
+        width: 80%;
+        margin: 0 auto;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    #submit:disabled {
+        background-color: #8b8b8b !important;
+        transition: 0.5s ease-in-out;
+    }
+    
+    #submit:not(:disabled) {
+        background-color: #4CAF50;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    
+    #submit:hover {
+        background-color: #338837;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .create-post-btn {
+        margin-top: 50px;
+        font-size: 30px;
+        width: 100%;
+        color: #D8CEC5;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        font-weight: 600;
+    }
+    
+    .modal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    
+    .modal-content {
+        background-color: #FEFEFE;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 10px;
+    }
+    
+    .modal-content form {
+        padding: 0 10px;
+    }
+    
+    .modal-content h2 {
+        color: #3D3D3D;
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+    
+    .modal-content label {
+        color: #3D3D3D;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .modal-content input {
+        margin-bottom: 50px;
+        font-size: 20;
+    }
+    
+    .modal-content select {
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+    
+    option {
+        font-size: 20px;
+    }
+    
+    .modal-content textarea {
+        margin-bottom: 50px;
+        font-size: 20px;
+    }
+    
+    .close {
+        color: #3D3D3D;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #3D3D3D;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form input, form select, form textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #CCCCCC;
+    }
+    
+    form button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    form button:hover {
+        background-color: #45a049;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .communityContent {
+        padding: 65px !important;
+    }
+
+    .user img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .communityContent .text {
+        padding-left: 50px !important;
+    }
+
+    .user p {
+        font-size: 25px;
+    }
+
+    h1 {
+        font-size: 35px;
+        text-align: justify;
+    }
+
+    .communityContent .row .text img {
+        width: 300px;
+        max-height: 300px;
+        margin: 0 auto;
+        margin-bottom: 56px;
+    }
+
+    .communityContent .row .text a {
+        font-size: 25px;
+        width: 60%;
+        border-radius: 32px;
+        padding: 8px 33px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        background-color: #8B8B8B;
+        cursor: not-allowed;
+        width: 60%;
+        margin: 0 auto;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    #submit:disabled {
+        background-color: #8b8b8b !important;
+        transition: 0.5s ease-in-out;
+    }
+    
+    #submit:not(:disabled) {
+        background-color: #4CAF50;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    
+    #submit:hover {
+        background-color: #338837;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .create-post-btn {
+        margin-top: 50px;
+        font-size: 30px;
+        width: 60%;
+        color: #D8CEC5;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        font-weight: 600;
+    }
+    
+    .modal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    
+    .modal-content {
+        background-color: #FEFEFE;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888888;
+        width: 60%;
+        max-width: 600px;
+        border-radius: 10px;
+    }
+    
+    .modal-content form {
+        padding: 0 10px;
+    }
+    
+    .modal-content h2 {
+        color: #3D3D3D;
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+    
+    .modal-content label {
+        color: #3D3D3D;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .modal-content input {
+        margin-bottom: 50px;
+        font-size: 20;
+    }
+    
+    .modal-content select {
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+    
+    option {
+        font-size: 20px;
+    }
+    
+    .modal-content textarea {
+        margin-bottom: 50px;
+        font-size: 20px;
+    }
+    
+    .close {
+        color: #3D3D3D;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #3D3D3D;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form input, form select, form textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #CCCCCC;
+    }
+    
+    form button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    form button:hover {
+        background-color: #45a049;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .communityContent {
+        padding: 65px !important;
+    }
+
+    .user img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .communityContent .text {
+        padding-left: 50px !important;
+    }
+
+    .user p {
+        font-size: 25px;
+    }
+
+    h1 {
+        font-size: 35px;
+        text-align: justify;
+    }
+
+    .communityContent .row .text img {
+        width: 300px;
+        max-height: 300px;
+        margin: 0 auto;
+        margin-bottom: 56px;
+    }
+
+    .communityContent .row .text a {
+        font-size: 25px;
+        width: 60%;
+        border-radius: 32px;
+        padding: 8px 33px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        background-color: #8B8B8B;
+        cursor: not-allowed;
+        width: 40%;
+        margin: 0 auto;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    #submit:disabled {
+        background-color: #8b8b8b !important;
+        transition: 0.5s ease-in-out;
+    }
+    
+    #submit:not(:disabled) {
+        background-color: #4CAF50;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    
+    #submit:hover {
+        background-color: #338837;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .create-post-btn {
+        margin-top: 50px;
+        font-size: 30px;
+        width: 50%;
+        color: #D8CEC5;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        font-weight: 600;
+    }
+    
+    .modal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    
+    .modal-content {
+        background-color: #FEFEFE;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888888;
+        width: 60%;
+        max-width: 600px;
+        border-radius: 10px;
+    }
+    
+    .modal-content form {
+        padding: 0 10px;
+    }
+    
+    .modal-content h2 {
+        color: #3D3D3D;
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+    
+    .modal-content label {
+        color: #3D3D3D;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .modal-content input {
+        margin-bottom: 50px;
+        font-size: 20;
+    }
+    
+    .modal-content select {
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+    
+    option {
+        font-size: 20px;
+    }
+    
+    .modal-content textarea {
+        margin-bottom: 50px;
+        font-size: 20px;
+    }
+    
+    .close {
+        color: #3D3D3D;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #3D3D3D;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form input, form select, form textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #CCCCCC;
+    }
+    
+    form button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    form button:hover {
+        background-color: #45a049;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .user img {
+        width: 200px;
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 45px;
+        text-align: justify;
+    }
+
+    .communityContent .row .text img {
+        width: 400px;
+        max-height: 400px;
+        margin: 0 auto;
+        margin-bottom: 56px;
+    }
+
+    .communityContent .row .text a {
+        font-size: 25px;
+        width: 35%;
+        border-radius: 32px;
+        padding: 8px 33px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        background-color: #8B8B8B;
+        cursor: not-allowed;
+        width: 30%;
+        margin: 0 auto;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    #submit:disabled {
+        background-color: #8b8b8b !important;
+        transition: 0.5s ease-in-out;
+    }
+    
+    #submit:not(:disabled) {
+        background-color: #4CAF50;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    
+    #submit:hover {
+        background-color: #338837;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .create-post-btn {
+        margin-top: 50px;
+        font-size: 30px;
+        width: 40%;
+        color: #D8CEC5;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        font-weight: 600;
+    }
+    
+    .modal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    
+    .modal-content {
+        background-color: #FEFEFE;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888888;
+        width: 60%;
+        max-width: 600px;
+        border-radius: 10px;
+    }
+    
+    .modal-content form {
+        padding: 0 10px;
+    }
+    
+    .modal-content h2 {
+        color: #3D3D3D;
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 50px;
+    }
+    
+    .modal-content label {
+        color: #3D3D3D;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .modal-content input {
+        margin-bottom: 50px;
+        font-size: 20;
+    }
+    
+    .modal-content select {
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+    
+    option {
+        font-size: 20px;
+    }
+    
+    .modal-content textarea {
+        margin-bottom: 50px;
+        font-size: 20px;
+    }
+    
+    .close {
+        color: #3D3D3D;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #3D3D3D;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form input, form select, form textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #CCCCCC;
+    }
+    
+    form button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    form button:hover {
+        background-color: #45a049;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .communityContent {
+        padding: 65px !important;
+    }
+
+    .user img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .communityContent .text {
+        padding-left: 50px !important;
+        font-size: 40px;
+    }
+
+    .user p {
+        font-size: 65px !important;
+    }
+
+    h1 {
+        font-size: 65px;
+        text-align: justify;
+    }
+
+    .communityContent .row .text img {
+        width: 600px;
+        max-height: 600px;
+        margin: 0 auto;
+        margin-bottom: 56px;
+    }
+
+    .communityContent .row .text a {
+        font-size: 45px;
+        width: 60%;
+        border-radius: 60px;
+        padding: 25px 33px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #submit {
+        background-color: #8B8B8B;
+        cursor: not-allowed;
+        width: 30%;
+        margin: 0 auto;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    #submit:disabled {
+        background-color: #8b8b8b !important;
+        transition: 0.5s ease-in-out;
+    }
+    
+    #submit:not(:disabled) {
+        background-color: #4CAF50;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    
+    #submit:hover {
+        background-color: #338837;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .create-post-btn {
+        margin-top: 50px;
+        font-size: 30px;
+        width: 40%;
+        color: #D8CEC5;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        font-weight: 600;
+    }
+    
+    .modal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+        padding: 0;
+    }
+    
+    .modal-content {
+        background-color: #FEFEFE;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888888;
+        width: 80%;
+        border-radius: 10px;
+    }
+    
+    .modal-content form {
+        padding: 0 10px;
+    }
+    
+    .modal-content h2 {
+        color: #3D3D3D;
+        text-align: center;
+        font-size: 65px;
+        margin-bottom: 50px;
+    }
+    
+    .modal-content label {
+        color: #3D3D3D;
+        font-size: 45px;
+        font-weight: bold;
+    }
+    
+    .modal-content input {
+        margin-bottom: 50px;
+        font-size: 40px;
+    }
+    
+    .modal-content select {
+        margin-bottom: 50px;
+        font-size: 45px;
+    }
+    
+    option {
+        font-size: 40px;
+    }
+    
+    .modal-content textarea {
+        margin-bottom: 50px;
+        font-size: 40px;
+    }
+    
+    .close {
+        color: #3D3D3D;
+        font-size: 40px;
+        font-weight: bold;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        margin-left: 50px;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #3D3D3D;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    form input, form select, form textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #CCCCCC;
+    }
+    
+    form button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    form button:hover {
+        background-color: #45a049;
     }
 }

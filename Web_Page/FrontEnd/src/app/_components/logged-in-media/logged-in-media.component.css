@@ -2,48 +2,174 @@
     background-image: linear-gradient(rgba(175, 149, 131, 0.573), rgba(46, 39, 34, 0.676)), url(../../../assets/images/makarov\ BG.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: center;
     background-attachment: fixed;
+    background-position-x: center;
+    min-height: 100vh;
 }
 
 .mediaContent {
     background-color: rgba(48, 47, 47, 0.568);
-    padding: 6.25rem;
+    padding: 100px;
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 6.25rem;
-    margin-bottom: 6.25rem;
-    border-radius: 4.7rem;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 75px;
 }
 
 .mediaContent div {
-    font-size: 2.5rem;
+    font-size: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #D8CEC5;
     text-align: justify;
-    padding: 1.5rem;
+    padding: 24px;
 }
 
 #galleryPic {
-    height: 22rem;
-    width: 22rem;
+    height: 352px;
+    width: 352px;
 }
 
 hr {
     opacity: 1;
 }
 
-@media (min-width: 2560px){
-    .mediaContent p {
-        font-size: 4rem;
+@media screen and (min-width: 425px) {
+    .mediaContent {
+        border-radius: 40px;
+        padding: 0;
     }
-    
+
+    .mediaContent p {
+        font-size: 30px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .gallery {
+        padding: 0 !important;
+    }
+
     #galleryPic {
-        height: 30rem;
-        width: 30rem;
+        height: 200px;
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .mediaContent {
+        border-radius: 40px;
+        padding: 0;
+    }
+
+    .mediaContent p {
+        font-size: 35px;
+        width: 100%;
+        text-align: justify;
+    }
+
+    .gallery {
+        padding: 0 !important;
+    }
+
+    #galleryPic {
+        height: 300px;
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .mediaContent {
+        padding: 20px;
+        width: 80%;
+    }
+
+    .galleryText {
+        display: flex;
+        justify-content: center;
+        padding: 0 20px !important;
+    }
+
+    .mediaContent p {
+        font-size: 30px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .gallery {
+        padding: 0 !important;
+    }
+
+    #galleryPic {
+        height: 250px;
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .mediaContent {
+        padding: 20px;
+        width: 80%;
+    }
+
+    .galleryText {
+        display: flex;
+        justify-content: center;
+        padding: 0 20px !important;
+    }
+
+    .mediaContent p {
+        font-size: 40px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .gallery {
+        padding: 0 !important;
+    }
+
+    #galleryPic {
+        height: 250px;
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .mediaContent {
+        padding: 20px;
+        width: 65%;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .mediaContent {
+        padding: 40px;
+        width: 80%;
+        border-radius: 100px;
+    }
+
+    .galleryText {
+        display: flex;
+        justify-content: center;
+        padding: 0 20px !important;
+    }
+
+    .mediaContent p {
+        font-size: 60px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .gallery {
+        padding: 0 !important;
+    }
+
+    #galleryPic {
+        height: 450px;
+        width: 450px;
     }
 }

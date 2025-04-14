@@ -13,7 +13,6 @@ import { CommonModule } from '@angular/common';
 })
 export class LoggedInDevlogComponent implements OnInit{
   logList: any[] = [];
-  gitUsers: { [key: number]: any } = {};
   showAllLogs = false;
 
   constructor(private devLogsService: DevLogsService) {}
@@ -21,17 +20,6 @@ export class LoggedInDevlogComponent implements OnInit{
   ngOnInit(): void {
     this.devLogsService.fetchLogsData().then((data) => {
       this.logList = data;
-
-      this.loadGitUsers();
-    });
-  }
-
-  loadGitUsers(): void {
-    const adminIds = Array.from(new Set(this.logList.map(log => log.adminId)));
-    adminIds.forEach((adminId) => {
-      this.devLogsService.fetchGitUser(adminId).then((userData) => {
-        this.gitUsers[adminId] = userData;
-      });
     });
   }
 

@@ -12,7 +12,7 @@
 }
 
 .modal-content {
-    background: white;
+    background: #D8CEC5;
     padding: 50px;
     border-radius: 20px;
     width: 30%;
@@ -47,11 +47,11 @@ input {
     margin: 0 auto;
     margin-right: 20px;
     border-radius: 30px;
+    transition: 0.5s ease-in-out;
 }
 
 #code:hover {
-    background-color: #3A69B6 !important;
-    transition: 0.5s ease-in-out;
+    background-color: rgb(19, 89, 219) !important;
 }
 
 #close {
@@ -59,11 +59,12 @@ input {
     margin: 0 auto;
     margin-left: 20px;
     border-radius: 30px;
+    background-color: rgb(156, 39, 39);
+    transition: 0.5s ease-in-out;
 }
 
 #close:hover {
-    background-color: #3A69B6 !important;
-    transition: 0.5s ease-in-out;
+    background-color: rgb(126, 8, 8) !important;
 }
 
 button {
@@ -83,4 +84,118 @@ button:hover {
 
 .close-btn {
     background: #ccc;
+}
+
+
+@media screen and (min-width: 425px) {
+    .modal-content {
+        width: 90%;
+        margin: 100px auto;
+        border-radius: 50px;
+        padding: 20px 50px !important;
+        background-color: #D8CEC5;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+
+    .modal-content p {
+        font-size: 20px;
+    }
+    
+    label {
+        font-weight: bold;
+        text-align: left;
+        font-size: 25px;
+    }
+    
+    input {
+        border-radius: 35px !important;
+        padding: 10px 20px;
+        border: none;
+        font-size: 20px;
+        width: 100%;
+        border: 3px solid #3D3D3D;
+    }
+
+    .buttons {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .modal-content {
+        width: 60%;
+    }
+
+    .modal-content p {
+        font-size: 30px;
+        text-align: justify;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .modal-content {
+        width: 50%;
+    }
+
+    .modal-content p {
+        font-size: 30px;
+        text-align: justify;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .modal-content {
+        width: 40%;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .modal-content p {
+        font-size: 30px;
+        text-align: justify;
+    }
+
+    input {
+        font-size: 30px;
+    }
+
+    .buttons {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .modal-content {
+        width: 35%;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .modal-content {
+        width: 30%;
+    }
+
+    h1 {
+        font-size: 70px;
+    }
+
+    .modal-content p {
+        font-size: 50px;
+        text-align: justify;
+    }
+
+    input {
+        font-size: 40px;
+    }
+
+    .buttons {
+        font-size: 40px;
+    }
 }

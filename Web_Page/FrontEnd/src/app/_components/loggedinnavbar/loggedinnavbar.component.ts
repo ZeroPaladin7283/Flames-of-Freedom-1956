@@ -29,4 +29,10 @@ export class LoggedinnavbarComponent implements OnInit {
       }
     });
   }
+
+  isNavbarOpen = false;
+
+  toggleNavbar() {
+    this.isNavbarOpen = !this.isNavbarOpen;
+  }
 }

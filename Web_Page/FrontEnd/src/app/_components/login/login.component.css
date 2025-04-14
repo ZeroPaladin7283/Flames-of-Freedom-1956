@@ -6,54 +6,40 @@
     background-attachment: fixed;
 }
 
-form {
-    width: 45rem;
-    margin: 6.5rem auto;
-    border-radius: 1.5rem;
-    padding: 3.5rem;
-    background-color: #D8CEC5;
-    text-align: center;
-    font-size: 2rem;
-}
-
 h1 {
-    font-size: 3.5rem;
-    margin-bottom: 4rem;
-}
-
-p {
-    font-size: 2.5rem;
-    margin-top: 2rem;
+    font-size: 70px;
+    margin-bottom: 80px;
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 100%;
-    margin-bottom: 3.5rem;
+    margin-bottom: 50px;
 }
 
 label {
     font-weight: bold;
     text-align: left;
+    font-size: 30px;
 }
 
 input {
-    border-radius: 1.5rem !important;
-    padding: 1rem;
+    border-radius: 35px !important;
+    padding: 15px 30px;
     border: none;
+    font-size: 25px;
 }
 
 input:focus {
-    outline: 0.3rem solid #3A69B6;
+    outline: 3px solid #3A69B6;
 }
 
 #forgot {
     display: flex;
-    font-size: 2.3rem;
-    padding-left: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 35px;
+    padding-left: 25px;
+    margin-bottom: 35px;
     text-decoration: underline;
     color: #3A69B6;
     width: 55%;
@@ -66,30 +52,24 @@ input:focus {
 }
 
 button {
-    width: 22rem;
-    font-size: 2.3rem;
-    padding: 0.5rem 1rem;
-    border-radius: 5rem;
-    margin-top: 2rem;
+    width: 55%;
+    font-size: 40px;
+    padding: 10px 20px;
+    border-radius: 80px;
+    margin-top: 35px;
     font-weight: bold;
     border: none;
-    background-color: #405A85;
     color: #e0d9d2;
-}
-
-button:hover {
-    background-color: #3A69B6;
-    transition: 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
 }
 
 #login-register {
-    margin-top: 3.5rem;
-    font-size: 2rem;
+    margin-top: 55px;
+    font-size: 35px;
 }
 
 #login-register a {
-    color: #3A69B6;
-    text-decoration: underline;
+    transition: color 0.5s ease-in-out;
 }
 
 #login-register a:hover {
@@ -99,8 +79,8 @@ button:hover {
 
 .error {
     color: rgb(171, 19, 19);
-    font-size: 2.8rem;
-    margin-top: 1.5rem;
+    font-size: 45px;
+    margin-top: 25px;
     text-align: center;
     font-family: Bookman Old Style;
 }
@@ -115,89 +95,397 @@ button:hover {
 
 #login:disabled {
     background-color: #8b8b8b !important;
-    transition: 0.5s ease-in-out;
 }
 
 #login:not(:disabled) {
     background-color: #405A85;
-    transition: 0.5s ease-in-out;
 }
 
 #login:hover {
     background-color: #3A69B6;
-    transition: 0.5s ease-in-out;
 }
 
-@media screen and (min-width: 2560px) {
+@media screen and (max-width: 425px) {
     form {
-        width: 65rem;
-        font-size: 3rem;
-        padding: 4rem 6rem;
-        border-radius: 4rem;
+        width: 90%;
+        margin: 100px auto;
+        border-radius: 50px;
+        padding: 20px 30px !important;
+        background-color: #D8CEC5;
+        text-align: center;
     }
-    
+
     h1 {
-        font-size: 5rem;
-        margin-bottom: 4rem;
+        font-size: 40px;
+        margin-bottom: 40px;
     }
     
-    .input-group {
-        padding: 4rem 0 0 1.5rem;
+    label {
+        font-weight: bold;
+        text-align: left;
+        font-size: 25px;
+    }
+    
+    input {
+        border-radius: 35px !important;
+        padding: 10px 20px;
+        border: none;
+        font-size: 20px;
         width: 100%;
     }
 
-    input {
-        padding: 1.5rem;
-        border-radius: 4rem !important;
-    }
-
-    input:focus {
-        border: 0.3rem solid #3A69B6;
-    }
-    
     #forgot {
-        font-size: 3rem;
-        padding-top: 1.5rem;
-        padding-left: 1rem;
-        margin-bottom: 4rem;
-        width: 25rem;
+        display: flex;
+        font-size: 20px;
+        padding-left: 25px;
+        margin-top: -40px;
+        margin-bottom: 10px;
+        text-decoration: underline;
+        color: #3A69B6;
+        width: 70%;
+        background: none;
+        transition: color 0.5s ease-in-out;
     }
     
     #forgot:hover {
         color: rgb(19, 89, 219) !important;
         cursor: pointer;
     }
-    
+
     button {
-        width: 35rem;
-        font-size: 4rem;
-        border-radius: 5rem;
+        width: 90%;
+        font-size: 30px;
+        padding: 5px 15px;
+        border-radius: 80px;
+        margin-top: 20px;
         font-weight: bold;
         border: none;
-        background-color: #405A85;
-        color: #D8CEC5;
+        color: #e0d9d2;
+        transition: background-color 0.5s ease-in-out;
     }
-
+    
     #login-register {
-        margin-top: 3rem;
-        font-size: 3rem;
-    }
-
-    #login-register a {
-        text-decoration: underline;
+        margin: 50px auto;
+        font-size: 25px;
     }
 
     .error {
         color: rgb(171, 19, 19);
-        font-size: 4rem;
-        margin-bottom: 2rem;
+        font-size: 25px;
+        margin-top: 15px;
+        text-align: center;
+        font-family: Bookman Old Style;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    form {
+        width: 75%;
+        margin: 100px auto;
+        border-radius: 50px;
+        padding: 20px 40px !important;
+        background-color: #D8CEC5;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin-bottom: 50px;
     }
     
-    #login-register a:hover {
+    label {
+        font-weight: bold;
+        text-align: left;
+        font-size: 30px;
+    }
+    
+    input {
+        border-radius: 35px !important;
+        padding: 10px 20px;
+        border: none;
+        font-size: 25px;
+        width: 100%;
+    }
+
+    #forgot {
+        display: flex;
+        font-size: 25px;
+        padding-left: 25px;
+        margin-top: -40px;
+        margin-bottom: 10px;
+        text-decoration: underline;
+        color: #3A69B6;
+        width: 55%;
+        background: none;
+        transition: color 0.5s ease-in-out;
+    }
+    
+    #forgot:hover {
         color: rgb(19, 89, 219) !important;
+        cursor: pointer;
+    }
+
+    button {
+        width: 60%;
+        font-size: 30px;
+        padding: 5px 15px;
+        border-radius: 80px;
+        margin-top: 20px;
+        font-weight: bold;
+        border: none;
+        color: #e0d9d2;
+        transition: background-color 0.5s ease-in-out;
     }
     
-    .invalid {
-        border: 3px solid red;
+    #login-register {
+        margin-top: 50px;
+        font-size: 35px;
+    }
+
+    .error {
+        color: rgb(171, 19, 19);
+        font-size: 30px;
+        margin-top: 15px;
+        text-align: center;
+        font-family: Bookman Old Style;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    form {
+        width: 65%;
+        margin: 100px auto;
+        border-radius: 50px;
+        padding: 50px !important;
+        background-color: #D8CEC5;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin-bottom: 50px;
+    }
+    
+    label {
+        font-weight: bold;
+        text-align: left;
+        font-size: 35px;
+    }
+    
+    input {
+        border-radius: 35px !important;
+        padding: 10px 20px;
+        border: none;
+        font-size: 30px;
+        width: 100%;
+    }
+
+    #forgot {
+        display: flex;
+        font-size: 30px;
+        padding-left: 25px;
+        margin-top: -40px;
+        margin-bottom: 10px;
+        text-decoration: underline;
+        color: #3A69B6;
+        width: 70%;
+        background: none;
+        transition: color 0.5s ease-in-out;
+    }
+    
+    #forgot:hover {
+        color: rgb(19, 89, 219) !important;
+        cursor: pointer;
+    }
+
+    button {
+        width: 60%;
+        font-size: 40px;
+        padding: 5px 15px;
+        border-radius: 80px;
+        margin-top: 40px;
+        font-weight: bold;
+        border: none;
+        color: #e0d9d2;
+        transition: background-color 0.5s ease-in-out;
+    }
+    
+    #login-register {
+        margin: 50px auto;
+        font-size: 40px;
+    }
+
+    .error {
+        color: rgb(171, 19, 19);
+        font-size: 40px;
+        margin-top: 15px;
+        text-align: center;
+        font-family: Bookman Old Style;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    form {
+        width: 45%;
+        margin: 100px auto;
+        border-radius: 50px;
+        padding: 50px !important;
+        background-color: #D8CEC5;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 60px;
+        margin-bottom: 50px;
+    }
+    
+    label {
+        font-weight: bold;
+        text-align: left;
+        font-size: 40px;
+    }
+    
+    input {
+        border-radius: 35px !important;
+        padding: 10px 20px;
+        border: none;
+        font-size: 30px;
+        width: 100%;
+    }
+
+    #forgot {
+        display: flex;
+        font-size: 35px;
+        padding-left: 25px;
+        margin-top: -40px;
+        margin-bottom: 10px;
+        text-decoration: underline;
+        color: #3A69B6;
+        width: 60%;
+        background: none;
+        transition: color 0.5s ease-in-out;
+    }
+    
+    #forgot:hover {
+        color: rgb(19, 89, 219) !important;
+        cursor: pointer;
+    }
+
+    button {
+        width: 60%;
+        font-size: 40px;
+        padding: 5px 15px;
+        border-radius: 80px;
+        margin-top: 40px;
+        font-weight: bold;
+        border: none;
+        color: #e0d9d2;
+        transition: background-color 0.5s ease-in-out;
+    }
+    
+    #login-register {
+        margin: 50px auto;
+        font-size: 25px;
+    }
+
+    .error {
+        color: rgb(171, 19, 19);
+        font-size: 40px;
+        margin-top: 15px;
+        text-align: center;
+        font-family: Bookman Old Style;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    form{
+        width: 40%;
+        margin: 100px auto;
+        border-radius: 50px;
+        padding: 50px 70px !important;
+        background-color: #D8CEC5;
+        text-align: center;
+    }
+
+    button {
+        margin-top: 80px;
+    }
+
+    #login-register {
+        margin: 50px auto;
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    form {
+        width: 35%;
+        margin: 100px auto;
+        border-radius: 50px;
+        padding: 80px !important;
+        background-color: #D8CEC5;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 80px;
+        margin-bottom: 50px;
+    }
+    
+    label {
+        font-weight: bold;
+        text-align: left;
+        font-size: 50px;
+    }
+    
+    input {
+        border-radius: 45px !important;
+        padding: 10px 20px;
+        border: none;
+        font-size: 40px;
+        width: 100%;
+    }
+
+    #forgot {
+        display: flex;
+        font-size: 45px;
+        padding-left: 25px;
+        margin-top: -40px;
+        margin-bottom: 10px;
+        text-decoration: underline;
+        color: #3A69B6;
+        width: 70%;
+        background: none;
+        transition: color 0.5s ease-in-out;
+    }
+    
+    #forgot:hover {
+        color: rgb(19, 89, 219) !important;
+        cursor: pointer;
+    }
+
+    button {
+        width: 65%;
+        font-size: 60px;
+        padding: 5px 15px;
+        border-radius: 80px;
+        margin-top: 50px;
+        font-weight: bold;
+        border: none;
+        color: #e0d9d2;
+        transition: background-color 0.5s ease-in-out;
+    }
+    
+    #login-register {
+        margin: 50px auto;
+        font-size: 60px;
+    }
+
+    .error {
+        color: rgb(171, 19, 19);
+        font-size: 45px;
+        margin-top: 15px;
+        text-align: center;
+        font-family: Bookman Old Style;
     }
 }

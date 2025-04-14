@@ -7,18 +7,18 @@
 }
 
 form {
-    width: 45rem;
-    margin: 6.5rem auto;
-    border-radius: 1.5rem;
-    padding: 3.5rem;
+    width: 720px;
+    margin: 104px auto;
+    border-radius: 25px;
+    padding: 50px;
     background-color: #D8CEC5;
     text-align: center;
-    font-size: 2rem;
+    font-size: 30px;
 }
 
 h1 {
-    font-size: 3.5rem;
-    margin-bottom: 2rem;
+    font-size: 50px;
+    margin-bottom: 30px;
 }
 
 .input-group {
@@ -26,7 +26,7 @@ h1 {
     flex-direction: column;
     margin: 0 auto;
     width: 100%;
-    margin-bottom: 3.5rem;
+    margin-bottom: 50px;
 }
 
 .profPic {
@@ -42,19 +42,16 @@ label {
 
 input {
     width: 100%;
-    border-radius: 3.5rem;
-    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    padding: 10px 25px;
     border: none;
     background-color: white;
-    font-size: 2rem;
+    font-size: 30px;
 }
 
-input:focus {
-    outline: 0.3rem solid #3A69B6;
-}
-
+input:focus,
 textarea:focus {
-    outline: 0.3rem solid #3A69B6;
+    outline: 4.8px solid #3A69B6;
 }
 
 .edit {
@@ -62,30 +59,22 @@ textarea:focus {
     justify-content: left;
     flex-direction: row;
     align-items: center;
-    margin-right: 2rem;
+    margin-right: 30px;
 }
 
 img {
     display: flex;
-    width: 13rem;
-    height: 13rem;
+    width: 200px;
     border-radius: 50%;
     justify-content: left;
     flex-direction: row;
 }
 
-.file-upload-label {
-    cursor: pointer;
-    display: flex;
-    padding: 1rem;
-    justify-content: center;
-    align-items: center;
-}
-
 .file-upload-label i {
-    font-size: 2.5rem;
+    font-size: 40px;
     color: #3D3D3D;
     display: flex;
+    cursor: pointer;
 }
 
 .tooltip-text {
@@ -95,11 +84,11 @@ img {
     color: #FFFFFF;
     text-align: center;
     border-radius: 5px;
-    padding: 0.5rem;
+    padding: 10px;
     position: absolute;
     bottom: 40%;
     left: 60%;
-    margin-left: -3.5rem;
+    margin-left: -50px;
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -112,10 +101,10 @@ img {
 #change {
     width: 10%;
     height: 5%;
-    margin-left: 1rem;
+    margin-left: 15px;
     background: none;
     color: #3D3D3D;
-    font-size: 2.5rem;
+    font-size: 40px;
 }
 
 #change:hover {
@@ -125,25 +114,25 @@ img {
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 2.5rem;
+    gap: 15px;
+    margin-top: 50px;
 }
 
 .buttons div {
-    width: 22rem;
+    width: 350px;
     display: flex;
     justify-content: center;
 }
 
 button {
-    padding: 1rem;
+    padding: 15px;
     width: 100%;
     text-align: center;
     background-color: #405A85;
     color: #D8CEC5;
-    font-size: 1.5rem;
+    font-size: 25px;
     font-weight: bold;
-    border-radius: 1rem;
+    border-radius: 15px;
     border: none;
 }
 
@@ -176,125 +165,239 @@ button {
     transition: 0.5s ease-in-out;
 }
 
-@media (min-width: 2560px) {
-    .profileCard {
-        margin: 7rem auto;
-        border-radius: 3rem;
-        width: 35%;
-        padding: 3rem 5rem;
+@media screen and (min-width: 425px) {
+    form {
+        width: 90%;
+        margin: 100px auto;
+        border-radius: 50px;
+        padding: 20px 30px !important;
+        background-color: #D8CEC5;
+        text-align: center;
     }
-    
+
     h1 {
-        font-size: 4rem;
-        margin-bottom: 3rem;
-    }
-    
-    .input-group {
-        width: 100%;
-        margin-bottom: 3rem;
+        font-size: 40px;
+        margin-bottom: 40px;
     }
     
     label {
-        font-size: 2.3rem;
+        font-weight: bold;
+        text-align: left;
+        font-size: 25px;
     }
     
     input {
-        width: 90%;
-        border-radius: 3rem;
-        padding: 1rem 1rem;
-    }
-    
-    input:focus {
-        outline: 0.35rem solid #3A69B6;
-    }
-    
-    textarea {
-        width: 90%;
-        border-radius: 1rem;
-        padding: 0.5rem 1rem;
-        min-height: 10rem;
-    }
-    
-    textarea:focus {
-        outline: 0.35rem solid #3A69B6;
-    }
-    
-    img {
-        width: 15rem;
-    }
-
-    a.profPic {
-        display: block;
-        width: 10%;
-    }
-
-    .bi-upload {
-        display: flex;
-        text-align: center;
-        align-items: center;
-        gap: 1.5rem;
-        background-color: #405A85;
-        width: 16rem;
-        margin-top: 1.8rem;
-        padding: 0.5rem 1.8rem;
-        border-radius: 5rem;
-        color: #D8CEC5;
-        font-weight: bold;
-        margin-bottom: 5rem;
-        margin-left: -0.5rem;
-    }
-
-    .bi-upload:hover {
-        background-color: #3A69B6;
-        transition: 0.5s ease-in-out;
-    }
-    
-    a {
-        font-size: 2.5rem;
-        color: #3D3D3D;
-        text-decoration: none;
-    }
-    
-    a:hover {
-        color: #3D3D3D !important;
-    }
-    
-    .buttons {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 30px;
-    }
-    
-    .buttons div {
-        width: 25rem;
-        display: flex;
-        justify-content: center;
-    }
-    
-    button {
-        padding: 1rem;
-        width: 100%;
-        text-align: center;
-        background-color: #405A85;
-        color: #D8CEC5;
-        font-size: 25px;
-        font-weight: bold;
-        border-radius: 15px;
+        border-radius: 35px !important;
+        padding: 10px 20px;
         border: none;
+        font-size: 20px;
+        width: 100%;
+    }
+
+    img {
+        width: 150px;
+    }
+
+    .tooltip-text {
+        width: 75%;
+        padding: 5px 10px;
+        position: absolute;
+        bottom: 0;
+        left: 65%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    form {
+        width: 75%;
+        margin: 100px auto;
+        border-radius: 50px;
+        padding: 20px 40px !important;
+        background-color: #D8CEC5;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin-bottom: 50px;
     }
     
-    #logout:hover {
-        background-color: #3A69B6;
-        color: #D8CEC5;
-        transition: 0.5s ease-in-out;
+    label {
+        font-weight: bold;
+        text-align: left;
+        font-size: 30px;
     }
     
-    #save {
-        background-color: #8b8b8b;
+    input {
+        border-radius: 35px !important;
+        padding: 10px 20px;
+        border: none;
+        font-size: 25px;
+        width: 100%;
+    }
+
+    img {
+        width: 170px;
+    }
+
+    .tooltip-text {
+        width: 75%;
+        padding: 5px 10px;
+        position: absolute;
+        bottom: 35%;
+        left: 65%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    form {
+        width: 65%;
+        margin: 100px auto;
+        border-radius: 50px;
+        padding: 50px !important;
+        background-color: #D8CEC5;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin-bottom: 50px;
     }
     
-    #hover {
-        background-color: #6767678F;
+    label {
+        font-weight: bold;
+        text-align: left;
+        font-size: 35px;
+    }
+    
+    input {
+        border-radius: 35px !important;
+        padding: 10px 20px;
+        border: none;
+        font-size: 30px;
+        width: 100%;
+    }
+
+    img {
+        width: 180px;
+    }
+
+    .tooltip-text {
+        width: 75%;
+        padding: 5px 10px;
+        position: absolute;
+        bottom: 35%;
+        left: 60%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    form {
+        width: 45%;
+        margin: 100px auto;
+        border-radius: 50px;
+        padding: 50px !important;
+        background-color: #D8CEC5;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 60px;
+        margin-bottom: 50px;
+    }
+    
+    label {
+        font-weight: bold;
+        text-align: left;
+        font-size: 40px;
+    }
+    
+    input {
+        border-radius: 35px !important;
+        padding: 10px 20px;
+        border: none;
+        font-size: 30px;
+        width: 100%;
+    }
+
+    img {
+        width: 190px;
+    }
+
+    .tooltip-text {
+        width: 75%;
+        padding: 5px 10px;
+        position: absolute;
+        bottom: 35%;
+        left: 60%;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    form{
+        width: 40%;
+        margin: 100px auto;
+        border-radius: 50px;
+        padding: 50px 70px !important;
+        background-color: #D8CEC5;
+        text-align: center;
+    }
+
+    img {
+        width: 190px;
+    }
+
+    .tooltip-text {
+        width: 75%;
+        padding: 5px 10px;
+        position: absolute;
+        bottom: 35%;
+        left: 55%;
+    }
+}
+
+@media (min-width: 2560px) {
+    form {
+        width: 35%;
+        margin: 100px auto;
+        border-radius: 50px;
+        padding: 80px !important;
+        background-color: #D8CEC5;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 80px;
+        margin-bottom: 50px;
+    }
+    
+    label {
+        font-weight: bold;
+        text-align: left;
+        font-size: 50px;
+    }
+    
+    input {
+        border-radius: 45px !important;
+        padding: 10px 20px;
+        border: none;
+        font-size: 40px;
+        width: 100%;
+    }
+
+    img {
+        width: 220px;
+    }
+
+    .tooltip-text {
+        width: 75%;
+        padding: 5px 10px;
+        position: absolute;
+        bottom: 35%;
+        left: 50%;
+    }
+
+    .file-upload-label i {
+        font-size: 50px;
     }
 }

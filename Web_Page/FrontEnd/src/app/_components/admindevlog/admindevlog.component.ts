@@ -14,7 +14,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class AdmindevlogComponent implements OnInit{
   logList: any[] = [];
-  gitUsers: { [key: number]: any } = {};
   newLog = { adminId: 0, log: ''};
   showModal = false;
   showAllLogs = false;
@@ -24,8 +23,6 @@ export class AdmindevlogComponent implements OnInit{
   ngOnInit(): void {
     this.devLogsService.fetchLogsData().then((data) => {
       this.logList = data;
-
-      this.loadGitUsers();
     });
 
     const adminId = localStorage.getItem('userId');
@@ -71,15 +68,6 @@ export class AdmindevlogComponent implements OnInit{
 
   toggleLogs() {
     this.showAllLogs = !this.showAllLogs;
-  }
-
-  loadGitUsers(): void {
-    const adminIds = Array.from(new Set(this.logList.map(log => log.adminId)));
-    adminIds.forEach((adminId) => {
-      this.devLogsService.fetchGitUser(adminId).then((userData) => {
-        this.gitUsers[adminId] = userData;
-      });
-    });
   }
 
   deleteLog(id: number): void {
